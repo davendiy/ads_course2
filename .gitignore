@@ -2,9 +2,9 @@
 /.idea
 /dz_others/kasmirenko/__pycache__
 /dz_others/module1/__pycache__
-/dz_others/subject1_search/__pycache__
-/dz_others/subject2_sort/__pycache__
-/dz_others/subject3_full_permute/__pycache__
-/dz_others/subject4_stack/__pycache__
-/dz_others/subject5_trees/__pycache__
-/dz_others/subject6_graphs/__pycache__
+/subject1_search/__pycache__
+/subject2_sort/__pycache__
+/subject3_full_permute/__pycache__
+/subject4_stack/__pycache__
+/subject5_trees/__pycache__
+/subject6_graphs/__pycache__
