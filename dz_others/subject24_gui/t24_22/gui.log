@@ -1,0 +1,36 @@
+# LOG FILE
+
+-----------2018-11-27 02:03:59.739006----------Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1702, in __call__
+    return self.func(*args)
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/gui.py", line 178, in _find_handler
+    raise e
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/gui.py", line 167, in _find_handler
+    res = get_all_flights(self.filename, air_id1, air_id2, date, self.sheet_flights)
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/ms_module.py", line 49, in get_all_flights
+    date_day = datetime.datetime(*date).weekday()   # день тижня, на який припадає задана дата
+TypeError: Required argument 'month' (pos 2) not found
+
+
+-----------2018-11-27 02:10:22.630557----------
+
+
+-----------2018-11-27 02:11:49.330042----------
+
+
+-----------2018-11-27 02:28:50.516816----------
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1702, in __call__
+    return self.func(*args)
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/gui.py", line 225, in _find_handler
+    raise e
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/gui.py", line 214, in _find_handler
+    res = get_all_flights(self.filename, air_id1, air_id2, date, self.sheet_flights)
+  File "/home/user/Документы/univer/python/course2/dz_others/subject24_gui/t24_22/ms_module.py", line 49, in get_all_flights
+    date_day = datetime.datetime(*date).weekday()   # день тижня, на який припадає задана дата
+TypeError: Required argument 'month' (pos 2) not found
+
+
+-----------2018-11-27 14:36:51.625222----------
