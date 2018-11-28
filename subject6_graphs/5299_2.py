@@ -187,9 +187,9 @@ class Graph:
 
     def construct_way(self, start, end):
         """ Домопіжний метод, що будує шлях, між двома вершинами у графі
-        Може бути застосовами лише після дії алгоритмів пошуку шляху
-        (Хвильового, Дейкстри, Беллмана-Форда, тощо) які записують
-        допоміжну інформацію у вершини графа.
+            Може бути застосовами лише після дії алгоритмів пошуку шляху
+            (Хвильового, Дейкстри, Беллмана-Форда, тощо) які записують
+            допоміжну інформацію у вершини графа.
 
         :param start: Вершина, що початком шляху
         :param end: Вершина, що є кінцем шляху
@@ -318,14 +318,40 @@ def split2(graph: Graph):
     return count
 
 
+def try_kuhn(graph: Graph, vertex_key: str, used: set):
+    if vertex_key in used:
+        return False
+
+    used.add(vertex_key)
+    for neighbour in graph[vertex_key].neighbours():
+        if not graph[neighbour].mVisited or try_kuhn(graph, neighbour, used):
+            graph[neighbour].mVisited = True
+            graph[vertex_key].mVisited = True
+            return True
+
+    return False
+
+
 if __name__ == '__main__':
+
     n, m = map(int, input().split())
-    task = Graph(oriented=True)
+    task = Graph()
     for i in range(1, n+1):
-        task.addVertex(i)
+        task.addVertex('a{}'.format(i))
+        task.addVertex('b{}'.format(i))
+
     for i in range(m):
-        task.addEdge(*map(int, input().split()))
-    print(split2(task))
+        tmp1, tmp2 = input().split()
+        task.addEdge('a{}'.format(tmp1), 'b{}'.format(tmp2))
+
+    for i in range(1, n+1):
+        try_kuhn(task, 'a{}'.format(i), set())
+
+    count = 0
+    for i in range(1, n+1):
+        if not task['a{}'.format(i)].mVisited:
+            count += 1
+    print(count)
 
     # task = Graph(oriented=True)
     # with open('input5299.txt', 'r') as file:
