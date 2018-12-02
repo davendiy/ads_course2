@@ -16,7 +16,7 @@ sep = '\\' if sys.platform == 'win32' else '/'   # символ розділюв
 CHUNK = 100 * 1024
 
 
-def archive(directory: str, path_to_save: str, chunk=CHUNK):1
+def archive(directory: str, path_to_save: str, chunk=CHUNK):
     """ Архівування каталогу і розбиття його на
     томи, якщо результуючий розмір файлу перевищує
     заданий
