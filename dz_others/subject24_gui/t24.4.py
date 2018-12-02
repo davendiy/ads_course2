@@ -28,7 +28,6 @@ class Block:
 
     def amount_diff(self):
         """ Рахує к-ть змін знаку
-
         """
         s = self.entry.get().split(', ')
         if not s:
