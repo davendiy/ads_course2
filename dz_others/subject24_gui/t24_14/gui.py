@@ -176,7 +176,7 @@ class GUI:
 
             # вибираємо з словника курс для вибраної пари
             coeff = self._exchange[(self._from, self._to)]
-            res = float(summ) * float(coeff)   # обчислення
+            res = float(summ) / float(coeff)   # обчислення
             self._res.config(text=GUI._pattern.format(res))  # виведення
             self.top.update()
 
