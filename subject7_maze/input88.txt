@@ -1,0 +1,23 @@
+3
+6 7
+RRRRRRR
+R_e___R
+R_____R
+R_RRR_R
+R_gRl_R
+RRRRRRR
+4 5
+RRRRR
+R__eR
+Rgl_R
+RRRRR
+9 13
+RRRRRRRRRRRRR
+R_____R___R_R
+R_R_R_R_R_R_R
+R___RRR_R_R_R
+R_RRR___ReR_R
+R_R___R_R_R_R
+R_R_RRRRR_R_R
+R_g________lR
+RRRRRRRRRRRRR
