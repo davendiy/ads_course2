@@ -66,8 +66,8 @@ class Queue:
             raise Exception("Queue: 'dequeue' applied to empty container")
 
         current_front = self.mFront       # запам'ятовуємо поточну голову черги
-        item = current_front.item        # запам'ятовуємо навантаження першого вузла черги
-        self.mFront = self.mFront.next     # замінюємо перший вузол наступним
+        item = current_front.mItem        # запам'ятовуємо навантаження першого вузла черги
+        self.mFront = self.mFront.mNext     # замінюємо перший вузол наступним
         del current_front                # видаляємо запам'ятований вузол
 
         if self.mFront is None:  # Якщо голова черги стала порожньою

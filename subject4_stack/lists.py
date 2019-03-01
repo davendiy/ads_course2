@@ -124,7 +124,7 @@ class BayonetList:
 if __name__ == '__main__':
     # import random
 
-    # COMMAND_LIST = ['go_end', 'go_first', 'go_next', 'go_pre', 'del_curr', 'get_current']
+    print(" COMMAND_LIST = ['go_end', 'go_first', 'go_next', 'go_pre', 'del_curr', 'get_current', 'insert_after', 'insert_before']")
     test = BayonetList()
     # for i in range(50):
     #     test.insert_after(random.randrange(100))
@@ -132,13 +132,16 @@ if __name__ == '__main__':
 
     print(test)
     while True:
-        command = input('command:\n--> ')
-        param = input("param:\n--> ")
-        # print("command: {}".format(command))
-        if param:
-            print(test.__getattribute__(command)(param))
-        else:
-            print(test.__getattribute__(command)(param))
-        print(test)
-        print('current index: {}'.format(test._current))
-        input('press enter to continue...')
+        try:
+	        command = input('command:\n--> ')
+	        param = input("param:\n--> ")
+	        # print("command: {}".format(command))
+	        if param:
+	            print(test.__getattribute__(command)(param))
+	        else:
+	            print(test.__getattribute__(command)(param))
+	        print(test)
+	        print('current index: {}'.format(test._current))
+	        input('press enter to continue...')
+        except Exception as e:
+                print(e)
