@@ -13,8 +13,8 @@ import tkinter as tk
 import datetime
 
 with open('logs.log', 'a') as file:
-    sys.stdout = file
-    sys.stderr = file
+    # sys.stdout = file
+    # sys.stderr = file
     print("===================={}=====================".format(datetime.datetime.now()))
     top = tk.Tk()
     test = MainWindow(top)

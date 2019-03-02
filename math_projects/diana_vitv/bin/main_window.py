@@ -7,9 +7,7 @@
 # Taras Shevchenko National University of Kyiv
 # email: davendiy@gmail.com
 
-from tkinter import *
-from tkinter.messagebox import showwarning
-from tkinter.filedialog import askopenfilename, askdirectory
+from tkinter.filedialog import askopenfilename
 from .storage import *
 from .dialogs import *
 
@@ -21,7 +19,7 @@ class MainWindow:
         self.database = None           # type: StorageDB
         self.data_connector = None     # type: StorageCollection
         self._ms_pattern = None
-
+        self._chosen_category = ''
         self._open_database()
         self._make_widgets()
 
@@ -51,13 +49,26 @@ class MainWindow:
 
         # рамка з полем для введення частини назви і вибору категорії
         _frame = Frame(self.top)
-        self.input_name = Entry(_frame, font=('arial', '16'))
-        self.categories = Menubutton(_frame, text='Категорія', relief=RAISED)
-        self.input_name.pack(side=LEFT)
-        self.categories.pack(side=LEFT)
+        _category_frame = Frame(_frame)
+        self.input_name = Entry(_category_frame, font=('arial', '16'))
+        self._category_label = Label(_category_frame, text='Вибрана категорія: ...', font=('arial', '12'))
+
+        _list_frame = Frame(_frame)
+        _scroll = Scrollbar(_list_frame)
+        self.categories_list = Listbox(_list_frame, height=5, width=16, yscrollcommand=_scroll.set)
+        self.categories_list.bind('<Double-1>', self._save_category)
+
         self._update_categories()      # наповнити кнопку вибору категорій їх списком
-        Button(_frame, text='Шукати', font=('arial', '16'), command=self._fill_list).pack(side=LEFT)
-        _frame.pack(side=TOP)
+
+        _frame.pack(side=TOP, expand=1)
+        _category_frame.pack(side=LEFT, expand=1)
+        self.input_name.pack(side=TOP, fill=X, expand=1)
+        self._category_label.pack(side=TOP, fill=X, expand=1)
+
+        _list_frame.pack(side=LEFT, expand=1)
+        _scroll.pack(side=RIGHT, fill=Y, expand=1)
+        self.categories_list.pack(side=LEFT, fill=BOTH, expand=1)
+        Button(_frame, text='Шукати', font=('arial', '15'), command=self._fill_list).pack(side=RIGHT, expand=1)
 
         # список - результати пошуку
         Label(self.top, text=' Результати пошуку:', font=('Helvetica', '12', 'bold')).pack(side=TOP)
@@ -85,23 +96,30 @@ class MainWindow:
         piece_name = self.input_name.get()
 
         translator = sql2dict(self.data_connector.get_categories())    # TODO доробити пошук по категорії
-
-        tmp_val = self.data_connector.find_item(piece_name)
+        if self._chosen_category in translator:
+            tmp_val = self.data_connector.find_item(piece_name, translator[self._chosen_category])
+        else:
+            tmp_val = self.data_connector.find_item(piece_name)
 
         self.items_list.delete(0, END)
         for el in tmp_val:
             string = ' '.join('{}: {},'.format(key, value) for key, value in el.items())
             self.items_list.insert(END, string)
 
+    def _save_category(self, ev=None):
+        self._chosen_category = self.categories_list.get(self.categories_list.curselection())
+        tmp = 'Вибрана категорія: ' + self._chosen_category
+        print(tmp)
+        self._category_label.config(text=tmp)
+
     def _update_categories(self):
         """ Створити список категорій для вибору у головному вікні
         """
         if self.database is not None:
-            _rad_menu = Menu(self.categories)
-            self.categories.configure(menu=_rad_menu)
-
+            self.categories_list.delete(0, END)
             for el in self.data_connector.get_categories():
-                _rad_menu.add_radiobutton(label=el['Name'])
+                self.categories_list.insert(END, el['Name'])
+            self.categories_list.insert(END, '...')
 
     def _open_database(self):
         """ Відкрити базу даних
