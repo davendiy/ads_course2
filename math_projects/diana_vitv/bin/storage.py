@@ -191,7 +191,7 @@ class StorageCollection:
         item_id = self.db.get_one_result('SELECT id FROM categories WHERE Name=?', name)
         curs = self.db.get_cursor()
         curs.execute('DELETE FROM categories WHERE Name=?', (name,))
-        curs.execute('DELETE FROM items WHERE Category_id=?', (item_id,))
+        curs.execute('DELETE FROM items WHERE Category_id=?', (item_id[0],))
         self.db.close()
 
 

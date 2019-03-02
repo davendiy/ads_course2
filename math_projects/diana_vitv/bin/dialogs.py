@@ -8,11 +8,10 @@
 # email: davendiy@gmail.com
 
 from tkinter import *
-# from .main_window import MainWindow
-from tkinter.messagebox import showerror
+from tkinter.messagebox import showerror, showinfo, askokcancel
 import datetime
 
-# TODO діалог видалення і додавання категорії
+
 # TODO діалог відкриття діректорії зберігання і т.п.
 # TODO діалог створення звіту
 
@@ -24,7 +23,54 @@ def sql2dict(dicts_list):
     return res
 
 
-class DialogEnter:
+class DialogEnterCategory:
+
+    def __init__(self, pre):
+        self.pre = pre
+        self.diag = Toplevel()
+        self.diag.focus_set()
+        self.diag.grab_set()
+        self._make_widgets()
+
+    def _make_widgets(self):
+        _frame = Frame(self.diag)
+        Label(_frame, text="Назва категорії:", font=('arial', '16')).pack(side=LEFT, expand=YES)
+        self._entry = Entry(_frame, font=('arial', '16'))
+        self._entry.pack(side=LEFT, expand=YES)
+        _frame.pack(side=TOP, expand=YES)
+
+        _frame = Frame(self.diag)
+        Button(_frame, text='Додати', font=('arial', '16'), command=self._add).pack(side=LEFT, expand=YES)
+        Button(_frame, text='Видалити', font=('arial', '16'), command=self._del).pack(side=LEFT, expand=YES)
+        _frame.pack(side=TOP)
+
+    def _add(self, ev=None):
+        try:
+            tmp = self._entry.get()
+            if tmp:
+                self.pre.data_connector.add_category(tmp)
+                showinfo('Success', 'Category is successfully added.')
+        except Exception as e:
+            showerror('Error', e)
+            print(e)
+
+    def _del(self, ev=None):
+        try:
+            tmp = self._entry.get()
+            if tmp:
+                ans = askokcancel('Увага', 'Видалення категорії призведе '
+                                           'до видалення всіх товарів даної категорії.'
+                                           'Бажаєте продовжити?')
+                if ans:
+                    print(tmp)
+                    self.pre.data_connector.delete_category(tmp)
+                    showinfo('Success', 'Category is successfully deleted.')
+        except Exception as e:
+            showerror('Error', e)
+            print(e)
+
+
+class DialogEnterItem:
     """ Діалогове вікно введення нового товару.
     """
 
@@ -55,12 +101,12 @@ class DialogEnter:
                 continue
 
             _frame = Frame(self.diag)
-            if el == 'Category_id':                                                 # список в діалоговому вікні
+            if el == 'Category_id':  # список в діалоговому вікні
                 el = 'Category'
                 scroll_y = Scrollbar(_frame)
                 scroll_y.pack(side=RIGHT, fill=Y)
                 self.list_entry = Listbox(_frame, height=5,
-                                  width=16, yscrollcommand=scroll_y.set)
+                                          width=16, yscrollcommand=scroll_y.set)
                 self.list_entry.bind('<Double-1>', self._update_text)
                 _entry = Label(_frame, height=2, width=10)
 
@@ -116,6 +162,8 @@ class DialogEnter:
                 res[name.lower()] = tmp
 
             self.pre.data_connector.add_item(**res)
+            showinfo('Success', 'New item is successfully added')
+
         except Exception as e:
             showerror(title='Error', message=e)
-            print(datetime.datetime.now, ': ',  e, sep='')
+            print(datetime.datetime.now, ': ', e, sep='')

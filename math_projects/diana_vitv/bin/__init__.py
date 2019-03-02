@@ -9,7 +9,7 @@
 
 
 from .main_window import MainWindow
-from .dialogs import DialogEnter
+from .dialogs import DialogEnterItem
 from .storage import StorageCollection, StorageDB
 
-__all__ = ['MainWindow', 'DialogEnter', 'StorageDB', 'StorageCollection']
+__all__ = ['MainWindow', 'DialogEnterItem', 'StorageDB', 'StorageCollection']

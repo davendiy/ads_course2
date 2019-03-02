@@ -61,19 +61,19 @@ class MainWindow:
         self._update_categories()      # наповнити кнопку вибору категорій їх списком
 
         _frame.pack(side=TOP, expand=1)
-        _category_frame.pack(side=LEFT, expand=1)
+        _category_frame.grid(row=0, column=0, padx=4)
         Label(_category_frame, text='Введіть частину назви товару:', font=('arial', '12')).pack(side=TOP,
                                                                                                 fill=X, expand=1)
         self.input_name.pack(side=TOP, fill=X, expand=1)
         self._category_label.pack(side=TOP, fill=X, expand=1)
 
-        _list_frame.pack(side=LEFT, expand=1)
+        _list_frame.grid(row=0, column=2, padx=4)
         _scroll.pack(side=RIGHT, fill=Y, expand=1)
         self.categories_list.pack(side=LEFT, fill=BOTH, expand=1)
-        Button(_frame, text='Шукати', font=('arial', '15'), command=self._fill_list).pack(side=RIGHT, expand=1)
+        Button(_frame, text='Шукати', font=('arial', '15'), command=self._fill_list).grid(row=0, column=4, padx=4)
 
         # список - результати пошуку
-        Label(self.top, text=' Результати пошуку:', font=('Helvetica', '12', 'bold')).pack(side=TOP)
+        Label(self.top, text=' Результати пошуку:', font=('Helvetica', '12', 'bold'), pady=10).pack(side=TOP)
         _frame = Frame(self.top)
         self.scroll_y = Scrollbar(_frame)
         self.scroll_y.pack(side=RIGHT, fill=Y)
@@ -108,20 +108,14 @@ class MainWindow:
             string = ''
             for field_name, val in el.items():
                 if field_name == 'Category_id':
-                    for name, id in translator.items():
-                        if id == val:
+                    for name, _id in translator.items():
+                        if _id == val:
                             val = name
                             break
                 tmp = '{}: {}'.format(field_name, val)
                 print(tmp, len(tmp), 30-len(tmp))
                 string += '   ' + tmp + '   '
             self.items_list.insert(END, string.strip())
-
-    def _save_category(self, ev=None):
-        self._chosen_category = self.categories_list.get(self.categories_list.curselection())
-        tmp = 'Вибрана категорія: ' + self._chosen_category
-        print(tmp)
-        self._category_label.config(text=tmp)
 
     def _update_categories(self):
         """ Створити список категорій для вибору у головному вікні
@@ -132,6 +126,16 @@ class MainWindow:
                 self.categories_list.insert(END, el['Name'])
             self.categories_list.insert(END, '...')
 
+    # ================================================= handlers =======================================================
+    def _dialog_pattern(self):
+        pass
+
+    def _save_category(self, ev=None):
+        self._chosen_category = self.categories_list.get(self.categories_list.curselection())
+        tmp = 'Вибрана категорія: ' + self._chosen_category
+        print(tmp)
+        self._category_label.config(text=tmp)
+
     def _open_database(self):
         """ Відкрити базу даних
         """
@@ -140,17 +144,25 @@ class MainWindow:
             self.database = StorageDB(filename)
             self.data_connector = StorageCollection(self.database)
 
-    def _dialog_pattern(self):
-        pass
-
-    # ================================================= handlers =======================================================
     def _add_item(self, ev=None):
-        DialogEnter(self)                   # TODO додавання і видалення категорії + зміна елемента
+        tmp = DialogEnterItem(self)
+        self.top.wait_window(tmp.diag)
+        self._update_categories()
+        self._chosen_category = ''
+        self.input_name.clipboard_clear()
+        self._category_label.config(text='Вибрана категорія: ...')
+        self._fill_list()
 
-    def _category_handler(self, ev=None):   # TODO звіт
-        pass
+    def _category_handler(self, ev=None):
+        tmp = DialogEnterCategory(self)
+        self.top.wait_window(tmp.diag)
+        self._update_categories()
+        self._chosen_category = ''
+        self.input_name.clipboard_clear()
+        self._category_label.config(text='Вибрана категорія: ...')
+        self._fill_list()
 
-    def _create_report(self, ev=None):
+    def _create_report(self, ev=None):   # TODO звіт
         pass
 
     def _change_element(self, ev=None):
