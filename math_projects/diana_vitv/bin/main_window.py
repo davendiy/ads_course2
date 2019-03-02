@@ -126,7 +126,7 @@ class MainWindow:
                 self.categories_list.insert(END, el['Name'])
             self.categories_list.insert(END, '...')
 
-    # ================================================= handlers =======================================================
+    # ========================================= handlers ===============================================================
     def _dialog_pattern(self):
         pass
 
@@ -166,4 +166,12 @@ class MainWindow:
         pass
 
     def _change_element(self, ev=None):
-        ...
+        default = self.items_list.get(self.items_list.curselection())
+        default = dict(map(lambda a: a.split(":"), default.split('      ')))
+        tmp = DialogChangeItem(self, default)
+        self.top.wait_window(tmp.diag)
+        self._update_categories()
+        self._chosen_category = ''
+        self.input_name.clipboard_clear()
+        self._category_label.config(text='Вибрана категорія: ...')
+        self._fill_list()
