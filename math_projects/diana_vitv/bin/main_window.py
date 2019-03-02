@@ -62,6 +62,8 @@ class MainWindow:
 
         _frame.pack(side=TOP, expand=1)
         _category_frame.pack(side=LEFT, expand=1)
+        Label(_category_frame, text='Введіть частину назви товару:', font=('arial', '12')).pack(side=TOP,
+                                                                                                fill=X, expand=1)
         self.input_name.pack(side=TOP, fill=X, expand=1)
         self._category_label.pack(side=TOP, fill=X, expand=1)
 
@@ -95,7 +97,7 @@ class MainWindow:
     def _fill_list(self, ev=None):
         piece_name = self.input_name.get()
 
-        translator = sql2dict(self.data_connector.get_categories())    # TODO доробити пошук по категорії
+        translator = sql2dict(self.data_connector.get_categories())
         if self._chosen_category in translator:
             tmp_val = self.data_connector.find_item(piece_name, translator[self._chosen_category])
         else:
@@ -103,8 +105,17 @@ class MainWindow:
 
         self.items_list.delete(0, END)
         for el in tmp_val:
-            string = ' '.join('{}: {},'.format(key, value) for key, value in el.items())
-            self.items_list.insert(END, string)
+            string = ''
+            for field_name, val in el.items():
+                if field_name == 'Category_id':
+                    for name, id in translator.items():
+                        if id == val:
+                            val = name
+                            break
+                tmp = '{}: {}'.format(field_name, val)
+                print(tmp, len(tmp), 30-len(tmp))
+                string += '   ' + tmp + '   '
+            self.items_list.insert(END, string.strip())
 
     def _save_category(self, ev=None):
         self._chosen_category = self.categories_list.get(self.categories_list.curselection())

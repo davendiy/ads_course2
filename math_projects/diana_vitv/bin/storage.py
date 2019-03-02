@@ -45,7 +45,7 @@ class StorageDB:
         self.close()
         return res
 
-    def get_data_dicts(self, query, *parameters, n=20):
+    def get_data_dicts(self, query, *parameters, n=20)->list:
         """Повертає список словників з даними.
 
         Як відповідь на запит query з параметрами param.
@@ -87,7 +87,7 @@ class StorageCollection:
     def __init__(self, db):
         self.db = db     # type: StorageDB
 
-    def get_items(self, category='', n=20):
+    def get_items(self, category='', n=20)->list:
         """ Повертає всі товари на складі (певної категорії, якщо вказано).
 
         :param category: рядок
@@ -114,7 +114,7 @@ class StorageCollection:
         categories = self.db.get_data_dicts(query)
         return categories
 
-    def find_item(self, piece_of_name: str, category='', n=20):
+    def find_item(self, piece_of_name: str, category='', n=20)->list:
         """ Знайти товар за частиною імені та категорією
 
         :param piece_of_name: рядок
