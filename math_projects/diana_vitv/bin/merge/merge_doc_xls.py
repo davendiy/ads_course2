@@ -3,11 +3,7 @@
 # Імена полів, що заповнюються даними, мають бути взяті у фігурні дужки { }
 # Файли, з яких треба брати дані, вказують у конфігураційному файлі
 
-from docx import Document
-import os
-
 from .mergesource import *
-from .config_dict import *
 
 
 class Merger:
@@ -150,25 +146,3 @@ def run_format_copy(r1, r2):
     rf2.strike = rf1.strike
     rf2.subscript = rf1.subscript
     rf2.superscript = rf1.superscript
-
-
-if __name__ == '__main__':
-    import sys
-
-    if len(sys.argv) == 1:  # якщо немає параметрів, ставимо ім'я за угодою
-        config = "config.txt"
-    else:
-        config = sys.argv[1]  # 1 параметр
-    conf = ConfigDict(config)
-    params = conf.getconfig()
-    # окремо виділяємо leadparam, template, outfile
-    leadparam = params['LeadParam']
-    del params['LeadParam']
-    template = params['Template']
-    del params['Template']
-    outfile = params.get('OutFile')
-    if outfile:
-        del params['OutFile']
-
-    merger = Merger(template, params, leadparam, outfile)
-    merger.merge()
