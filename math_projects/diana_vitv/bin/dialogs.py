@@ -110,7 +110,7 @@ class DialogEnterItem:
                 scroll_y = ttk.Scrollbar(_frame)
                 scroll_y.pack(side=RIGHT, fill=Y)
                 self.list_entry = Listbox(_frame, height=5,
-                                          width=16, yscrollcommand=scroll_y.set)
+                                          width=18, yscrollcommand=scroll_y.set)
                 self.list_entry.bind('<Double-1>', self._update_text)
                 _entry = ttk.Label(_frame)
 
@@ -210,7 +210,7 @@ class DialogChangeItem:
                 scroll_y = ttk.Scrollbar(_frame)
                 scroll_y.pack(side=RIGHT, fill=Y)
                 self.list_entry = Listbox(_frame, height=5,
-                                          width=16, yscrollcommand=scroll_y.set)
+                                          width=18, yscrollcommand=scroll_y.set)
                 self.list_entry.bind('<Double-1>', self._update_text)
                 _entry = ttk.Label(_frame, text=self.default['Category_id'])
                 self._list_value = self.default['Category_id']
@@ -235,7 +235,7 @@ class DialogChangeItem:
         ttk.Button(_frame, text='Змінити',
                    command=self._change_handler).pack(side=LEFT, padx=5, pady=5)
 
-        ttk.Button(_frame, text='Видалити',
+        ttk.Button(_frame, text='Випустити',
                    command=self._del_handler).pack(side=LEFT, padx=5, pady=5)
 
         ttk.Button(_frame, text='Вихід',

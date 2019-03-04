@@ -58,12 +58,12 @@ class MainWindow:
         self.top.config(menu=self.menubar)
 
         # рамка з полем для введення частини назви і вибору категорії
-        _frame = Frame(self.top)
+        _frame = Frame(self.top, relief=RAISED)
         _category_frame = Frame(_frame)
         self.input_name = ttk.Entry(_category_frame)
         self._category_label = ttk.Label(_category_frame, text='Вибрана категорія: ...')
 
-        _list_frame = Frame(_frame)
+        _list_frame = Frame(_frame, relief=RAISED)
         _scroll = ttk.Scrollbar(_list_frame)
         self.categories_list = Listbox(_list_frame, height=5, width=16, yscrollcommand=_scroll.set)
         self.categories_list.bind('<Double-1>', self._save_category)
@@ -72,7 +72,7 @@ class MainWindow:
 
         _frame.pack(side=TOP, expand=1)
         _category_frame.grid(row=0, column=0, padx=4)
-        ttk.Label(_category_frame, text='Введіть частину назви товару:').pack(side=TOP,
+        ttk.Label(_category_frame, text='Частина назви:').pack(side=TOP,
                                                                               fill=X, expand=1)
         self.input_name.pack(side=TOP, fill=X, expand=1)
         self._category_label.pack(side=TOP, fill=X, expand=1)
@@ -80,7 +80,7 @@ class MainWindow:
         _list_frame.grid(row=0, column=2, padx=4)
         _scroll.pack(side=RIGHT, fill=Y, expand=1)
         self.categories_list.pack(side=LEFT, fill=BOTH, expand=1)
-        ttk.Button(_frame, text='Шукати', command=self._fill_list).grid(row=0, column=4, padx=4)
+        ttk.Button(_frame, text='Шукати', command=self._fill_list).grid(row=0, column=4, padx=5, pady=5)
 
         # список - результати пошуку
         ttk.Label(self.top, text=' Результати пошуку:').pack(side=TOP)
@@ -98,10 +98,10 @@ class MainWindow:
         self._fill_list()
 
         _frame = Frame(self.top)
-        ttk.Button(_frame, text='Додати товар', command=self._add_item).pack(side=LEFT)
+        ttk.Button(_frame, text='Додати товар', command=self._add_item).pack(side=LEFT, padx=5, pady=5)
         ttk.Button(_frame, text='Додати/Видалити категорію',
-                   command=self._category_handler).pack(side=LEFT)
-        ttk.Button(_frame, text='Звіт', command=self._create_report).pack(side=LEFT)
+                   command=self._category_handler).pack(side=LEFT, padx=5, pady=5)
+        ttk.Button(_frame, text='Звіт', command=self._create_report).pack(side=LEFT, padx=5, pady=5)
         _frame.pack(side=TOP, fill=X, expand=YES)
 
     def _fill_list(self, ev=None):

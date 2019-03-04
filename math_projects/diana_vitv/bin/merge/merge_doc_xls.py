@@ -47,7 +47,7 @@ class Merger:
         """Здійснити злиття."""
         for record in self.mergesrc:
             self._process_template(record)
-            self.outdoc.add_page_break()  # додати розрив сторінки
+            # self.outdoc.add_page_break()  # додати розрив сторінки
         self.outdoc.save(self.outfile)  # зберегти файл результату
 
     def _process_template(self, record):
@@ -90,8 +90,8 @@ class Merger:
                     for t_run in t_para.runs:
                         new_run = new_para.add_run(t_run.text, t_run.style)
                         run_format_copy(t_run, new_run)
-                    if i < num_para - 1:  # якщо параграф не останній, додаємо розрив рядка
-                        new_run.add_break()
+                    # if i < num_para - 1:  # якщо параграф не останній, додаємо розрив рядка
+                    #     new_run.add_break()
         # додаємо до результату текст після останньої мітки поля
         # якщо міток немає, то тут додається весь текст
         new_run = new_para.add_run(text, run.style)
