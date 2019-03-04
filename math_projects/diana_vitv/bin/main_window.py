@@ -2,10 +2,17 @@
 # -*-encoding: utf-8-*-
 
 from tkinter.filedialog import askopenfilename, asksaveasfile
-from tkinter import ttk
 from .storage import *
 from .dialogs import *
 from .report import create_report
+import os
+import datetime
+
+# TODO додати збереження бази даних
+# TODO додати відпуск товару (ідентичний видаленню)
+# TODO додати діалог налаштування створення звіту
+
+CHUNK = 1024 * 100
 
 
 class MainWindow:
@@ -16,10 +23,16 @@ class MainWindow:
         self.data_connector = None     # type: StorageCollection
         self._ms_pattern = None
         self._chosen_category = ''
-        self.template = '/files/univer/python/course2/math_projects/diana_vitv/template.docx'
-        self.report = '/files/univer/python/course2/math_projects/diana_vitv/report.docx'
-        self._open_database()
-        self._make_widgets()
+        self.template = os.path.join(os.path.curdir, 'template.docx')
+        self.report = os.path.join(os.path.curdir, 'report.docx')
+        tmp = 0
+        while tmp != 1:
+            tmp = self._open_database()
+            if tmp == 2:
+                self.top.destroy()
+                break
+        if tmp == 1:
+            self._make_widgets()
 
     def mainloop(self):
         self.top.mainloop()
@@ -35,12 +48,13 @@ class MainWindow:
         # та переміщуватись у окремому вікні
         filemenu = Menu(self.menubar, tearoff=0)
         filemenu.add_command(label="Відкрити", command=self._open_database)
+        filemenu.add_command(label="Зберегти як", command=self._save_database)
         filemenu.add_separator()
         filemenu.add_command(label="Вихід", command=self.top.quit)
         self.menubar.add_cascade(label="Файл", menu=filemenu)
         # створити меню опцій
         optionsmenu = Menu(self.menubar, tearoff=0)
-        optionsmenu.add_command(label="Шаблон", command=self._dialog_pattern)
+        optionsmenu.add_command(label="Параметри створення звіту", command=self._settings)
         self.menubar.add_cascade(label="Опції", menu=optionsmenu)
         # показати меню
         self.top.config(menu=self.menubar)
@@ -93,6 +107,7 @@ class MainWindow:
         _frame.pack(side=TOP, fill=X, expand=YES)
 
     def _fill_list(self, ev=None):
+        print(datetime.datetime.now(), '_fill_list', ev, '', sep='\n')
         piece_name = self.input_name.get()
 
         translator = sql2dict(self.data_connector.get_categories())
@@ -111,7 +126,7 @@ class MainWindow:
                             val = name
                             break
                 tmp = '{}: {}'.format(field_name, val)
-                print(tmp, len(tmp), 30-len(tmp))
+                # print(tmp, len(tmp), 30-len(tmp))
                 string += '   ' + tmp + '   '
             self.items_list.insert(END, string.strip())
 
@@ -129,9 +144,10 @@ class MainWindow:
         pass
 
     def _save_category(self, ev=None):
+        print(datetime.datetime.now(), '_save_category', ev, sep='\n')
         self._chosen_category = self.categories_list.get(self.categories_list.curselection())
         tmp = 'Вибрана категорія: ' + self._chosen_category
-        print(tmp)
+        # print(tmp)
         self._category_label.config(text=tmp)
 
     def _open_database(self):
@@ -139,10 +155,22 @@ class MainWindow:
         """
         filename = askopenfilename()  # стандартний діалог відкриття файлу
         if filename:
-            self.database = StorageDB(filename)
-            self.data_connector = StorageCollection(self.database)
+            try:
+                database = StorageDB(filename)
+                data_connector = StorageCollection(database)
+                data_connector.get_categories()
+
+                self.database = database
+                self.data_connector = data_connector
+                return 1
+            except Exception as exc:
+                showerror("Error", "Необхідно вибрати базу даних.")
+                print(datetime.datetime.now(), '_open_database', exc, '', sep='\n')
+                return 0
+        return 2
 
     def _add_item(self, ev=None):
+        print(datetime.datetime.now(), '_add_item', ev, '', sep='\n')
         tmp = DialogEnterItem(self)
         self.top.wait_window(tmp.diag)
         self._update_categories()
@@ -152,6 +180,7 @@ class MainWindow:
         self._fill_list()
 
     def _category_handler(self, ev=None):
+        print(datetime.datetime.now(), '_category_handler', ev, '', sep='\n')
         tmp = DialogEnterCategory(self)
         self.top.wait_window(tmp.diag)
         self._update_categories()
@@ -161,6 +190,7 @@ class MainWindow:
         self._fill_list()
 
     def _create_report(self, ev=None):
+        print(datetime.datetime.now(), '_create_report', ev, '', sep='\n')
         try:
             all_data = self.data_connector.get_items()
             categories = sql2id_dict(self.data_connector.get_categories())
@@ -168,11 +198,12 @@ class MainWindow:
                 row['Category'] = categories[row['Category_id']]
             create_report(self.report, self.template, all_data)
             showinfo('Success', "Report is successfully created into {}".format(self.report))
-        except Exception as e:
-            print(e)
-            showerror("Error", e)
+        except Exception as exc:
+            print(datetime.datetime.now(), '_create_report', exc, '', sep='\n')
+            showerror("Error", exc)
 
     def _change_element(self, ev=None):
+        print(datetime.datetime.now(), '_change_element', ev, '', sep='\n')
         default = self.items_list.get(self.items_list.curselection())
         default = dict(map(lambda a: a.split(":"), default.split('      ')))
         tmp = DialogChangeItem(self, default)
@@ -182,3 +213,18 @@ class MainWindow:
         self.input_name.clipboard_clear()
         self._category_label.config(text='Вибрана категорія: ...')
         self._fill_list()
+
+    def _settings(self):
+        pass
+
+    def _save_database(self):
+        fileout = asksaveasfile(mode='wb')
+        if fileout:
+            filein = open(self.database.urn, 'rb')
+            try:
+                for i in range(os.path.getsize(self.database.urn) // CHUNK + 1):
+                    fileout.write(filein.read(CHUNK))
+            except Exception as exc:
+                print(datetime.datetime.now(), '_save_database:', exc, '', sep='\n')
+                filein.close()
+                fileout.close()

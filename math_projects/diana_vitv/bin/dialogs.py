@@ -289,3 +289,36 @@ class DialogChangeItem:
         except Exception as e:
             showerror(title='Error', message=e)
             print(datetime.datetime.now, ': ', e, sep='')
+
+
+class DialogSettings:
+
+    def __init__(self, pre, default: dict):
+        """ Ініціалізація
+
+        :param pre: вікно, яке визвало
+        """
+        self.pre = pre
+        self.diag = Toplevel()
+        self.diag.focus_set()
+        self.diag.title('Налаштування створення звіту')
+        self._make_widgets()
+
+    def _make_widgets(self):
+        """ Сворення віджетів
+        """
+
+        _frame = Frame(self.diag)
+        template_label = ttk.Label(_frame, text="Шлях до шаблону: "+self.pre.template)
+        ttk.Button(_frame, text='Змінити', relief=RAISED, command=self._change_template).pack(side=RIGHT)
+        template_label.pack(side=RIGHT)
+        _frame.pack(side=TOP)
+
+        _frame = Frame(self.diag)
+        report_label = ttk.Label(_frame, text="Шлях до звіту: "+self.pre.template)
+        ttk.Button(_frame, text='Змінити', relief=RAISED, command=self._change_template).pack(side=RIGHT)
+        template_label.pack(side=RIGHT)
+        _frame.pack(side=TOP)
+
+    def _change_template(self, ev=None):
+        pass
