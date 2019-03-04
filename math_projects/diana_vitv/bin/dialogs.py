@@ -4,11 +4,11 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import showerror, showinfo, askokcancel
+from tkinter.filedialog import askopenfilename, askdirectory
 import datetime
-
-
-# TODO діалог відкриття діректорії зберігання і т.п.
-# TODO діалог створення звіту
+from docx import Document
+import os
+# from .main_window import MainWindow
 
 
 def sql2dict(dicts_list):
@@ -42,21 +42,23 @@ class DialogEnterCategory:
         _frame.pack(side=TOP, expand=YES)
 
         _frame = Frame(self.diag)
-        ttk.Button(_frame, text='Додати', command=self._add).pack(side=LEFT, expand=YES)
-        ttk.Button(_frame, text='Видалити', command=self._del).pack(side=LEFT, expand=YES)
+        ttk.Button(_frame, text='Додати', command=self._add).pack(side=LEFT, expand=YES, padx=5, pady=5)
+        ttk.Button(_frame, text='Видалити', command=self._del).pack(side=LEFT, expand=YES, padx=5, pady=5)
         _frame.pack(side=TOP)
 
     def _add(self, ev=None):
+        print(datetime.datetime.now(), self.__class__, '_add', ev, '', sep='\n')
         try:
             tmp = self._entry.get()
             if tmp:
                 self.pre.data_connector.add_category(tmp)
                 showinfo('Success', 'Category is successfully added.')
-        except Exception as e:
-            showerror('Error', e)
-            print(e)
+        except Exception as exc:
+            showerror('Error', exc)
+            print(datetime.datetime.now(), self.__class__, '_add', exc, sep='\n')
 
     def _del(self, ev=None):
+        print(datetime.datetime.now(), self.__class__, '_del', ev, '', sep='\n')
         try:
             tmp = self._entry.get()
             if tmp:
@@ -64,12 +66,11 @@ class DialogEnterCategory:
                                            'до видалення всіх товарів даної категорії.'
                                            'Бажаєте продовжити?')
                 if ans:
-                    print(tmp)
                     self.pre.data_connector.delete_category(tmp)
                     showinfo('Success', 'Category is successfully deleted.')
         except Exception as e:
             showerror('Error', e)
-            print(e)
+            print(datetime.datetime.now(), self.__class__, '_del', e, sep='\n')
 
 
 class DialogEnterItem:
@@ -94,7 +95,7 @@ class DialogEnterItem:
         """
 
         _field_names = self.pre.database.get_fields('items')
-        print("field names:", _field_names)
+        # print("field names:", _field_names)
 
         self._entries = {}
         self._categories = sql2dict(self.pre.data_connector.get_categories())
@@ -132,10 +133,10 @@ class DialogEnterItem:
         # кнопки
         _frame = Frame(self.diag)
         ttk.Button(_frame, text='Додати',
-                   command=self._add_handler).pack(side=LEFT)
+                   command=self._add_handler).pack(side=LEFT, padx=5, pady=5)
 
         ttk.Button(_frame, text='Вихід',
-                   command=self._exit).pack(side=LEFT)
+                   command=self._exit).pack(side=LEFT, padx=5, pady=5)
         _frame.pack(side=TOP)
 
     def _update_text(self, ev=None):
@@ -232,13 +233,13 @@ class DialogChangeItem:
         # кнопки
         _frame = Frame(self.diag)
         ttk.Button(_frame, text='Змінити',
-                   command=self._change_handler).pack(side=LEFT)
+                   command=self._change_handler).pack(side=LEFT, padx=5, pady=5)
 
         ttk.Button(_frame, text='Видалити',
-                   command=self._del_handler).pack(side=LEFT)
+                   command=self._del_handler).pack(side=LEFT, padx=5, pady=5)
 
         ttk.Button(_frame, text='Вихід',
-                   command=self._exit).pack(side=LEFT)
+                   command=self._exit).pack(side=LEFT, padx=5, pady=5)
         _frame.pack(side=TOP)
 
     def _update_text(self, ev=None):
@@ -293,7 +294,7 @@ class DialogChangeItem:
 
 class DialogSettings:
 
-    def __init__(self, pre, default: dict):
+    def __init__(self, pre):
         """ Ініціалізація
 
         :param pre: вікно, яке визвало
@@ -303,22 +304,48 @@ class DialogSettings:
         self.diag.focus_set()
         self.diag.title('Налаштування створення звіту')
         self._make_widgets()
+        self.new_template = ''
+        self.new_report = ''
 
     def _make_widgets(self):
         """ Сворення віджетів
         """
 
-        _frame = Frame(self.diag)
-        template_label = ttk.Label(_frame, text="Шлях до шаблону: "+self.pre.template)
-        ttk.Button(_frame, text='Змінити', relief=RAISED, command=self._change_template).pack(side=RIGHT)
-        template_label.pack(side=RIGHT)
-        _frame.pack(side=TOP)
+        self.template_label = ttk.Label(self.diag, text="Шлях до шаблону: "+self.pre.template)
+        ttk.Button(self.diag, text='Змінити', command=self._change_template).grid(row=1, column=3, padx=5, pady=5)
+        self.template_label.grid(row=1, column=1)
 
-        _frame = Frame(self.diag)
-        report_label = ttk.Label(_frame, text="Шлях до звіту: "+self.pre.template)
-        ttk.Button(_frame, text='Змінити', relief=RAISED, command=self._change_template).pack(side=RIGHT)
-        template_label.pack(side=RIGHT)
-        _frame.pack(side=TOP)
+        self.report_label = ttk.Label(self.diag, text="Шлях до каталогу, де буде збережено звіт: "+self.pre.report)
+        ttk.Button(self.diag, text='Змінити', command=self._change_report).grid(row=3, column=3, padx=5, pady=5)
+        self.report_label.grid(row=3, column=1)
+
+        ttk.Button(self.diag, text='Зберегти зміни', command=self._commit).grid(row=5, column=1)
+        ttk.Button(self.diag, text='Відміна', command=self._cancel).grid(row=5, column=2, padx=5, pady=5)
 
     def _change_template(self, ev=None):
-        pass
+        new_filename = askopenfilename()   # type: str
+        if new_filename:
+            try:
+                Document(new_filename)
+                self.new_template = new_filename
+                self.template_label.config(text='Шлях до шаблону: '+ self.new_template)
+            except Exception as exc:
+                showerror('Error', 'Необхідно вказати MS word файл.')
+                print(datetime.datetime.now(), '_change_template', exc, '', sep='\n')
+
+    def _change_report(self, ev=None):
+        new_directory = askdirectory()  # type: str
+        if new_directory:
+            self.report_label.config(text='Шлях до каталогу, де буде збережено звіт: ' + new_directory)
+            self.new_report = new_directory
+
+    def _commit(self, ev=None):
+        if self.new_template:
+            self.pre.template = self.new_template
+        if self.new_report:
+            self.pre.report = os.path.join(self.new_report, 'report.docx')
+        showinfo('Success', 'Changes saved')
+        self.diag.destroy()
+
+    def _cancel(self, ev=None):
+        self.diag.destroy()

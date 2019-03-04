@@ -11,7 +11,6 @@ TMP_FILE_NAME = '___tmp.xlsx'
 def create_xlsx(outfile, data):
     wb = openpyxl.Workbook()
     ws = wb.active
-    ws.delete_cols(1, ws.max_column)
     names = []
     for i, el in enumerate(data[0], start=1):
         c = ws.cell(row=1, column=i)

@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from tkinter.filedialog import askopenfilename, asksaveasfile
+from tkinter.filedialog import asksaveasfile
 from .storage import *
 from .dialogs import *
 from .report import create_report
 import os
 import datetime
 
-# TODO додати збереження бази даних
 # TODO додати відпуск товару (ідентичний видаленню)
-# TODO додати діалог налаштування створення звіту
 
 CHUNK = 1024 * 100
 
@@ -165,12 +163,12 @@ class MainWindow:
                 return 1
             except Exception as exc:
                 showerror("Error", "Необхідно вибрати базу даних.")
-                print(datetime.datetime.now(), '_open_database', exc, '', sep='\n')
+                print(datetime.datetime.now(), '_open_database', exc, '\n', sep='\n')
                 return 0
         return 2
 
     def _add_item(self, ev=None):
-        print(datetime.datetime.now(), '_add_item', ev, '', sep='\n')
+        print(datetime.datetime.now(), '_add_item', ev, '\n', sep='\n')
         tmp = DialogEnterItem(self)
         self.top.wait_window(tmp.diag)
         self._update_categories()
@@ -180,7 +178,7 @@ class MainWindow:
         self._fill_list()
 
     def _category_handler(self, ev=None):
-        print(datetime.datetime.now(), '_category_handler', ev, '', sep='\n')
+        print(datetime.datetime.now(), '_category_handler', ev, '\n', sep='\n')
         tmp = DialogEnterCategory(self)
         self.top.wait_window(tmp.diag)
         self._update_categories()
@@ -190,7 +188,7 @@ class MainWindow:
         self._fill_list()
 
     def _create_report(self, ev=None):
-        print(datetime.datetime.now(), '_create_report', ev, '', sep='\n')
+        print(datetime.datetime.now(), '_create_report', ev, '\n', sep='\n')
         try:
             all_data = self.data_connector.get_items()
             categories = sql2id_dict(self.data_connector.get_categories())
@@ -203,7 +201,7 @@ class MainWindow:
             showerror("Error", exc)
 
     def _change_element(self, ev=None):
-        print(datetime.datetime.now(), '_change_element', ev, '', sep='\n')
+        print(datetime.datetime.now(), '_change_element', ev, '\n', sep='\n')
         default = self.items_list.get(self.items_list.curselection())
         default = dict(map(lambda a: a.split(":"), default.split('      ')))
         tmp = DialogChangeItem(self, default)
@@ -215,7 +213,10 @@ class MainWindow:
         self._fill_list()
 
     def _settings(self):
-        pass
+        print(datetime.datetime.now(), '_settings', '\n', sep='\n')
+        tmp = DialogSettings(self)
+        self.top.wait_window(tmp.diag)
+        self._update_categories()
 
     def _save_database(self):
         fileout = asksaveasfile(mode='wb')
