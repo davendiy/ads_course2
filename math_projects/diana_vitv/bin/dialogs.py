@@ -2,6 +2,7 @@
 # -*-encoding: utf-8-*-
 
 from tkinter import *
+from tkinter import ttk
 from tkinter.messagebox import showerror, showinfo, askokcancel
 import datetime
 
@@ -17,6 +18,13 @@ def sql2dict(dicts_list):
     return res
 
 
+def sql2id_dict(dicts_list):
+    res = {}
+    for el in dicts_list:
+        res[el['id']] = el['Name']
+    return res
+
+
 class DialogEnterCategory:
 
     def __init__(self, pre):
@@ -28,14 +36,14 @@ class DialogEnterCategory:
 
     def _make_widgets(self):
         _frame = Frame(self.diag)
-        Label(_frame, text="Назва категорії:", font=('arial', '16')).pack(side=LEFT, expand=YES)
-        self._entry = Entry(_frame, font=('arial', '16'))
+        ttk.Label(_frame, text="Назва категорії:").pack(side=LEFT, expand=YES)
+        self._entry = ttk.Entry(_frame)
         self._entry.pack(side=LEFT, expand=YES)
         _frame.pack(side=TOP, expand=YES)
 
         _frame = Frame(self.diag)
-        Button(_frame, text='Додати', font=('arial', '16'), command=self._add).pack(side=LEFT, expand=YES)
-        Button(_frame, text='Видалити', font=('arial', '16'), command=self._del).pack(side=LEFT, expand=YES)
+        ttk.Button(_frame, text='Додати', command=self._add).pack(side=LEFT, expand=YES)
+        ttk.Button(_frame, text='Видалити', command=self._del).pack(side=LEFT, expand=YES)
         _frame.pack(side=TOP)
 
     def _add(self, ev=None):
@@ -98,20 +106,20 @@ class DialogEnterItem:
             _frame = Frame(self.diag)
             if el == 'Category_id':  # список в діалоговому вікні
                 el = 'Category'
-                scroll_y = Scrollbar(_frame)
+                scroll_y = ttk.Scrollbar(_frame)
                 scroll_y.pack(side=RIGHT, fill=Y)
                 self.list_entry = Listbox(_frame, height=5,
                                           width=16, yscrollcommand=scroll_y.set)
                 self.list_entry.bind('<Double-1>', self._update_text)
-                _entry = Label(_frame, height=2, width=10)
+                _entry = ttk.Label(_frame)
 
                 for name in self._categories.keys():
                     self.list_entry.insert(END, name)
 
             else:
-                _entry = Entry(_frame, font=('arial', 16))
+                _entry = ttk.Entry(_frame)
 
-            Label(_frame, text=el + ':', font=('arial', '16')).pack(side=LEFT)
+            ttk.Label(_frame, text=el + ':').pack(side=LEFT)
 
             self._entries[el] = _entry
             if el == "Category":
@@ -123,11 +131,11 @@ class DialogEnterItem:
 
         # кнопки
         _frame = Frame(self.diag)
-        Button(_frame, text='Додати', font=('arial', '16', 'bold'),
-               command=self._add_handler).pack(side=LEFT)
+        ttk.Button(_frame, text='Додати',
+                   command=self._add_handler).pack(side=LEFT)
 
-        Button(_frame, text='Вихід', font=('arial', '16', 'bold'),
-               command=self._exit).pack(side=LEFT)
+        ttk.Button(_frame, text='Вихід',
+                   command=self._exit).pack(side=LEFT)
         _frame.pack(side=TOP)
 
     def _update_text(self, ev=None):
@@ -191,26 +199,26 @@ class DialogChangeItem:
 
         for el in _field_names:
             if el == 'id':
-                Label(self.diag, text='Id: {}'.format(self.default[el]), font=('arial', 16)).pack(side=TOP)
+                ttk.Label(self.diag, text='Id: {}'.format(self.default[el])).pack(side=TOP)
                 continue
             _frame = Frame(self.diag)
-            Label(_frame, text=el + ':', font=('arial', '16')).pack(side=LEFT)
+            ttk.Label(_frame, text=el + ':').pack(side=LEFT)
 
             if el == 'Category_id':  # список в діалоговому вікні
                 el = 'Category'
-                scroll_y = Scrollbar(_frame)
+                scroll_y = ttk.Scrollbar(_frame)
                 scroll_y.pack(side=RIGHT, fill=Y)
                 self.list_entry = Listbox(_frame, height=5,
                                           width=16, yscrollcommand=scroll_y.set)
                 self.list_entry.bind('<Double-1>', self._update_text)
-                _entry = Label(_frame, text=self.default['Category_id'], height=2, width=10)
+                _entry = ttk.Label(_frame, text=self.default['Category_id'])
                 self._list_value = self.default['Category_id']
 
                 for name in self._categories.keys():
                     self.list_entry.insert(END, name)
 
             else:
-                _entry = Entry(_frame, font=('arial', 16))
+                _entry = ttk.Entry(_frame)
                 _entry.insert(0, self.default[el])
 
             self._entries[el] = _entry
@@ -223,14 +231,14 @@ class DialogChangeItem:
 
         # кнопки
         _frame = Frame(self.diag)
-        Button(_frame, text='Змінити', font=('arial', '16', 'bold'),
-               command=self._change_handler).pack(side=LEFT)
+        ttk.Button(_frame, text='Змінити',
+                   command=self._change_handler).pack(side=LEFT)
 
-        Button(_frame, text='Видалити', font=('arial', '16', 'bold'),
-               command=self._del_handler).pack(side=LEFT)
+        ttk.Button(_frame, text='Видалити',
+                   command=self._del_handler).pack(side=LEFT)
 
-        Button(_frame, text='Вихід', font=('arial', '16', 'bold'),
-               command=self._exit).pack(side=LEFT)
+        ttk.Button(_frame, text='Вихід',
+                   command=self._exit).pack(side=LEFT)
         _frame.pack(side=TOP)
 
     def _update_text(self, ev=None):

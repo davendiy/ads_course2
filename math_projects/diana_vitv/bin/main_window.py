@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfilename, asksaveasfile
+from tkinter import ttk
 from .storage import *
 from .dialogs import *
+from .report import create_report
 
 
 class MainWindow:
@@ -14,6 +16,8 @@ class MainWindow:
         self.data_connector = None     # type: StorageCollection
         self._ms_pattern = None
         self._chosen_category = ''
+        self.template = '/files/univer/python/course2/math_projects/diana_vitv/template.docx'
+        self.report = '/files/univer/python/course2/math_projects/diana_vitv/report.docx'
         self._open_database()
         self._make_widgets()
 
@@ -44,11 +48,11 @@ class MainWindow:
         # рамка з полем для введення частини назви і вибору категорії
         _frame = Frame(self.top)
         _category_frame = Frame(_frame)
-        self.input_name = Entry(_category_frame, font=('arial', '16'))
-        self._category_label = Label(_category_frame, text='Вибрана категорія: ...', font=('arial', '12'))
+        self.input_name = ttk.Entry(_category_frame)
+        self._category_label = ttk.Label(_category_frame, text='Вибрана категорія: ...')
 
         _list_frame = Frame(_frame)
-        _scroll = Scrollbar(_list_frame)
+        _scroll = ttk.Scrollbar(_list_frame)
         self.categories_list = Listbox(_list_frame, height=5, width=16, yscrollcommand=_scroll.set)
         self.categories_list.bind('<Double-1>', self._save_category)
 
@@ -56,20 +60,20 @@ class MainWindow:
 
         _frame.pack(side=TOP, expand=1)
         _category_frame.grid(row=0, column=0, padx=4)
-        Label(_category_frame, text='Введіть частину назви товару:', font=('arial', '12')).pack(side=TOP,
-                                                                                                fill=X, expand=1)
+        ttk.Label(_category_frame, text='Введіть частину назви товару:').pack(side=TOP,
+                                                                              fill=X, expand=1)
         self.input_name.pack(side=TOP, fill=X, expand=1)
         self._category_label.pack(side=TOP, fill=X, expand=1)
 
         _list_frame.grid(row=0, column=2, padx=4)
         _scroll.pack(side=RIGHT, fill=Y, expand=1)
         self.categories_list.pack(side=LEFT, fill=BOTH, expand=1)
-        Button(_frame, text='Шукати', font=('arial', '15'), command=self._fill_list).grid(row=0, column=4, padx=4)
+        ttk.Button(_frame, text='Шукати', command=self._fill_list).grid(row=0, column=4, padx=4)
 
         # список - результати пошуку
-        Label(self.top, text=' Результати пошуку:', font=('Helvetica', '12', 'bold'), pady=10).pack(side=TOP)
+        ttk.Label(self.top, text=' Результати пошуку:').pack(side=TOP)
         _frame = Frame(self.top)
-        self.scroll_y = Scrollbar(_frame)
+        self.scroll_y = ttk.Scrollbar(_frame)
         self.scroll_y.pack(side=RIGHT, fill=Y)
         self.items_list = Listbox(_frame, height=15,
                                   width=50, yscrollcommand=self.scroll_y.set)
@@ -82,10 +86,10 @@ class MainWindow:
         self._fill_list()
 
         _frame = Frame(self.top)
-        Button(_frame, text='Додати товар', font=('arial', '16'), command=self._add_item).pack(side=LEFT)
-        Button(_frame, text='Додати/Видалити категорію', font=('arial', '16'),
-               command=self._category_handler).pack(side=LEFT)
-        Button(_frame, text='Звіт', font=('arial', '16'), command=self._create_report).pack(side=LEFT)
+        ttk.Button(_frame, text='Додати товар', command=self._add_item).pack(side=LEFT)
+        ttk.Button(_frame, text='Додати/Видалити категорію',
+                   command=self._category_handler).pack(side=LEFT)
+        ttk.Button(_frame, text='Звіт', command=self._create_report).pack(side=LEFT)
         _frame.pack(side=TOP, fill=X, expand=YES)
 
     def _fill_list(self, ev=None):
@@ -156,8 +160,17 @@ class MainWindow:
         self._category_label.config(text='Вибрана категорія: ...')
         self._fill_list()
 
-    def _create_report(self, ev=None):   # TODO звіт
-        pass
+    def _create_report(self, ev=None):
+        try:
+            all_data = self.data_connector.get_items()
+            categories = sql2id_dict(self.data_connector.get_categories())
+            for row in all_data:
+                row['Category'] = categories[row['Category_id']]
+            create_report(self.report, self.template, all_data)
+            showinfo('Success', "Report is successfully created into {}".format(self.report))
+        except Exception as e:
+            print(e)
+            showerror("Error", e)
 
     def _change_element(self, ev=None):
         default = self.items_list.get(self.items_list.curselection())
