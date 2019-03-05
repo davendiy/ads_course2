@@ -1,18 +1,31 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+"""
+Модуль з класами для зв'язку з базою даних
+
+Схема бази даних:
+
+    categories -> id
+               -> Name
+
+    items -> id
+          -> Name
+          -> Category_id         #  id категорії (з таблиці categories)
+          -> Department_id       #  id складу
+          -> Build_number        #  номер будівлі
+          -> Shelf_number        #  номер полиці.
+"""
+
+
 import sqlite3
-
-
-EQUAL = '=='
-LIKE = 'like'
 
 
 class StorageDB:
     """Клас з'єднання з базою даних курсів.
 
-        self.urn - розташування БД курсів
-        self.conn - об'єкт зв'язку з базою даних
+    self.urn - розташування БД курсів
+    self.conn - об'єкт зв'язку з базою даних
     """
 
     def __init__(self, urn):
@@ -77,7 +90,7 @@ class StorageDB:
 
 
 class StorageCollection:
-    """Клас для отримання даних курсів.
+    """Клас для отримання даних складу.
 
     self.db - об'єкт БД
     """
@@ -112,27 +125,20 @@ class StorageCollection:
         categories = self.db.get_data_dicts(query)
         return categories
 
-    def find_item(self, piece_of_name: str, category='', mode=LIKE, n=20)->list:
+    def find_item(self, piece_of_name: str, category='', n=20)->list:
         """ Знайти товар за частиною імені та категорією
 
         :param piece_of_name: рядок
         :param n: к-ть елементів, які повернуться
         :param category: категорія, якщо є
-        :param mode: LIKE або EQUAL - відповідно пошук за частиною назви, або за повною
         :return: [{name_field1: value1, name_field2: value2 ...}, ...]
         """
         piece_of_name = '%' + piece_of_name + '%'
         if category:
-            if mode == 'like':
-                query = "SELECT * from items WHERE (Name LIKE ? AND Category_id=?)"
-            else:
-                query = "SELECT * from items WHERE (Name=? AND Category_id=?)"
+            query = "SELECT * from items WHERE (Name LIKE ? AND Category_id=?)"
             items = self.db.get_data_dicts(query, piece_of_name.lower(), category, n=n)
         else:
-            if mode == 'like':
-                query = "SELECT * from items WHERE (Name LIKE ?)"
-            else:
-                query = "SELECT * from items WHERE (Name=?)"
+            query = "SELECT * from items WHERE (Name LIKE ?)"
             items = self.db.get_data_dicts(query, piece_of_name.lower(), n=n)
         return items
 
@@ -148,7 +154,7 @@ class StorageCollection:
         query = 'INSERT into items(Name, Category_id, Department_id, Build_number, Shelf_number) ' \
                 'values (?, ?, ?, ?, ?)'
 
-        curs = self.db.get_cursor()               # FIXME it seems to be false
+        curs = self.db.get_cursor()
         curs.execute(query, (name, category_id, department_id, build_number, shelf_number))
         self.db.close()
 
@@ -202,6 +208,7 @@ class StorageCollection:
 
 if __name__ == '__main__':
 
+    # тестування (власноруч)
     test = StorageCollection('source.db')
     while True:
         try:

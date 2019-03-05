@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*-encoding: utf-8-*-
+
+# author: Oleksandr Obvintsev
+
 # T23_23
 # Злиття даних з файлів MS Word, MS Excel за шаблоном MS Word
 # Імена полів, що заповнюються даними, мають бути взяті у фігурні дужки { }

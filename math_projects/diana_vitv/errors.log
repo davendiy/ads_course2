@@ -1,0 +1,13 @@
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 209, in _change_element
+    tmp = DialogChangeItem(self, default)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 190, in __init__
+    self._make_widgets()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 207, in _make_widgets
+    self._make_change_tab()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 228, in _make_change_tab
+    _entry = ttk.Label(_frame, text=self.default['Category_id'])
+KeyError: 'Category_id'

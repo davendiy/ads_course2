@@ -1,0 +1,243 @@
+====================2019-03-05 15:50:08.479178=====================
+2019-03-05 15:50:18.208413
+_fill_list
+None
+
+
+
+====================2019-03-05 15:50:57.449409=====================
+2019-03-05 15:51:00.953037
+_open_database
+file is not a database
+
+
+2019-03-05 15:51:06.249327
+_fill_list
+None
+
+2019-03-05 15:51:09.241811
+_change_element
+<ButtonPress event num=1 x=127 y=43>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}]
+2019-03-05 15:51:15.685247
+_fill_list
+None
+
+2019-03-05 15:51:17.437617
+_add_item
+None
+
+
+2019-03-05 15:51:20.793982
+_fill_list
+None
+
+2019-03-05 15:51:22.428488
+_fill_list
+None
+
+2019-03-05 15:51:23.138118
+_save_category
+<ButtonPress event num=1 x=69 y=40>
+2019-03-05 15:51:23.776953
+_fill_list
+None
+
+2019-03-05 15:51:25.187302
+_save_category
+<ButtonPress event num=1 x=47 y=26>
+2019-03-05 15:51:25.633582
+_fill_list
+None
+
+2019-03-05 15:51:26.698209
+_save_category
+<ButtonPress event num=1 x=49 y=50>
+2019-03-05 15:51:27.235812
+_fill_list
+None
+
+2019-03-05 15:51:28.159625
+_save_category
+<ButtonPress event num=1 x=54 y=81>
+2019-03-05 15:51:29.142649
+_fill_list
+None
+
+2019-03-05 15:51:34.680500
+_category_handler
+None
+
+
+2019-03-05 15:51:40.006256
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterCategory'>
+_add
+None
+
+2019-03-05 15:51:42.521056
+_fill_list
+None
+
+2019-03-05 15:51:47.461842
+_add_item
+None
+
+
+2019-03-05 15:51:58.700867
+_fill_list
+None
+
+2019-03-05 15:51:59.532610
+_category_handler
+None
+
+
+2019-03-05 15:52:14.342247
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterCategory'>
+_add
+None
+
+2019-03-05 15:52:16.661173
+_fill_list
+None
+
+2019-03-05 15:52:20.743391
+_add_item
+None
+
+
+2019-03-05 15:54:25.468556
+_fill_list
+None
+
+2019-03-05 15:54:44.767218
+_save_category
+<ButtonPress event num=1 x=41 y=7>
+2019-03-05 15:54:45.335393
+_fill_list
+None
+
+2019-03-05 15:54:46.704358
+_save_category
+<ButtonPress event num=1 x=55 y=41>
+2019-03-05 15:54:47.364162
+_fill_list
+None
+
+2019-03-05 15:54:48.276933
+_save_category
+<ButtonPress event num=1 x=49 y=60>
+2019-03-05 15:54:48.825079
+_fill_list
+None
+
+2019-03-05 15:54:49.687774
+_save_category
+<ButtonPress event num=1 x=67 y=73>
+2019-03-05 15:54:50.163690
+_fill_list
+None
+
+2019-03-05 15:54:51.634712
+_save_category
+<ButtonPress event num=1 x=60 y=65>
+2019-03-05 15:54:52.639890
+_fill_list
+None
+
+2019-03-05 15:54:54.272178
+_save_category
+<ButtonPress event num=1 x=44 y=72>
+2019-03-05 15:54:54.921934
+_fill_list
+None
+
+2019-03-05 15:55:00.784790
+_change_element
+<ButtonPress event num=1 x=164 y=109>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+
+
+====================2019-03-05 15:58:13.473781=====================
+2019-03-05 15:58:17.829761
+_fill_list
+None
+
+
+
+====================2019-03-05 15:58:55.333489=====================
+2019-03-05 15:58:57.366524
+_fill_list
+None
+
+2019-03-05 15:58:58.735870
+_change_element
+<ButtonPress event num=1 x=156 y=103>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 26, 'Name': 'CS GO ', 'Category_id': 12312320, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 4534543534}]
+2019-03-05 15:59:13.857283
+_fill_list
+None
+
+
+
+====================2019-03-05 16:11:31.995152=====================
+2019-03-05 16:11:36.915614
+_fill_list
+None
+
+2019-03-05 16:11:55.410678
+_settings
+
+
+2019-03-05 16:12:05.109201
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_cancel
+None
+
+
+2019-03-05 16:12:08.121860
+_settings
+
+
+2019-03-05 16:12:10.149951
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_change_template
+None
+
+
+2019-03-05 16:12:14.269282
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_commit
+None
+
+
+2019-03-05 16:12:32.585529
+_add_item
+None
+
+
+2019-03-05 16:12:34.456556
+_fill_list
+None
+
+2019-03-05 16:12:35.689688
+_change_element
+<ButtonPress event state=0x2000 num=1 x=164 y=108>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 27, 'Name': 'Metro Exodus', 'Category_id': 12312320, 'Department_id': 2342353323, 'Build_number': 3453334534, 'Shelf_number': 4534543534}]
+2019-03-05 16:12:48.321438
+_fill_list
+None
+
+
+

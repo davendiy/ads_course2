@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Модуль з класом, що реалізує головне вікно програми.
+"""
+
 from tkinter.filedialog import asksaveasfile
 from .storage import *
 from .dialogs import *
@@ -8,22 +11,30 @@ from .report import create_report
 import os
 import datetime
 
-# TODO додати відпуск товару (ідентичний видаленню)
-
 CHUNK = 1024 * 100
 
 
 class MainWindow:
+    """ Головне вікно програми.
 
+    Головне вікно складається з поля для введення частини назви
+    (і відповідними написами), списком з категоріями для вибору певної,
+    та головним списком, в якому відображаються результати.
+    """
     def __init__(self, master: Tk):
         self.top = master
         self.database = None           # type: StorageDB
         self.data_connector = None     # type: StorageCollection
-        self._ms_pattern = None
-        self._chosen_category = ''
-        self.template = os.path.join(os.path.curdir, 'template.docx')
-        self.report = os.path.join(os.path.curdir, 'report.docx')
+
+        self._chosen_category = ''     # вибрана категорія
+        self.template = os.path.join(os.path.curdir, 'template.docx')      # шлях до шаблону звіту
+        self.report = os.path.join(os.path.curdir, 'report.docx')          # шлях збереження звіту
+        self.template_invoice = os.path.join(os.path.curdir, 'template_invoice.docx')   # шлях до шаблону накладної
         tmp = 0
+
+        # перед створенням користувачу необхідно вибрати базу даних
+        # якщо він вибрав неправильний тип файлу, то дається ще спроба.
+        # якщо він закрив вікно, то програма завершується.
         while tmp != 1:
             tmp = self._open_database()
             if tmp == 2:
@@ -41,9 +52,8 @@ class MainWindow:
 
         # меню
         self.menubar = Menu(self.top)
-        # створити меню, що випадає, та додати до головного меню
-        # tearoff=0 означає, що меню не може бути "відірване"
-        # та переміщуватись у окремому вікні
+
+        # створення меню в шапці вікна
         filemenu = Menu(self.menubar, tearoff=0)
         filemenu.add_command(label="Відкрити", command=self._open_database)
         filemenu.add_command(label="Зберегти як", command=self._save_database)
@@ -63,14 +73,16 @@ class MainWindow:
         self.input_name = ttk.Entry(_category_frame)
         self._category_label = ttk.Label(_category_frame, text='Вибрана категорія: ...')
 
+        # рамка з списком доступних категорій, та напису, який відображає вибрану категорію
         _list_frame = ttk.Frame(_frame)
         _scroll = ttk.Scrollbar(_list_frame)
         self.categories_list = Listbox(_list_frame, height=5, width=16, yscrollcommand=_scroll.set)
         _scroll.config(command=self.categories_list.yview)
         self.categories_list.bind('<Double-1>', self._save_category)
 
-        self._update_categories()      # наповнити кнопку вибору категорій їх списком
+        self._update_categories()      # наповнити список категорій
 
+        # пакування
         _frame.pack(side=TOP, expand=1)
         _category_frame.grid(row=0, column=0, padx=4)
         ttk.Label(_category_frame, text='Частина назви:').pack(side=TOP,
@@ -98,6 +110,7 @@ class MainWindow:
 
         self._fill_list()
 
+        # кнопки
         _frame = ttk.Frame(self.top)
         ttk.Button(_frame, text='Додати товар', command=self._add_item).pack(side=LEFT, padx=5, pady=5)
         ttk.Button(_frame, text='Додати/Видалити категорію',
@@ -106,16 +119,21 @@ class MainWindow:
         _frame.pack(side=TOP, fill=X, expand=YES)
 
     def _fill_list(self, ev=None):
+        """ Наповнити список результатами пошуку.
+        """
         print(datetime.datetime.now(), '_fill_list', ev, '', sep='\n')
-        piece_name = self.input_name.get()
+        piece_name = self.input_name.get()    # частина назви
 
+        # словник {Category_Name: Category_id}
         translator = sql2dict(self.data_connector.get_categories())
+
+        # якщо вибрано категорію зі списку, то шукаємо за частиною назви та категорією
         if self._chosen_category in translator:
             tmp_val = self.data_connector.find_item(piece_name, translator[self._chosen_category])
-        else:
+        else:   # інакше - за частиною назви
             tmp_val = self.data_connector.find_item(piece_name)
 
-        self.items_list.delete(0, END)
+        self.items_list.delete(0, END)    # очистка списку та заповнення його заново
         for el in tmp_val:
             string = ''
             for field_name, val in el.items():
@@ -139,10 +157,12 @@ class MainWindow:
             self.categories_list.insert(END, '...')
 
     # ========================================= handlers ===============================================================
-    def _dialog_pattern(self):
-        pass
-
     def _save_category(self, ev=None):
+        """ Обробка подвійного натиснення на елемент списку категорій
+
+        Зберігає вибрану категорію у відповідній змінній
+        та перезаписує напис з вибраною категорією.
+        """
         print(datetime.datetime.now(), '_save_category', ev, sep='\n')
         self._chosen_category = self.categories_list.get(self.categories_list.curselection())
         tmp = 'Вибрана категорія: ' + self._chosen_category
@@ -151,24 +171,30 @@ class MainWindow:
 
     def _open_database(self):
         """ Відкрити базу даних
+
+        Викликається з самого початку + після натиснення відповідної кнопки в меню.
         """
         filename = askopenfilename()  # стандартний діалог відкриття файлу
         if filename:
             try:
-                database = StorageDB(filename)
-                data_connector = StorageCollection(database)
+                database = StorageDB(filename)          # пробуємо підключитись до бази даних
+                data_connector = StorageCollection(database)   # якщо щось піде не так - зініціюється виключення
                 data_connector.get_categories()
 
-                self.database = database
+                self.database = database  # якщо все пройшло нормально - змінюємо об'єкти StorageDB i StorageCollection
                 self.data_connector = data_connector
-                return 1
+                return 1                  # 1 - все нормально
             except Exception as exc:
                 showerror("Error", "Необхідно вибрати базу даних.")
                 print(datetime.datetime.now(), '_open_database', exc, '\n', sep='\n')
-                return 0
-        return 2
+                return 0                  # 0 - дати ще один шанс
+        return 2                          # 2 - закрити вікно і вийти з програми, якщо це відбувається вперше
 
     def _add_item(self, ev=None):
+        """ Обробка натиснення кнопки 'Додати товар'.
+
+        Викликає відповідне діалогове вікно. Після його завершення оновлює всі дані.
+        """
         print(datetime.datetime.now(), '_add_item', ev, '\n', sep='\n')
         tmp = DialogEnterItem(self)
         self.top.wait_window(tmp.diag)
@@ -179,6 +205,10 @@ class MainWindow:
         self._fill_list()
 
     def _category_handler(self, ev=None):
+        """ Обробка натиснення кнопки 'Додати/Видалити категорію'.
+
+        Викликає відповідне діалогове вікно. Після його завершення оновлює всі дані.
+        """
         print(datetime.datetime.now(), '_category_handler', ev, '\n', sep='\n')
         tmp = DialogEnterCategory(self)
         self.top.wait_window(tmp.diag)
@@ -189,6 +219,11 @@ class MainWindow:
         self._fill_list()
 
     def _create_report(self, ev=None):
+        """ Обробляє натиснення кнопки 'Звіт'
+
+        Формує список словників з інформацією з бази даних і викликає відповідну
+        функцію для створення звіту за шаблоном.
+        """
         print(datetime.datetime.now(), '_create_report', ev, '\n', sep='\n')
         try:
             all_data = self.data_connector.get_items()
@@ -202,9 +237,14 @@ class MainWindow:
             showerror("Error", exc)
 
     def _change_element(self, ev=None):
+        """ Обробка подвійного натиснення на елемент списку.
+
+        Викликає відповідне діалогове вікно (Змінити елемент), після
+        його завершення оновлює інформацію в головному вікні.
+        """
         print(datetime.datetime.now(), '_change_element', ev, '\n', sep='\n')
         default = self.items_list.get(self.items_list.curselection())
-        default = dict(map(lambda a: a.split(":"), default.split('      ')))
+        default = dict(map(lambda a: a.strip().split(":"), default.split('      ')))
         tmp = DialogChangeItem(self, default)
         self.top.wait_window(tmp.diag)
         self._update_categories()
@@ -214,16 +254,26 @@ class MainWindow:
         self._fill_list()
 
     def _settings(self):
+        """ Обробка подвійного натиснення на 'Налаштування'
+
+        Викликає відповідне діалогове вікно, після
+        його завершення оновлює інформацію в головному вікні.
+        """
         print(datetime.datetime.now(), '_settings', '\n', sep='\n')
         tmp = DialogSettings(self)
         self.top.wait_window(tmp.diag)
         self._update_categories()
 
     def _save_database(self):
+        """ Обробка натиснення 'Зберегти як'.
+
+        Зберігає базу даних у вказаний файл.
+        """
         fileout = asksaveasfile(mode='wb')
         if fileout:
             filein = open(self.database.urn, 'rb')
             try:
+                # копіюємо інформацію порціями, щоб не було переповнення буферу.
                 for i in range(os.path.getsize(self.database.urn) // CHUNK + 1):
                     fileout.write(filein.read(CHUNK))
             except Exception as exc:

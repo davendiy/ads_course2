@@ -1,17 +1,33 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Головна програма.
+"""
+
 from math_projects.diana_vitv.bin import *
 import sys
 import tkinter as tk
 import datetime
 
-with open('logs.log', 'a') as file:
-    # sys.stdout = file
-    # sys.stderr = file
+# перенаправляюємо стандартні потоки stdout (виведення) i stderr (виведення помилок)
+# у відповідні лог-файли.
+file_print = open('messages.log', 'a', encoding='utf-8')
+file_errors = open('errors.log', 'a', encoding='utf-8')
+
+sys.stdout = file_print
+sys.stderr = file_errors
+
+try:
+    # відповідно тепер кожен print буде виводитись у messages.log
     print("===================={}=====================".format(datetime.datetime.now()))
     top = tk.Tk()
+    top.title('Діана Вітвіцька')
     test = MainWindow(top)
     test.mainloop()
     print()
     print()
+except Exception as e:
+    # а кожна помилка буде виводитись у errors.log
+    file_errors.write(e)
+    file_errors.close()
+    file_print.close()
