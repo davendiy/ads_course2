@@ -47,7 +47,7 @@ class Merger:
         """Здійснити злиття."""
         for record in self.mergesrc:
             self._process_template(record)
-            # self.outdoc.add_page_break()  # додати розрив сторінки
+            self.outdoc.add_page_break()  # додати розрив сторінки
         self.outdoc.save(self.outfile)  # зберегти файл результату
 
     def _process_template(self, record):

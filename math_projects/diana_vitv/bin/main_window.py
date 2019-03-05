@@ -58,14 +58,15 @@ class MainWindow:
         self.top.config(menu=self.menubar)
 
         # рамка з полем для введення частини назви і вибору категорії
-        _frame = Frame(self.top, relief=RAISED)
-        _category_frame = Frame(_frame)
+        _frame = ttk.Frame(self.top)
+        _category_frame = ttk.Frame(_frame)
         self.input_name = ttk.Entry(_category_frame)
         self._category_label = ttk.Label(_category_frame, text='Вибрана категорія: ...')
 
-        _list_frame = Frame(_frame, relief=RAISED)
+        _list_frame = ttk.Frame(_frame)
         _scroll = ttk.Scrollbar(_list_frame)
         self.categories_list = Listbox(_list_frame, height=5, width=16, yscrollcommand=_scroll.set)
+        _scroll.config(command=self.categories_list.yview)
         self.categories_list.bind('<Double-1>', self._save_category)
 
         self._update_categories()      # наповнити кнопку вибору категорій їх списком
@@ -84,7 +85,7 @@ class MainWindow:
 
         # список - результати пошуку
         ttk.Label(self.top, text=' Результати пошуку:').pack(side=TOP)
-        _frame = Frame(self.top)
+        _frame = ttk.Frame(self.top)
         self.scroll_y = ttk.Scrollbar(_frame)
         self.scroll_y.pack(side=RIGHT, fill=Y)
         self.items_list = Listbox(_frame, height=15,
@@ -97,7 +98,7 @@ class MainWindow:
 
         self._fill_list()
 
-        _frame = Frame(self.top)
+        _frame = ttk.Frame(self.top)
         ttk.Button(_frame, text='Додати товар', command=self._add_item).pack(side=LEFT, padx=5, pady=5)
         ttk.Button(_frame, text='Додати/Видалити категорію',
                    command=self._category_handler).pack(side=LEFT, padx=5, pady=5)

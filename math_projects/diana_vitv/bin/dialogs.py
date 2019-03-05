@@ -192,17 +192,28 @@ class DialogChangeItem:
         """ Сворення віджетів
         """
 
+        self._entries = {}
+        self._nb_frame = ttk.Frame(self.diag)
+        self._nb_frame.pack(side=TOP)
+        self.nb = ttk.Notebook(self._nb_frame, width=400, height=250)
+        self.nb.pack()
+
+        self.nbTabs = (ttk.Frame(self._nb_frame), ttk.Frame(self._nb_frame))
+        self.nb.add(self.nbTabs[0], text='Змінити', padding=2)
+        self.nb.add(self.nbTabs[1], text='Відпуск товару', padding=2)
+        self._categories = sql2dict(self.pre.data_connector.get_categories())
+        self._make_change_tab()
+        self._make_product_release()
+
+    def _make_change_tab(self):
         _field_names = self.pre.database.get_fields('items')
         print("field names:", _field_names)
 
-        self._entries = {}
-        self._categories = sql2dict(self.pre.data_connector.get_categories())
-
         for el in _field_names:
             if el == 'id':
-                ttk.Label(self.diag, text='Id: {}'.format(self.default[el])).pack(side=TOP)
+                ttk.Label(self.nbTabs[0], text='Id: {}'.format(self.default[el])).pack(side=TOP)
                 continue
-            _frame = Frame(self.diag)
+            _frame = ttk.Frame(self.nbTabs[0])
             ttk.Label(_frame, text=el + ':').pack(side=LEFT)
 
             if el == 'Category_id':  # список в діалоговому вікні
@@ -228,8 +239,11 @@ class DialogChangeItem:
 
             _entry.pack(side=RIGHT)
 
-            _frame.pack(side=TOP, fill=X, expand=YES)
+            _frame.pack()
 
+        self._make_buttons()
+
+    def _make_buttons(self):
         # кнопки
         _frame = Frame(self.diag)
         ttk.Button(_frame, text='Змінити',
@@ -242,6 +256,27 @@ class DialogChangeItem:
                    command=self._exit).pack(side=LEFT, padx=5, pady=5)
         _frame.pack(side=TOP)
 
+    def _make_product_release(self):
+        ttk.Label(self.nbTabs[1], text=self.default['Name']).pack()
+        _frame = Frame(self.nbTabs[1])
+        _frame.pack()
+        scroll = Scrollbar(_frame)
+        scroll.pack(side=RIGHT, fill=Y)
+        listbox = Listbox(_frame, height=300, width=300, yscrollcommand=scroll.set)
+        scroll.configure(command=listbox.yview)
+        listbox.pack(side=RIGHT)
+        # print(self.default['Name'])
+        items = self.pre.data_connector.find_item(self.default['Name'].strip())
+        print(items)
+        for el in items:
+            string = 'Department: {},   Build: {},     Shelf: {}'
+            string = string.format(el['Department_id'],
+                                   el["Build_number"],
+                                   el['Shelf_number'])
+
+            listbox.insert(0, string)
+
+    # =========================================== handlers =============================================================
     def _update_text(self, ev=None):
         entry = self._entries['Category']
         res = self.list_entry.get(self.list_entry.curselection())
@@ -255,12 +290,9 @@ class DialogChangeItem:
 
     def _del_handler(self, ev=None):
         try:
-            ans = askokcancel(title='Увага',
-                              message='Ви впевнені, що хочете видалити одиницю товару {}?'.format(self.default['Name']))
-            if ans:
-                self.pre.data_connector.delete_item(self.default['id'])
-                showinfo('Success', 'Одиниця товару успішно видалена.')
-                self.diag.destroy()
+            self.pre.data_connector.delete_item(self.default['id'])
+            showinfo('Success', 'Одиниця товару успішно випущена.')
+            self.diag.destroy()
         except Exception as e:
             print(e)
             showerror('Error', e)

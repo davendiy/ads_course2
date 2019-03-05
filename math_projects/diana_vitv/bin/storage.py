@@ -4,6 +4,10 @@
 import sqlite3
 
 
+EQUAL = '=='
+LIKE = 'like'
+
+
 class StorageDB:
     """Клас з'єднання з базою даних курсів.
 
@@ -108,20 +112,27 @@ class StorageCollection:
         categories = self.db.get_data_dicts(query)
         return categories
 
-    def find_item(self, piece_of_name: str, category='', n=20)->list:
+    def find_item(self, piece_of_name: str, category='', mode=LIKE, n=20)->list:
         """ Знайти товар за частиною імені та категорією
 
         :param piece_of_name: рядок
         :param n: к-ть елементів, які повернуться
         :param category: категорія, якщо є
+        :param mode: LIKE або EQUAL - відповідно пошук за частиною назви, або за повною
         :return: [{name_field1: value1, name_field2: value2 ...}, ...]
         """
         piece_of_name = '%' + piece_of_name + '%'
         if category:
-            query = "SELECT * from items WHERE (Name LIKE ? AND Category_id=?)"
+            if mode == 'like':
+                query = "SELECT * from items WHERE (Name LIKE ? AND Category_id=?)"
+            else:
+                query = "SELECT * from items WHERE (Name=? AND Category_id=?)"
             items = self.db.get_data_dicts(query, piece_of_name.lower(), category, n=n)
         else:
-            query = "SELECT * from items WHERE (Name LIKE ?)"
+            if mode == 'like':
+                query = "SELECT * from items WHERE (Name LIKE ?)"
+            else:
+                query = "SELECT * from items WHERE (Name=?)"
             items = self.db.get_data_dicts(query, piece_of_name.lower(), n=n)
         return items
 

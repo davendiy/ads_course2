@@ -32,3 +32,7 @@ def create_report(outfile, template, data):
     m.merge()
     path = os.path.curdir
     os.remove(os.path.join(path, TMP_FILE_NAME))
+
+
+def create_invoice():
+    pass
