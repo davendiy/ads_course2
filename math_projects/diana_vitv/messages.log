@@ -241,3 +241,83 @@ None
 
 
 
+====================2019-03-05 20:23:12.955495=====================
+2019-03-05 20:23:16.355188
+_fill_list
+None
+
+2019-03-05 20:23:22.192373
+_add_item
+None
+
+
+2019-03-05 20:23:31.006512
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_update_text
+<ButtonPress event num=1 x=56 y=39>
+
+
+2019-03-05 20:23:36.316592
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_update_text
+<ButtonPress event num=1 x=63 y=58>
+
+
+2019-03-05 20:23:38.682956
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_add_handler
+None
+
+
+2019-03-05 20:23:40.976485
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_exit
+None
+
+
+2019-03-05 20:23:41.000727
+_fill_list
+None
+
+2019-03-05 20:24:02.790808
+_settings
+
+
+2019-03-05 20:24:08.213086
+_create_report
+None
+
+
+2019-03-05 20:24:12.263553
+_change_element
+<ButtonPress event num=1 x=154 y=95>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}]
+2019-03-05 20:24:17.188431
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+2019-03-05 20:24:31.650842
+_fill_list
+None
+
+2019-03-05 20:24:37.642263
+_category_handler
+None
+
+
+2019-03-05 20:24:44.202027
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterCategory'>
+_del
+None
+
+2019-03-05 20:24:48.338100
+_fill_list
+None
+
+
+

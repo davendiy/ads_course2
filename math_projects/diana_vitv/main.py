@@ -20,6 +20,7 @@ sys.stderr = file_errors
 try:
     # відповідно тепер кожен print буде виводитись у messages.log
     print("===================={}=====================".format(datetime.datetime.now()))
+    file_errors.write("===================={}====================\n".format(datetime.datetime.now()))
     top = tk.Tk()
     top.title('Діана Вітвіцька')
     test = MainWindow(top)
