@@ -1,0 +1,74 @@
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 209, in _change_element
+    tmp = DialogChangeItem(self, default)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 190, in __init__
+    self._make_widgets()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 207, in _make_widgets
+    self._make_change_tab()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 228, in _make_change_tab
+    _entry = ttk.Label(_frame, text=self.default['Category_id'])
+KeyError: 'Category_id'
+====================2019-03-06 22:53:53.553692====================
+====================2019-03-06 22:54:25.542440====================
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 26, in <module>
+    test = MainWindow(top)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 51, in __init__
+    self._make_widgets()
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 123, in _make_widgets
+    self._fill_tree()
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 156, in _fill_tree
+    el['Category'] = translator2(el['Category_id'])
+TypeError: 'dict' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 32, in <module>
+    file_errors.write(e)
+TypeError: write() argument must be str, not TypeError
+====================2019-03-06 22:55:16.876034====================
+====================2019-03-06 22:56:15.975108====================
+====================2019-03-06 22:57:13.337752====================
+====================2019-03-06 22:59:04.505237====================
+====================2019-03-06 23:02:08.653385====================
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 26, in <module>
+    test = MainWindow(top)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 50, in __init__
+    self._make_widgets()
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 120, in _make_widgets
+    self._init_tree(_frame)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 134, in _init_tree
+    _scroll = Scrollbar(pre, show='headings')
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 3043, in __init__
+    Widget.__init__(self, master, 'scrollbar', cnf, kw)
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 2299, in __init__
+    (widgetName, self._w) + extra + self._options(cnf))
+_tkinter.TclError: unknown option "-show"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 32, in <module>
+    file_errors.write(e)
+TypeError: write() argument must be str, not TclError
+====================2019-03-06 23:02:53.956695====================
+====================2019-03-06 23:03:08.757790====================
+====================2019-03-06 23:08:57.775081====================
+====================2019-03-06 23:09:45.495951====================
+====================2019-03-06 23:10:20.393144====================
+====================2019-03-06 23:10:45.155140====================
+====================2019-03-06 23:12:04.980658====================
+====================2019-03-06 23:12:28.803688====================
+====================2019-03-06 23:12:55.757188====================
+====================2019-03-06 23:23:29.553026====================
+====================2019-03-06 23:23:52.606229====================
+====================2019-03-06 23:24:42.536038====================
+====================2019-03-06 23:26:43.793037====================
+====================2019-03-06 23:27:59.139692====================
+====================2019-03-06 23:30:07.075177====================
+====================2019-03-06 23:30:20.265811====================
