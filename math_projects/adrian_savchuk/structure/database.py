@@ -229,7 +229,7 @@ class BudgetCollection:
             curs.execute('DELETE FROM '+item_type+' WHERE Category_id=?', (item_id[0],))
         self.db.close()
 
-    def get_sum(self, year='', month='', day='', item_type=REVENUE, Category_id=''):
+    def get_sum(self, year='', month='', day='', item_type=REVENUE, Category_id='%'):
         """ Порахувати суму всіх транзакцій певного типу за певний період.
 
         :param year: рік, у який відбувалась транзакція (опціонально)
