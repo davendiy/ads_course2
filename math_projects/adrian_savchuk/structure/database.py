@@ -1,21 +1,40 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Модуль з класами для зв'язку з базою даних.
+
+
+Схема бази даних:
+
+    Categories_in  -> id
+                   -> Name
+
+    Categories_out -> id
+                   -> Name
+
+    Revenues -> id
+             -> Date
+             -> Sum
+             -> Category_id >---- Categories_in.id
+             -> Comments
+
+    Costs -> id
+          -> Date
+          -> Sum
+          -> Category_id >---- Categories_out.id
+          -> Comments
+
+"""
+
+
 import sqlite3
-import datetime
 from .other_functions import *
-
-
-def default():
-    database = BudgetDB(DEFAULT_DATABASE)
-    data_connector = BudgetCollection(database)
-    return database, data_connector
-
+import datetime
 
 class BudgetDB:
-    """Клас з'єднання з базою даних курсів.
+    """Клас з'єднання з базою даних бюджету.
 
-    self.urn - розташування БД курсів
+    self.urn - розташування БД
     self.conn - об'єкт зв'язку з базою даних
     """
 
@@ -81,20 +100,30 @@ class BudgetDB:
 
 
 class BudgetCollection:
+    """ Клас, що забезпечує функціонал домашнього бюджету.
+    """
 
     def __init__(self, db: BudgetDB):
         self.db = db
-        self.balance = 0
-        self.config_file = DEFAULT_CONFIG_FILE
-        self.balance = 0
+        self.balance = 0   # різниця між доходами і витратами - нинішня сума
         self.update_balance()
 
     def update_balance(self):
+        """ Порахувати баланс
+        """
         self.balance = self.get_sum(item_type=REVENUE) - self.get_sum(item_type=COST)
 
     def get_items(self, item_type=REVENUE, category='', n=DEFAULT_N) -> list:
+        """ Отримати транзакції з бази даних з певними ознаками
+
+        :param item_type: REVENUE або COST
+        :param category: назва категорії (опціонально)
+        :param n: к-ть транзакцій, що повернуться
+        :return: [{name_field1: value1, name_field2: value2 ...}, ...]
+        """
         params = ()
-        if category:
+        # формуємо запит відповідно до введених параметрів
+        if category:     # якщо вказано категорію, то необхідно знайти її id у БД
             if item_type == REVENUE:
                 category_id = self.db.get_one_result("SELECT id FROM Categories_in WHERE Name=?", category)
             else:
@@ -123,7 +152,15 @@ class BudgetCollection:
         return categories
 
     def add_item(self, Date, Sum, Category_id, Comments='', item_type=REVENUE):
+        """ Додати транзакцію (дохід або витрата). Назви вхідних параметрів
+        збігаються з назвами полів  в БД для виключення плутанини.
 
+        :param Date: дата транзакції
+        :param Sum: сума
+        :param Category_id: номер категорії (з Categories_in/Categories_out)
+        :param Comments: коментар (опціонально)
+        :param item_type: REVENUE or COST
+        """
         query = 'INSERT into ' + item_type + '(Date, Sum, Category_id, Comments) values (?, ?, ?, ?)'
 
         curs = self.db.get_cursor()
@@ -131,6 +168,11 @@ class BudgetCollection:
         self.db.close()
 
     def delete_item(self, item_id, item_type=REVENUE):
+        """ Видалити тразнакцію з БД.
+
+        :param item_id: id елемента
+        :param item_type: REVENUE or COST
+        """
         curs = self.db.get_cursor()
         curs.execute("DELETE FROM " + item_type + " WHERE id=?",
                      (item_id,))
@@ -138,12 +180,27 @@ class BudgetCollection:
         self.db.close()
 
     def change_item(self, id, Date, Sum, Category_id, item_type=REVENUE, Comments=''):
+        """ Змінити параметри транзакції.
+
+        :param id: ідентифікаційний номер (адреса транзакції, не міняється)
+        :param Date: дата
+        :param Sum: сума
+        :param Category_id: номер категорії (3 Categories_in/Categories_out)
+        :param item_type: REVENUE or COST
+        :param Comments: коментар (опціонально)
+        """
+
         query = 'UPDATE ' + item_type + " SET date=?, sum=?, category_id=?, comments=? WHERE id=?"
         curs = self.db.get_cursor()
         curs.execute(query, (Date, Sum, Category_id, Comments, id))
         self.db.close()
 
     def add_category(self, name, item_type):
+        """ Додати нову категорію у відповідну таблицю.
+
+        :param name: назва
+        :param item_type: REVENUE or COST
+        """
         if item_type == REVENUE:
             item_type = 'Categories_in'
         else:
@@ -154,6 +211,11 @@ class BudgetCollection:
         self.db.close()
 
     def delete_category(self, name, item_type):
+        """ Видалити категорію і всі транзакції цієї категорії.
+
+        :param name: назва категорії
+        :param item_type: REVENUE or COST
+        """
         if item_type == REVENUE:
             category_table = 'Categories_in'
         else:
@@ -168,6 +230,16 @@ class BudgetCollection:
         self.db.close()
 
     def get_sum(self, year='', month='', day='', item_type=REVENUE, Category_id=''):
+        """ Порахувати суму всіх транзакцій певного типу за певний період.
+
+        :param year: рік, у який відбувалась транзакція (опціонально)
+        :param month: місяць, у який відбувалась транзакція (опціонально)
+        :param day: день, у який відбувалась транзакція (опціонально)
+        :param item_type: REVENUE or COST
+        :param Category_id: номер категорії
+        :return: int/float
+        """
+        # формуємо параметр парсингу по даті
         if day and month and year:
             param = "{}-{}-{}".format(year, month, day)
         elif month and year:
@@ -177,6 +249,7 @@ class BudgetCollection:
         else:
             param = '%'
 
+        # формуємо запит відповідно до заданих дати і категорії
         query = "SELECT sum FROM " + item_type + " WHERE (Date LIKE ? AND Category_id LIKE ?)"
         curs = self.db.get_cursor()
         curs.execute(query, (param, Category_id))

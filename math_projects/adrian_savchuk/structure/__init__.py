@@ -6,4 +6,4 @@ from .front import *
 from .other_functions import *
 
 
-__all__ = ['MainWindow', 'DEFAULT_CONFIG_FILE', 'BudgetDB', 'BudgetCollection']
+__all__ = ['MainWindow', 'BudgetDB', 'BudgetCollection']

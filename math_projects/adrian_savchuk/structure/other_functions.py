@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-
+# Список полів з таблиці REVENUE, які будуть відображатись у GUI
 REVENUE_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
+
+# Список полів з таблиці COST, які будуть відображатись у GUI
 COSTS_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
 
+# К-ть елементів за умовчанням, які буде видавати пошук
 DEFAULT_N = 40
+
+# Константа, що означає тип транзакції 'Дохід'. Збігається з назвою таблиці з доходами
 REVENUE = 'Revenues'
+
+# Константа, що означає тип транзакції 'Витрата'. Збігається з назвою таблиці з витратами
 COST = 'Costs'
-DEFAULT_CONFIG_FILE = 'config.bud'
+
+# шлях за умовчанням до бази даних
 DEFAULT_DATABASE = './budget.db'
 
 

@@ -5,8 +5,6 @@ from .dialogs import *
 import matplotlib.pyplot as plt
 import numpy as np
 
-# TODO add comments
-
 
 class MainWindow(Tk):
     """ Головне вікно програми.
@@ -261,9 +259,9 @@ class MainWindow(Tk):
     def _add_revenue_handler(self, ev=None):
         """ Обробити натиснення кнопки 'Додати' на Головній вкладці навпроти доходів
         """
-        tmp = DialogAddItem(self, REVENUE)
+        tmp = DialogAddItem(self, REVENUE)  # викликаємо діалог
         self.wait_window(tmp.diag)
-        self._nb_frame.destroy()
+        self._nb_frame.destroy()            # оновлюємо віджети
         self._make_widgets()
 
     def _change_item(self, item_type):
@@ -280,9 +278,9 @@ class MainWindow(Tk):
             item = self._all_cost_tree.focus()
             _default = dict(zip(COSTS_FIELDS, self._all_cost_tree.item(item)['values']))
 
-        tmp = DialogChangeItem(self, item_type, _default)
+        tmp = DialogChangeItem(self, item_type, _default)   # викликаємо діалог
         self.wait_window(tmp.diag)
-        self._nb_frame.destroy()
+        self._nb_frame.destroy()                            # оновлюємо віджети
         self._make_widgets()
         if item_type == REVENUE:           # вибираємо вкладку, з якої викликалась команда
             tab = self.nbTabs[1]
@@ -291,38 +289,49 @@ class MainWindow(Tk):
         self.nb.select(tab)
 
     def _add_category(self, item_type):
-        """
+        """ Обробити натиснення кнопки `New category`
 
-        :param item_type:
-        :return:
+        :param item_type: REVENUE or COST
         """
-        tmp = DialogAddCategory(self, item_type)
+        tmp = DialogAddCategory(self, item_type)  # викликаємо відповідний діалог
         self.wait_window(tmp.diag)
-        self._nb_frame.destroy()
+        self._nb_frame.destroy()                  # оновлюємо віджети
         self._make_widgets()
-        if item_type == REVENUE:
+        if item_type == REVENUE:           # вибираємо вкладку, з якої викликалась команда
             tab = self.nbTabs[1]
         else:
             tab = self.nbTabs[2]
         self.nb.select(tab)
 
     def _del_category(self, item_type):
-        tmp = DialogDelCategory(self, item_type)
+        """ Обробити натиснення кнопки 'Delete category'
+
+        :param item_type: REVENUE or COST
+        """
+        tmp = DialogDelCategory(self, item_type)  # викликаємо відповідний діалог
         self.wait_window(tmp.diag)
-        self._nb_frame.destroy()
+        self._nb_frame.destroy()                  # оновлюємо віджети
         self._make_widgets()
-        if item_type == REVENUE:
+        if item_type == REVENUE:           # вибираємо вкладку, з якої викликалась команда
             tab = self.nbTabs[1]
         else:
             tab = self.nbTabs[2]
         self.nb.select(tab)
 
     def _make_hist(self, item_type):
+        """ Вивести гістограму витрат/доходів по категоріям
+
+        :param item_type: REVENUE or COST
+        """
+        # отримуємо словник категорій {Name1: id1, ...}
         categories = name_dict(self.data_connector.get_categories(item_type))
         counter = {}
+
+        # для кожної катеогорії обчислюємо суму
         for k, v in categories.items():
             counter[k] = self.data_connector.get_sum(item_type=item_type, Category_id=v)
 
+        # будуємо гістограму (взято зі stackowerflow)
         labels, values = zip(*counter.items())
 
         indexes = np.arange(len(labels))
