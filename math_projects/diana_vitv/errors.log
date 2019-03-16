@@ -11,3 +11,4 @@ Traceback (most recent call last):
   File "/files/univer/python/course2/math_projects/diana_vitv/bin/dialogs.py", line 228, in _make_change_tab
     _entry = ttk.Label(_frame, text=self.default['Category_id'])
 KeyError: 'Category_id'
+====================2019-03-16 19:38:26.991134====================

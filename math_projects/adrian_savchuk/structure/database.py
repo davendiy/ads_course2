@@ -31,6 +31,7 @@ import sqlite3
 from .other_functions import *
 import datetime
 
+
 class BudgetDB:
     """Клас з'єднання з базою даних бюджету.
 

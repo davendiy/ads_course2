@@ -72,3 +72,30 @@ TypeError: write() argument must be str, not TclError
 ====================2019-03-06 23:27:59.139692====================
 ====================2019-03-06 23:30:07.075177====================
 ====================2019-03-06 23:30:20.265811====================
+====================2019-03-16 19:36:13.059584====================
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+====================2019-03-16 19:37:37.487125====================
+====================2019-03-16 19:38:37.583066====================
+====================2019-03-16 19:40:21.890026====================
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 27, in <module>
+    test.mainloop()
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 44, in mainloop
+    self.top.mainloop()
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1283, in mainloop
+    self.tk.mainloop(n)
+KeyboardInterrupt
+====================2019-03-16 19:41:06.546442====================

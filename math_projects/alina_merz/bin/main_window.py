@@ -120,9 +120,9 @@ class MainWindow:
         _scroll.config(comman=self.tree.yview)
         _scroll.pack(side=RIGHT, fill=Y)
         self.tree.pack(side=RIGHT)
-        self.tree['columns'] = ROWS_DIALOG
+        self.tree['columns'] = ROWS_MAIN
         self.tree.bind('<Double-1>', self._change_element)
-        for el in ROWS_DIALOG:
+        for el in ROWS_MAIN:
             self.tree.column(el, width=120, anchor='center')
             self.tree.heading(el, text=el, anchor='center')
 
@@ -147,7 +147,7 @@ class MainWindow:
         for el in tmp_val:
             el['Category'] = translator2[el['Category_id']]
             del el["Category_id"]
-            tmp = tuple(map(lambda a: el[a], ROWS_DIALOG))
+            tmp = tuple(map(lambda a: el[a], ROWS_MAIN))
             self.tree.insert("", 'end', text='', values=tmp)
 
     def _update_categories(self):
