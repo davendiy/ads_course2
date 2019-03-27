@@ -43,6 +43,7 @@ def fib(n):
 
 result = ''
 
+
 form = cgi.FieldStorage()
 if 'n_val' in form:
     n = int(form['n_val'].value)

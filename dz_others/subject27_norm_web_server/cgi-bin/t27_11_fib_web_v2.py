@@ -48,12 +48,14 @@ HTML_PAGE = """Content-type: text/html charset=utf-8\n\n
 </html>
 """
 
+
 def fib(n):
     """Обчислює n-те число Фібоначчі."""
     a, b = 1, 1
     for i in range(n):
         a, b = b, a + b
     return a
+
 
 result = ''
 

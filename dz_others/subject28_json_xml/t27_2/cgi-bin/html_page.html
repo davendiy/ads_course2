@@ -1,0 +1,39 @@
+Content-type: text/html charset=utf-8
+
+
+<html>
+<head>
+<!-- мета-параметри (кодування + заголовок) -->
+    <meta charset="UTF-8">
+    <title>Пошук символа та найдовшої послідовності однакових символів, що йдуть підряд</title>
+</head>
+<body>
+    <h3>Пошук символа та найдовшої послідовності однакових символів, що йдуть підряд</h3>
+
+    <!-- результат, на місці фігурних дужок будуть стояти імена вихідних файлів-->
+    <br>
+    RESULT_JSON: {}
+    <br>
+    RESULT XML: {}
+
+    <form method=POST action="http://localhost:8001/cgi-bin/28_2.py">
+        <!-- рядки введення -->
+        <p>Введіть рядок:
+            <label>
+                <input type=text name="string" value="">
+            </label>
+        </p>
+        <p>Введіть символ, який необхідно знайти:
+            <label>
+                <input type="text" name="letter" value="">
+            </label>
+        </p>
+        <!-- кнопка -->
+        <p>
+            <input type=submit value="Знайти!">
+        </p>
+
+    </form>
+
+</body>
+</html>

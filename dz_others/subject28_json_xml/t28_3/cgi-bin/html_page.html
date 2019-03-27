@@ -1,0 +1,38 @@
+Content-type: text/html charset=utf-8
+
+
+<html lang="en">
+<head>
+<!-- мета-параметри (кодування + заголовок) -->
+    <meta charset="UTF-8">
+    <title>Повернути усі цифри, які входять в заданий рядок, та окремо - решту символів</title>
+</head>
+<body>
+    <h3>Повернути усі цифри, які входять в заданий рядок, та окремо - решту символів</h3>
+
+    <form method=POST action="http://localhost:8000/cgi-bin/main.py">
+
+        <!-- рядки введення 0-->
+        <p>Введіть рядок:
+            <label>
+                <input type=text name="string" value="">
+            </label>
+        </p>
+        <!-- кнопка -->
+        <p>
+            <input type=submit value="Знайти!">
+        </p>
+
+        <!-- Виведення json i xml в окреме текстове вікно, т.к. теги xml сприймаються
+        як html і не виводяться-->
+        <textarea cols="200" rows="50">
+        Result JSON:
+        {}
+
+        Result XML:
+        '{}'
+        </textarea>
+    </form>
+
+</body>
+</html>
