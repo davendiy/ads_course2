@@ -57,3 +57,16 @@ tr:hover {background: #999999}
 }
 
 .buttons:hover {background-color: #999999}
+
+.buttons_list {
+    padding-left: 2%;
+}
+
+/*.buttons_list ul {*/
+    /*list-style-type: none;*/
+    /*overflow: hidden;*/
+/*}*/
+
+/*.buttons_list ul li {*/
+    /*float: left;*/
+/*}*/
