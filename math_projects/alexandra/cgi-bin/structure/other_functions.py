@@ -37,7 +37,6 @@ def change_html(filename):
     :param filename: назва файлу
     :return: рядок
     """
-    text = ''
     with open(filename, 'r', encoding='utf-8') as file:
         text = file.read().strip()
         text = text.lstrip('<!DOCTYPE html>')
