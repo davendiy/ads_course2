@@ -60,6 +60,21 @@ li a:hover {background: #111111}
 
 .buttons1:hover {background-color: #999999}
 
+.buttons2 {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    margin-left: 30%;
+    margin-top: 1%;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.buttons2:hover {background-color: #999999}
+
 
 .table_style2 {
     font-family: 'Lato', sans-serif;
@@ -83,6 +98,22 @@ li a:hover {background: #111111}
     font-size: medium;
 }
 
+
+.table_style3 {
+    font-family: 'Lato', sans-serif;
+    padding: 15px;
+    /*background-color: #333333;*/
+    /*color: #f2f2f2;*/
+    width: 40%;
+    margin-top: 2%;
+}
+
+.table_style3 input{
+    border: 1px solid black;
+    height: 24px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
 
 .text_style{
     font-family: 'Enriqueta', arial, serif;
