@@ -1,0 +1,6 @@
+<Library>
+    <Book author="J.K. Rowling" name="Harry Potter and Half-Blood princce" year="2015" />
+    <Book author="J.K. Rowling" name="Harry Potter and The Goblet of Fire" year="2012" />
+    <Book author="J.K. Rowling" name="Harry Potter and Order of Phoenix" year="2012" />
+    <Book author="Jack London" name="Sea Wolf" year="1987" />
+</Library>

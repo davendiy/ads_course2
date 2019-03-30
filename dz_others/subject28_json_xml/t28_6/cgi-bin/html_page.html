@@ -1,0 +1,53 @@
+Content-type: text/html charset=utf-8
+
+
+<html lang="en">
+<head>
+<!-- мета-параметри (кодування + заголовок) -->
+    <meta charset="UTF-8">
+    <title>Книги</title>
+</head>
+<body>
+    <h3>Підібрати книгу за назвою/автором/періодом видання</h3>
+
+    <form method=POST action="main.py">
+
+        <!-- рядки введення 0-->
+        <p>Назва:
+            <label>
+                <input type=text name="name" value="">
+            </label>
+        </p>
+
+        <p>Автор:
+            <label>
+                <input type=text name="author" value="">
+            </label>
+        </p>
+
+        Період видання
+        <p>
+            Від:
+            <label>
+                <input type="text" name="from" value="">
+            </label>
+        </p>
+        <p>
+            До:
+            <label>
+                <input type="text" name="to" value="">
+            </label>
+        </p>
+        <!-- кнопка -->
+        <p>
+            <input type=submit value="Знайти!">
+        </p>
+
+        <textarea rows="50" cols="200">
+            Result:
+            {}
+        </textarea>
+    </form>
+
+</body>
+</html>
