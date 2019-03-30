@@ -28,3 +28,23 @@ COST = 'Costs'
 
 # шлях за умовчанням до бази даних
 DEFAULT_DATABASE = './budget.db'
+
+
+def change_html(filename):
+    """ Прочитати html сторінку і змінити її у формат,
+    який буде надсилати cgi скрипт
+
+    :param filename: назва файлу
+    :return: рядок
+    """
+    text = ''
+    with open(filename, 'r', encoding='utf-8') as file:
+        text = file.read().strip()
+        text = text.lstrip('<!DOCTYPE html>')
+        text = 'Content-type: text/html charset=utf-8\n\n' + text
+
+    return text
+
+
+if __name__ == '__main__':
+    print(change_html('/files/univer/python/course2/math_projects/alexandra/front/home_page.html'))

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from .constants import *
+from .other_functions import *
 from .database import *
 
 __all__ = ['HOME_PAGE',
@@ -16,4 +16,5 @@ __all__ = ['HOME_PAGE',
            'BudgetCollection',
            'DEFAULT_DATABASE',
            'DEFAULT_N',
+           'change_html'
            ]
