@@ -261,3 +261,7 @@ class BudgetCollection:
         res = sum(map(lambda a: a[0], items))
         self.db.close()
         return res
+
+
+data_curs = BudgetDB(DEFAULT_DATABASE)
+data_connector = BudgetCollection(data_curs)

@@ -4,20 +4,19 @@
 # t27_01_local_webserver.py
 # Локальний веб-сервер
 
-# TODO зробити python діалоги
-# TODO зробити html діалоги
-
+# TODO зробити python діалоги додавання і видалення
+# TODO зробити діаграму
 
 from http.server import HTTPServer, CGIHTTPRequestHandler
-from structure import *
+from cgi_bin.structure import *
 import datetime
 
+CGIHTTPRequestHandler.cgi_directories = ['/cgi_bin', '/htbin']
+
 HOST = ''               # Комп'ютер для з'єднання
-PORT = 8000             # Порт для з'єднання
+PORT = 8001             # Порт для з'єднання
 
 chosen_category = ''
-data_cur = BudgetDB(DEFAULT_DATABASE)   # з'єднання з базою даних
-data_connector = BudgetCollection(data_cur)
 
 # ------------------------------- підготовка сторінки витрат -----------------------------------------
 

@@ -1,21 +1,34 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+
+# шляхи до html сторінок
 HOME_PAGE = 'front/home_page.html'
 COSTS_PAGE = 'front/costs_page.html'
 REVENUE_PAGE = 'front/revenue_page.html'
 
+# шляхи до шаблонів html сторінок
 HOME_PAGE_PATTERN = 'front/home_page_pattern.html'
 COSTS_PAGE_PATTERN = 'front/costs_page_pattern.html'
 REVENUE_PAGE_PATTERN = 'front/revenue_page_pattern.html'
 
-STYLE_SHEET = 'front/style.css'
+DIAGRAM_PATTERN = 'front/diagram.html'
 
+
+STYLE_SHEET = 'front/style.css'        # шлях до css файлу
+
+DIAGRAM_COSTS = 'diagram_costs.png'      # шлях до файлу, куди буде збережено діаграму
+DIAGRAM_REVENUES = 'diagram_revenues.png'
+
+# параметри, які необхідно вставляти в домашню сторінку
 HOME_PAGE_PARAMS = ('costs_day',
                     'costs_month',
                     'revenues_month',
                     'balance')
 
+# параметри, які необхідно вставляти в сторінку створення нового запису
+DIALOG_PAGE_PARAMS = ('type',
+                      'cur_date')
 
 # Список полів з таблиці REVENUE, які будуть відображатись у GUI
 REVENUE_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
@@ -49,19 +62,27 @@ HTML_PIECE = """
             </tr>
 """
 
+FILE_MODE = 'file'
+STRING_MODE = 'string'
 
-def change_html(filename):
+
+def change_html(filename_or_page, mode=FILE_MODE):
     """ Прочитати html сторінку і змінити її у формат,
     який буде надсилати cgi скрипт
 
-    :param filename: назва файлу
+    :param filename_or_page: назва файлу
+    :param mode: вказує в якому режимі працює функція: FILE_MODE - на вхід дано назву файлу
+                                                       STRING_MODE - на вхід дано рядок
     :return: рядок
     """
 
     # замінюємо <!DOCTYPE html> на Content-type: text/html charset=utf-8\n\n
-    with open(filename, 'r', encoding='utf-8') as file:
-        text = file.read().strip()
-        text = text.replace('<!DOCTYPE html>', 'Content-type: text/html charset=utf-8\n\n')
+    if mode == FILE_MODE:
+        with open(filename_or_page, 'r', encoding='utf-8') as file:
+            text = file.read().strip()
+    else:
+        text = filename_or_page
+    text = text.replace('<!DOCTYPE html>', 'Content-type: text/html charset=utf-8\n\n')
 
     # вставляємо в <head> замість <link rel="stylesheet" href="style.css"> дані з css файла
     with open(STYLE_SHEET, 'r', encoding='utf-8') as file:

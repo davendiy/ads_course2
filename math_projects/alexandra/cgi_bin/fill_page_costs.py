@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from math_projects.alexandra.structure import *
+# import sys
+# import os
+# sys.path.insert(0, '/files/univer/python/course2/math_projects/alexandra/structure')
+
+from structure import *
 import cgi
 import datetime
+
 
 # зчитуємо форму, яка надсилається
 form = cgi.FieldStorage()
@@ -22,16 +27,13 @@ if any([param in form for param in POST_PARAMS]):
             chosen_type = param
             break
 
-    data_cur = BudgetDB(DEFAULT_DATABASE)   # з'єднання з базою даних
-    data_connector = BudgetCollection(data_cur)
-
     # зчитуємо всі записи
-    items = data_connector.get_items(item_type=REVENUE, category=chosen_category)
+    items = data_connector.get_items(item_type=COST, category=chosen_category)
 
     year, month, day = str(datetime.datetime.now().date()).split('-')
 
     # словник {"Category_name": "Category_id"}
-    translator = id_dict(data_connector.get_categories(item_type=REVENUE))
+    translator = id_dict(data_connector.get_categories(item_type=COST))
 
     result = []      # відсіюємо ті, які не підходять
     for el in items:
@@ -48,12 +50,12 @@ if any([param in form for param in POST_PARAMS]):
         result.append(el)
 
     # заповнюємо html сторінку і виводимо її
-    with open(REVENUE_PAGE_PATTERN, 'r', encoding='utf-8') as file:
+    with open(COSTS_PAGE_PATTERN, 'r', encoding='utf-8') as file:
         tmp = file.read()
 
     res_page = fill_page(tmp, result)
 
-    with open(REVENUE_PAGE, 'w', encoding='utf-8') as file:
+    with open(COSTS_PAGE, 'w', encoding='utf-8') as file:
         file.write(res_page)
 
-    print(change_html(REVENUE_PAGE))
+    print(change_html(COSTS_PAGE))
