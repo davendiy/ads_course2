@@ -48,7 +48,7 @@ if any([param in form for param in POST_PARAMS]):
     with open(REVENUE_PAGE_PATTERN, 'r', encoding='utf-8') as file:
         tmp = file.read()
 
-    res_page = fill_page(tmp, result)
+    res_page = fill_cr_page(tmp, result)
 
     with open(REVENUE_PAGE, 'w', encoding='utf-8') as file:
         file.write(res_page)

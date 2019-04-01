@@ -1,150 +1,194 @@
 
 
-Content-type: text/html charset=utf-8
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
 
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{type}</title>
-    <style>.header {
-    padding-top: 1%;
-}
-
-.header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-}
-
-.header ul li{
-    float: left;
-}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')Please, fill all the fields (Comments - optional)
 
 
-.header ul li a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
 
 
-li a:hover {background: #111111}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
 
-.table_style {
-    font-family: 'Lato', sans-serif;
-    padding: 15px;
-    border: 1px solid black;
-    width: 40%;
-    margin-top: 1%;
-}
-
-.table_style td {
-    height: 20%;
-    padding: 15px;
-    vertical-align: center;
-}
-
-.table_style tr:nth-child(even) {background-color: #f2f2f2;}
-
-.table_style tr:hover {background: #999999}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
 
 
-.buttons1 {
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    margin-left: 30%;
-    margin-top: 1%;
-    width: 8%;
-    height: 6%;
-    font-size: 20px;
-    text-decoration: none;
-}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
 
-.buttons1:hover {background-color: #999999}
-
-.buttons2 {
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    margin-left: 30%;
-    margin-top: 1%;
-    width: 80px;
-    height: 40px;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.buttons2:hover {background-color: #999999}
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
 
 
-.table_style2 {
-    font-family: 'Lato', sans-serif;
-    padding: 15px;
-    border: 1px solid black;
-    width: 40%;
-    margin-top: 2%;
-}
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
 
 
-.table_style2 td{
-    height: 20%;
-    padding: 15px;
-    vertical-align: center;
-}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
 
-.table_style2 input{
-    margin-bottom: 2%;
-    margin-left: 1%;
-    font-family: 'Lato', sans-serif;
-    font-size: medium;
-}
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
 
 
-.table_style3 {
-    font-family: 'Lato', sans-serif;
-    padding: 15px;
-    /*background-color: #333333;*/
-    /*color: #f2f2f2;*/
-    width: 40%;
-    margin-top: 2%;
-}
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
 
-.table_style3 input{
-    border: 1px solid black;
-    height: 24px;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-}
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
 
-.text_style{
-    font-family: 'Enriqueta', arial, serif;
-    line-height: 1.25;
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 4%;
-}</style>
-</head>
-<body>
 
-    <div class="header">
-        <ul>
-            <li><a href="../front/home_page.html">Home</a></li>
-            <li><a href="../front/costs_page.html">Costs</a></li>
-            <li><a href="../front/revenue_page.html">Revenues</a></li>
-        </ul>
-    </div>
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
 
-    <div align="center">
-    <img src="../{diagram}"/>
-    </div>
-</body>
-</html>
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
 
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '100'), MiniFieldStorage('Category', 'New category'), MiniFieldStorage('Comments', 'testing'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '100'), MiniFieldStorage('Category', 'New category'), MiniFieldStorage('Comments', 'testing'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+Add
+MiniFieldStorage('Revenues', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '3000'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', '...'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '3000'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', '...'), MiniFieldStorage('Revenues', 'Submit')])
+Submit
+MiniFieldStorage('Revenues', 'Submit')
+
+=====================error=========================Please, fill all the fields (Comments - optional)
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+=====================error=========================Please, fill all the fields (Comments - optional)
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '1000'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'the last'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '10000'), MiniFieldStorage('Category', 'BIG PRIZE'), MiniFieldStorage('Comments', 'slkdfjsldkfjls'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '10000'), MiniFieldStorage('Category', 'BIG SALARY'), MiniFieldStorage('Comments', 'the last last one'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])

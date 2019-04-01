@@ -7,7 +7,6 @@
 
 from structure import *
 import cgi
-import datetime
 
 
 # зчитуємо форму, яка надсилається
@@ -27,35 +26,5 @@ if any([param in form for param in POST_PARAMS]):
             chosen_type = param
             break
 
-    # зчитуємо всі записи
-    items = data_connector.get_items(item_type=COST, category=chosen_category)
-
-    year, month, day = str(datetime.datetime.now().date()).split('-')
-
-    # словник {"Category_name": "Category_id"}
-    translator = id_dict(data_connector.get_categories(item_type=COST))
-
-    result = []      # відсіюємо ті, які не підходять
-    for el in items:
-        el['Category'] = translator[el['Category_id']]
-        del el['Category_id']
-        tmp_year, tmp_month, tmp_day = el['Date'].split('-')
-        if chosen_type == 'Day' and any([tmp_year != year, tmp_month != month, tmp_day != day]):
-            continue
-        if chosen_type == 'Month' and (tmp_year != year or tmp_month != month):
-            continue
-        if chosen_type == 'Year' and (tmp_year != year):
-            continue
-
-        result.append(el)
-
-    # заповнюємо html сторінку і виводимо її
-    with open(COSTS_PAGE_PATTERN, 'r', encoding='utf-8') as file:
-        tmp = file.read()
-
-    res_page = fill_page(tmp, result)
-
-    with open(COSTS_PAGE, 'w', encoding='utf-8') as file:
-        file.write(res_page)
-
+    update_cr_pages(chosen_category=chosen_category, item_type=COST, chosen_type=chosen_type)
     print(change_html(COSTS_PAGE))

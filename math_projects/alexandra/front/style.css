@@ -30,7 +30,7 @@ li a:hover {background: #111111}
     font-family: 'Lato', sans-serif;
     padding: 15px;
     border: 1px solid black;
-    width: 40%;
+    width: 45%;
     margin-top: 1%;
 }
 
@@ -80,7 +80,7 @@ li a:hover {background: #111111}
     font-family: 'Lato', sans-serif;
     padding: 15px;
     border: 1px solid black;
-    width: 40%;
+    width: 45%;
     margin-top: 2%;
 }
 
@@ -96,14 +96,14 @@ li a:hover {background: #111111}
     margin-left: 1%;
     font-family: 'Lato', sans-serif;
     font-size: medium;
+    background-color: white;
+    color: black;
 }
 
 
 .table_style3 {
     font-family: 'Lato', sans-serif;
     padding: 15px;
-    /*background-color: #333333;*/
-    /*color: #f2f2f2;*/
     width: 40%;
     margin-top: 2%;
 }
@@ -111,6 +111,8 @@ li a:hover {background: #111111}
 .table_style3 input{
     border: 1px solid black;
     height: 24px;
+    color: black;
+    background-color: white;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
 }

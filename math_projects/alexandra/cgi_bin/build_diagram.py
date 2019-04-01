@@ -27,6 +27,7 @@ if COST in form or REVENUE in form:
     indexes = np.arange(len(labels))
     width = 0.6
 
+    fig = plt.figure(figsize=(9, 7))
     plt.bar(indexes, values, width)
     plt.xticks(indexes + width * 0.5, labels)
 

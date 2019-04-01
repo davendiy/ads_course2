@@ -14,6 +14,7 @@ REVENUE_PAGE_PATTERN = 'front/revenue_page_pattern.html'
 
 DIAGRAM_PATTERN = 'front/diagram.html'
 
+DIALOG_REC_PATTERN = 'front/dialog_add_record.html'
 
 STYLE_SHEET = 'front/style.css'        # шлях до css файлу
 
@@ -30,11 +31,16 @@ HOME_PAGE_PARAMS = ('costs_day',
 DIALOG_PAGE_PARAMS = ('type',
                       'cur_date')
 
+START_ADDING = 'Add'   # параметр методу POST, який вказує, що додавання запису тільки починається
+END_ADDING = 'Submit'       # параметр методу POST, який вказує, що додавання запису закінчується
+
 # Список полів з таблиці REVENUE, які будуть відображатись у GUI
 REVENUE_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
 
 # Список полів з таблиці COST, які будуть відображатись у GUI
 COSTS_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
+
+COMMENTS = 'Comments'    # поле коментарі
 
 # К-ть елементів за умовчанням, які буде видавати пошук
 DEFAULT_N = 40
@@ -66,58 +72,6 @@ FILE_MODE = 'file'
 STRING_MODE = 'string'
 
 
-def change_html(filename_or_page, mode=FILE_MODE):
-    """ Прочитати html сторінку і змінити її у формат,
-    який буде надсилати cgi скрипт
-
-    :param filename_or_page: назва файлу
-    :param mode: вказує в якому режимі працює функція: FILE_MODE - на вхід дано назву файлу
-                                                       STRING_MODE - на вхід дано рядок
-    :return: рядок
-    """
-
-    # замінюємо <!DOCTYPE html> на Content-type: text/html charset=utf-8\n\n
-    if mode == FILE_MODE:
-        with open(filename_or_page, 'r', encoding='utf-8') as file:
-            text = file.read().strip()
-    else:
-        text = filename_or_page
-    text = text.replace('<!DOCTYPE html>', 'Content-type: text/html charset=utf-8\n\n')
-
-    # вставляємо в <head> замість <link rel="stylesheet" href="style.css"> дані з css файла
-    with open(STYLE_SHEET, 'r', encoding='utf-8') as file:
-        style = file.read()
-
-    style = '<style>' + style + '</style>'
-    text = text.replace('<link rel="stylesheet" href="style.css">', style)
-
-    text = text.replace('home_page.html', '../front/home_page.html')
-    text = text.replace('costs_page.html', '../front/costs_page.html')
-    text = text.replace('revenue_page.html', '../front/revenue_page.html')
-    return text
-
-
-def fill_page(page: str, list_values: list) -> str:
-    """ Додати в html текст рядки таблиці
-
-    В html паттерні сторінки (revenue_page_pattern.html i costs_page_pattern.html)
-    таблиця з результатми містить тільки заголоки, після яких стоїть коментар <!-- {} -->
-    замість цього коментаря необхідно вставити код, який імплементуватиме рядок таблиці
-
-    :param page: рядок з html кодом, в якому наявний '<!-- {} -->'
-    :param list_values: [{"Sum": ...,
-                          "Id": ...,
-                          "Category: ...,
-                          "Date": ...,
-                          "Comments": ...}] - список словників, які повертає BudgetCollection
-    :return:
-    """
-    tmp = ''
-    for el in list_values:
-        tmp += HTML_PIECE.format(**el)         # формуємо послідовність рядків таблиці
-    return page.format(tmp)
-
-
 def name_dict(dicts_list) -> dict:
     """ Функція, яка з списку словників (дані з бази даних) формує
     словник {Name: id}
@@ -144,11 +98,11 @@ def id_dict(dicts_list):
     return res
 
 
-def fill_home(page, costs_day=0, costs_month=0, revenue_month=0, balance=0):
-    return page.format(costs_day=costs_day,
-                       costs_month=costs_month,
-                       revenues_month=revenue_month,
-                       balance=balance)
+class ErrorBadDate(Exception):
+
+    def __str__(self):
+        return 'Please, enter the correct date in format yyyy-mm-dd.'
+
 
 if __name__ == '__main__':
     print(change_html('/files/univer/python/course2/math_projects/alexandra/front/home_page.html'))

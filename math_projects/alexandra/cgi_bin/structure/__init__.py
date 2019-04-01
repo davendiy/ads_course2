@@ -3,6 +3,7 @@
 
 from .other_functions import *
 from .database import *
+from .html_redactors import *
 
 __all__ = ['HOME_PAGE',
            'HOME_PAGE_PARAMS',
@@ -23,7 +24,7 @@ __all__ = ['HOME_PAGE',
            'POST_PARAMS',
            'id_dict',
            'name_dict',
-           'fill_page',
+           'fill_cr_page',
            'HTML_PIECE',
            'STYLE_SHEET',
            'fill_home',
@@ -35,4 +36,13 @@ __all__ = ['HOME_PAGE',
            'DIAGRAM_PATTERN',
            'FILE_MODE',
            'STRING_MODE',
+           'DIALOG_REC_PATTERN',
+           'START_ADDING',
+           'END_ADDING',
+           'COMMENTS',
+           'showerror',
+           'ErrorBadDate',
+           'showinfo',
+           'update_cr_pages',
+           'update_home_page',
            ]
