@@ -13,18 +13,14 @@ def fill_home(page, costs_day=0, costs_month=0, revenue_month=0, balance=0):
 
 
 def showerror(message):
-    # with open('logs.log', 'a') as file:
-    #     file.write('\n\n=====================error=========================')
-    #     file.write(str(message))
-    #     file.write('\n')
-    ...
+    """ Вивести html сторінку з помилкою на екран
 
-def showinfo(message):
-    # with open('logs.log', 'a') as file:
-    #     file.write('\n\n=====================info=========================')
-    #     file.write(str(message))
-    #     file.write('\n')
-    ...
+    :param message: повідомлення
+    """
+    with open(ERROR_PAGE, 'r', encoding='utf-8') as file:
+        page = file.read().format(message=str(message))
+    print(change_html(page, mode=STRING_MODE))
+
 
 def change_html(filename_or_page, mode=FILE_MODE):
     """ Прочитати html сторінку і змінити її у формат,
@@ -79,6 +75,15 @@ def fill_cr_page(page: str, list_values: list) -> str:
 
 
 def update_cr_pages(chosen_category='', item_type=COST, chosen_type=''):
+    """ Наповнити сторінки з доходами і витратами свіжою інформацією.
+
+    Функція бере шаблон сторінки і вставляє куди треба рядки таблиці, які
+    бере з бази даних.
+
+    :param chosen_category: елементи якої категорії мають виводитись
+    :param item_type: COST or REVENUE
+    :param chosen_type: Day/ Month/ Year/ All time
+    """
     # зчитуємо всі записи
     items = data_connector.get_items(item_type=item_type, category=chosen_category)
 
@@ -101,9 +106,12 @@ def update_cr_pages(chosen_category='', item_type=COST, chosen_type=''):
 
         result.append(el)
 
+    # шлях до шаблону
     pattern = COSTS_PAGE_PATTERN if item_type == COST else REVENUE_PAGE_PATTERN
+
+    # шлях до сторінки
     page = COSTS_PAGE if item_type == COST else REVENUE_PAGE
-    # заповнюємо html сторінку і виводимо її
+
     with open(pattern, 'r', encoding='utf-8') as file:
         tmp = file.read()
 
@@ -114,9 +122,12 @@ def update_cr_pages(chosen_category='', item_type=COST, chosen_type=''):
 
 
 def update_home_page(year, month, day):
+    """ Наповнити домашню сторінку свіжими даними
+    """
     with open(HOME_PAGE_PATTERN, 'r', encoding='utf-8') as file:
         page = file.read()
 
+    # послідовно обчислюємо суми за день і місяць для доходів і витрат та передаємо їх як параметри
     page = fill_home(page, costs_day=data_connector.get_sum(year=year, month=month, day=day, item_type=COST),
                      costs_month=data_connector.get_sum(year=year, month=month, item_type=COST),
                      revenue_month=data_connector.get_sum(year=year, month=month, item_type=REVENUE),

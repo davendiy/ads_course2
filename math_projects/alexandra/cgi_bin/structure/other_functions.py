@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-
 # шляхи до html сторінок
 HOME_PAGE = 'front/home_page.html'
 COSTS_PAGE = 'front/costs_page.html'
@@ -13,6 +12,7 @@ COSTS_PAGE_PATTERN = 'front/costs_page_pattern.html'
 REVENUE_PAGE_PATTERN = 'front/revenue_page_pattern.html'
 
 DIAGRAM_PATTERN = 'front/diagram.html'
+ERROR_PAGE = 'front/error_page.html'
 
 DIALOG_REC_PATTERN = 'front/dialog_add_record.html'
 
@@ -96,13 +96,3 @@ def id_dict(dicts_list):
     for el in dicts_list:
         res[el['id']] = el['Name']
     return res
-
-
-class ErrorBadDate(Exception):
-
-    def __str__(self):
-        return 'Please, enter the correct date in format yyyy-mm-dd.'
-
-
-if __name__ == '__main__':
-    print(change_html('/files/univer/python/course2/math_projects/alexandra/front/home_page.html'))

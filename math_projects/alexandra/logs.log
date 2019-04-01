@@ -192,3 +192,27 @@ FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
 
 
 FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
