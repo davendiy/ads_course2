@@ -14,7 +14,7 @@ PORT = 8001             # Порт для з'єднання
 year, month, day = str(datetime.datetime.now().date()).split('-')
 
 update_cr_pages(item_type=COST)     # оновлюємо сторінки
-update_cr_pages(item_type=REVENUES)
+update_cr_pages(item_type=REVENUE)
 update_home_page(year, month, day)
 
 print('=== Local webserver ===')

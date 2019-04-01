@@ -2,7 +2,7 @@
 # -*-encoding: utf-8-*-
 
 import cgi
-from .structure import *
+from structure import *
 import datetime
 
 

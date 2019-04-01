@@ -84,13 +84,19 @@ def update_cr_pages(chosen_category='', item_type=COST, chosen_type=''):
     :param item_type: COST or REVENUE
     :param chosen_type: Day/ Month/ Year/ All time
     """
+
+    # перевіряємо коретність категорії
+    categories = data_connector.get_categories(item_type=item_type)
+    if chosen_category not in name_dict(categories):
+        chosen_category = ''
+
     # зчитуємо всі записи
     items = data_connector.get_items(item_type=item_type, category=chosen_category)
 
     year, month, day = str(datetime.datetime.now().date()).split('-')
 
     # словник {"Category_ID": "Category_name"}
-    translator = id_dict(data_connector.get_categories(item_type=item_type))
+    translator = id_dict(categories)
 
     result = []      # відсіюємо ті, які не підходять
     for el in items:
