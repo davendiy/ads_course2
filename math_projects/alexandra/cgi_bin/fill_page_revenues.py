@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from math_projects.alexandra.cgi_bin.structure import *
+from structure import *
 import cgi
 import datetime
 
