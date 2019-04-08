@@ -1,5 +1,6 @@
 .header {
     padding-top: 1%;
+
 }
 
 .header ul {
@@ -7,7 +8,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: darkmagenta;
 }
 
 .header ul li{
@@ -19,17 +20,19 @@
     display: block;
     color: white;
     text-align: center;
+    height: 24px;
     padding: 16px;
     text-decoration: none;
 }
 
 
-li a:hover {background: #111111}
+li a:hover {background: crimson}
 
 .table_style {
     font-family: 'Lato', sans-serif;
     padding: 15px;
-    border: 1px solid black;
+    border: 1px solid darkblue;
+    color: darkgreen;
     width: 45%;
     margin-top: 1%;
 }
@@ -42,14 +45,14 @@ li a:hover {background: #111111}
 
 .table_style tr:nth-child(even) {background-color: #f2f2f2;}
 
-.table_style tr:hover {background: #999999}
+.table_style tr:hover {background: cornsilk}
 
 
 .buttons1 {
     font-family: 'Lato', sans-serif;
-    background-color: white;
-    border: 2px solid black;
-    color: black;
+    background-color: cadetblue;
+    border: 2px solid mediumvioletred;
+    color: white;
     margin-left: 30%;
     margin-top: 1%;
     width: 8%;
@@ -73,15 +76,17 @@ li a:hover {background: #111111}
     text-decoration: none;
 }
 
-.buttons2:hover {background-color: #999999}
+.buttons2:hover {background-color: cadetblue}
 
 
 .table_style2 {
     font-family: 'Lato', sans-serif;
     padding: 15px;
-    border: 1px solid black;
+    border: 1px solid darkviolet;
     width: 45%;
     margin-top: 2%;
+    background-color: brown;
+    color: white;
 }
 
 
@@ -104,9 +109,13 @@ li a:hover {background: #111111}
 .table_style3 {
     font-family: 'Lato', sans-serif;
     padding: 15px;
-    width: 40%;
-    margin-top: 2%;
+    width: 100%;
+    margin-top: 1%;
+    height: 2%;
+    background-color: brown;
+    color: white;
 }
+
 
 .table_style3 input{
     border: 1px solid black;
@@ -115,6 +124,7 @@ li a:hover {background: #111111}
     background-color: white;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+
 }
 
 .text_style{
@@ -124,4 +134,5 @@ li a:hover {background: #111111}
     font-weight: bold;
     margin-top: 3%;
     margin-bottom: 1%;
+    color: brown;
 }

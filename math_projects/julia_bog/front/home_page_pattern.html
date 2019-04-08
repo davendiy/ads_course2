@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="">Add Item</a></li>
+            <li><a href="">Report</a></li>
+        </ul>
+    </div>
+
+
+    <div align="center">
+        <form method="post" action="../cgi_bin/fill_home_page.py">
+            <table class="table_style3" >
+                <tr>
+                    <td>Piece of name:</td>
+                    <td><label><input type="text" name="Name"></label></td>
+                    <td>Category:</td>
+                    <td><label><input type="text" name="Category"></label></td>
+                    <td><input type="submit" name="Day" value="Find!" class="buttons2"></td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div align="center">
+        <table class="table_style">
+            <tr>
+                <td><b>id</b></td>
+                <td><b>Name</b></td>
+                <td><b>Category</b></td>
+                <td><b>Department_id</b></td>
+                <td><b>Build_number</b></td>
+                <td><b>Shelf_number</b></td>
+            </tr>
+
+            {}
+        </table>
+    </div>
+
+</body>
+</html>

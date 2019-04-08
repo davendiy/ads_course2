@@ -50,7 +50,7 @@ REVENUE = 'Revenues'
 COST = 'Costs'
 
 # шлях за умовчанням до бази даних
-DEFAULT_DATABASE = 'budget.db'
+DEFAULT_DATABASE = 'storage.db'
 
 # параметри, які надсилає сторінка з витратами або доходами через метод POST
 POST_PARAMS = ['Day', 'Month', 'Year', 'Category', 'All_time']
@@ -59,10 +59,11 @@ POST_PARAMS = ['Day', 'Month', 'Year', 'Category', 'All_time']
 HTML_PIECE = """
             <tr>
                 <td>{id}</td>
-                <td>{Date}</td>
-                <td>{Sum}</td>
+                <td>{Name}</td>
                 <td>{Category}</td>
-                <td>{Comments}</td>
+                <td>{Department_id}</td>
+                <td>{Build_number}</td>
+                <td>{Shelf_number}</td>
             </tr>
 """
 

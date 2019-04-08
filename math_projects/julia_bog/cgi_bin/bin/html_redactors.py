@@ -49,8 +49,8 @@ def change_html(filename_or_page, mode=FILE_MODE):
     text = text.replace('<link rel="stylesheet" href="style.css">', style)
 
     text = text.replace('home_page.html', '../front/home_page.html')
-    text = text.replace('costs_page.html', '../front/costs_page.html')
-    text = text.replace('revenue_page.html', '../front/revenue_page.html')
+    # text = text.replace('costs_page.html', '../front/costs_page.html')
+    # text = text.replace('revenue_page.html', '../front/revenue_page.html')
     return text
 
 

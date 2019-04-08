@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Storage</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="">Add Item</a></li>
+            <li><a href="">Report</a></li>
+        </ul>
+    </div>
+
+    <div class="text_style" align="center">
+    Add the new item
+    </div>
+
+    <div align="center">
+        <form method="post" action="../cgi_bin/dialog_add_record.py">
+            <table class="table_style2">
+                <tr>
+                    <td>Name: </td>
+                    <td>
+                        <label><input type="text" name='Name' value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Category: </td>
+                    <td>
+                        <label><input type="text" name="Category" value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Department_id:</td>
+                    <td>
+                        <label><input type="text" name="Department_id" value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Build_number:</td>
+                    <td>
+                        <label><input type="text" name="Build_number" value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Shelf_number:</td>
+                    <td>
+                        <label><input type="text" name="Shelf_number" value=""></label>
+                    </td>
+                </tr>
+
+            </table>
+            <input type="submit" class="buttons1" name="{type}" value="Submit">
+        </form>
+    </div>
+
+
 
 </body>
 </html>
