@@ -23,6 +23,12 @@ def showerror(message):
     print(change_html(page, mode=STRING_MODE))
 
 
+def showhref(path, message):
+    with open(FINAL_PAGE, 'r', encoding='utf-8') as file:
+        page = file.read().format(message=str(message), href=path)
+    print(change_html(page, mode=STRING_MODE))
+
+
 def change_html(filename_or_page, mode=FILE_MODE):
     """ Прочитати html сторінку і змінити її у формат,
     який буде надсилати cgi скрипт

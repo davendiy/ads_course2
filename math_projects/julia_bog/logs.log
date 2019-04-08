@@ -1,0 +1,114 @@
+category: New category,
+category_id: 12312319
+
+category: ,
+category_id: 
+
+category: New category,
+category_id: 12312319
+
+category: ,
+category_id: 
+
+category: ,
+category_id: 
+items: [{'id': 8, 'Name': 'skdjghkdf', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 9, 'Name': 'value', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}, {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}, {'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}, {'id': 30, 'Name': 'Sharp shl23', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 4534543536}, {'id': 31, 'Name': 'Samsung Galaxy A520f grey', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 45345432423}, {'id': 32, 'Name': 'the last test item', 'Category_id': 12312318, 'Department_id': 1314234, 'Build_number': 2342342, 'Shelf_number': 2342342}, {'id': 33, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 34, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 35, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 36, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 37, 'Name': 'Sharp', 'Category_id': 12312315, 'Department_id': 123123, 'Build_number': 23, 'Shelf_number': 1231}]
+
+category: New category,
+category_id: 12312319
+items: []
+
+category: Electronic,
+category_id: 12312315
+items: []
+
+category: ,
+category_id: 
+items: [{'id': 8, 'Name': 'skdjghkdf', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 9, 'Name': 'value', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}, {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}, {'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}, {'id': 30, 'Name': 'Sharp shl23', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 4534543536}, {'id': 31, 'Name': 'Samsung Galaxy A520f grey', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 45345432423}, {'id': 32, 'Name': 'the last test item', 'Category_id': 12312318, 'Department_id': 1314234, 'Build_number': 2342342, 'Shelf_number': 2342342}, {'id': 33, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 34, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 35, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 36, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 37, 'Name': 'Sharp', 'Category_id': 12312315, 'Department_id': 123123, 'Build_number': 23, 'Shelf_number': 1231}]
+items2: [{'id': 8, 'Name': 'skdjghkdf', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 9, 'Name': 'value', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}, {'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}, {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}, {'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}, {'id': 30, 'Name': 'Sharp shl23', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 4534543536}, {'id': 31, 'Name': 'Samsung Galaxy A520f grey', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 45345432423}, {'id': 32, 'Name': 'the last test item', 'Category_id': 12312318, 'Department_id': 1314234, 'Build_number': 2342342, 'Shelf_number': 2342342}, {'id': 33, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 34, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 35, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 36, 'Name': 'new item', 'Category_id': 12312320, 'Department_id': 13, 'Build_number': 1232, 'Shelf_number': 1231}, {'id': 37, 'Name': 'Sharp', 'Category_id': 12312315, 'Department_id': 123123, 'Build_number': 23, 'Shelf_number': 1231}]
+category: Electronic,
+category_id: 12312315
+
+
+item for release: 19
+
+
+
+item for release: (19, 'new item233', 12312316, 2342342, 2334222, 23342342)
+
+
+
+item for release: {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}
+
+
+
+item for release: {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}
+
+
+
+item for release: []
+
+
+
+item for release: {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}
+
+
+
+item for release: {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('End', 'Release')])
+
+item for release: {'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '10'), MiniFieldStorage('Name', ' value dsgd'), MiniFieldStorage('Category', 'Electronic'), MiniFieldStorage('Department_id', '234234'), MiniFieldStorage('Build_number', '323123'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+item for release: []
+
+
+
+item for release: {'id': 9, 'Name': 'value', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '9'), MiniFieldStorage('Name', 'value'), MiniFieldStorage('Category', 'Electronic'), MiniFieldStorage('Department_id', '234234'), MiniFieldStorage('Build_number', '323123'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '9'), MiniFieldStorage('Name', 'value'), MiniFieldStorage('Category', 'Electronic'), MiniFieldStorage('Department_id', '234234'), MiniFieldStorage('Build_number', '323123'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+item for release: {'id': 8, 'Name': 'skdjghkdf', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '8'), MiniFieldStorage('Name', 'skdjghkdf'), MiniFieldStorage('Category', 'Electronic'), MiniFieldStorage('Department_id', '234234'), MiniFieldStorage('Build_number', '323123'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+item for release: []
+
+
+
+item for release: []
+
+
+
+item for release: {'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '17'), MiniFieldStorage('Name', ' sjfjdd2222'), MiniFieldStorage('Category', 'Mechanic'), MiniFieldStorage('Department_id', '12123123'), MiniFieldStorage('Build_number', '12311'), MiniFieldStorage('Shelf_number', '12332'), MiniFieldStorage('End', 'Release')])
+
+item for release: {'id': 41, 'Name': 'final test', 'Category_id': 12312321, 'Department_id': 231, 'Build_number': 123, 'Shelf_number': 222}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '41'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '231'), MiniFieldStorage('Build_number', '123'), MiniFieldStorage('Shelf_number', '222'), MiniFieldStorage('End', 'Release')])
+
+item for release: {'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '19'), MiniFieldStorage('Name', 'new item233'), MiniFieldStorage('Category', 'Mechanic'), MiniFieldStorage('Department_id', '2342342'), MiniFieldStorage('Build_number', '2334222'), MiniFieldStorage('Shelf_number', '23342342'), MiniFieldStorage('End', 'Release')])
+
+item for release: {'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}
+

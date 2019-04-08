@@ -116,6 +116,13 @@ class StorageCollection:
         items = self.db.get_data_dicts(query, *params, n=n)
         return items
 
+    def get_item(self, id):
+        query = "SELECT * FROM items WHERE id=?"
+        result = self.db.get_data_dicts(query, id)
+        if result:
+            result = result[0]
+        return result
+
     def get_categories(self):
         """ Отримати список категорій
 
@@ -219,6 +226,19 @@ class StorageCollection:
             result = ''
         return result
 
+    def find_category_name(self, category_id):
+        """ Знайти Name категорії за id.
+
+        Якщо такої категорії не існує - повертає порожній рядок
+        :param category_id: рядок - id категорії
+        :return: рядок - назва категорії
+        """
+        result = self.db.get_one_result('SELECT Name FROM categories WHERE id=?', category_id)
+        if result:
+            result = result[0]
+        else:
+            result = ''
+        return result
 
 data_curs = StorageDB(DEFAULT_DATABASE)
 data_connector = StorageCollection(data_curs)

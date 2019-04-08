@@ -7,6 +7,9 @@ HOME_PAGE = 'front/home_page.html'
 # шляхи до шаблонів html сторінок
 HOME_PAGE_PATTERN = 'front/home_page_pattern.html'
 ADD_PAGE_PATTERN = 'front/add_page.html'
+RELEASE_PAGE_PATTERN = 'front/release_page_pattern.html'
+RELEASE_PAGE = 'front/release_page.html'
+FINAL_PAGE = 'front/final.html'
 
 
 ERROR_PAGE = 'front/error_page.html'
@@ -30,6 +33,11 @@ REPORT_TEMPLATE = 'template.docx'
 ADD_PARAMS = ['Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']
 HOME_PARAMS = ['Name', "Category", 'Find!']
 
+RELEASE_PARAMS = ['id', 'Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']
+
+START_RELEASE = 'Start'
+END_RELEASE = 'End'
+CANCEL_RELEASE = 'Cancel'
 
 # html опис рядка таблиці
 HTML_PIECE = """

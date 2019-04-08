@@ -6,7 +6,6 @@ import cgi
 
 form = cgi.FieldStorage()
 
-
 if all([param in form for param in ADD_PARAMS]):
     data = {param: form[param].value for param in ADD_PARAMS}
     translator = name_dict(data_connector.get_categories())

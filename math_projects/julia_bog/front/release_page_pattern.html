@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="add_page.html">Add Item</a></li>
+        </ul>
+    </div>
+
+    <div class="text_style" align="center">
+    Release this item?
+    </div>
+
+    <div align="center">
+        <form method="post" action="../cgi_bin/release.py">
+            <table class="table_style2">
+                <tr>
+                    <td>id: </td>
+                    <td>
+                        <label><input type="text" name='id' value="{id}" readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Name: </td>
+                    <td>
+                        <label><input type="text" name='Name' value="{Name}" readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Category: </td>
+                    <td>
+                        <label><input type="text" name="Category" value="{Category}" readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Department_id:</td>
+                    <td>
+                        <label><input type="text" name="Department_id" value="{Department_id}" readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Build_number:</td>
+                    <td>
+                        <label><input type="text" name="Build_number" value="{Build_number}" readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Shelf_number:</td>
+                    <td>
+                        <label><input type="text" name="Shelf_number" value="{Shelf_number}" readonly></label>
+                    </td>
+                </tr>
+
+            </table>
+            <input type="submit" class="buttons1" name="Cancel" value="Cancel">
+            <input type="submit" class="buttons1" name="End" value="Release">
+        </form>
+    </div>
+
+
+</body>
+</html>
