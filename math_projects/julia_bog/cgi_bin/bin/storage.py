@@ -142,20 +142,20 @@ class StorageCollection:
             items = self.db.get_data_dicts(query, piece_of_name.lower(), n=n)
         return items
 
-    def add_item(self, name, category_id, department_id, build_number, shelf_number):
+    def add_item(self, Name, Category_id, Department_id, Build_number, Shelf_number):
         """ Додає товар до складу
 
-        :param name: назва (будь-яка)
-        :param category_id: ід катеогорії (необхідно взяти з categories за назвою)
-        :param department_id: будь-який ід
-        :param build_number: будь-який ід
-        :param shelf_number: будь-який ід
+        :param Name: назва (будь-яка)
+        :param Category_id: ід катеогорії (необхідно взяти з categories за назвою)
+        :param Department_id: будь-який ід
+        :param Build_number: будь-який ід
+        :param Shelf_number: будь-який ід
         """
         query = 'INSERT into items(Name, Category_id, Department_id, Build_number, Shelf_number) ' \
                 'values (?, ?, ?, ?, ?)'
 
         curs = self.db.get_cursor()
-        curs.execute(query, (name, category_id, department_id, build_number, shelf_number))
+        curs.execute(query, (Name, Category_id, Department_id, Build_number, Shelf_number))
         self.db.close()
 
     def change_item(self, item_id, name, category_id, department_id, build_number, shelf_number):
@@ -226,10 +226,8 @@ data_connector = StorageCollection(data_curs)
 
 if __name__ == '__main__':
 
-    # тестування (власноруч)
-    test = StorageCollection('source.db')
     while True:
         try:
-            eval(input('--> '))
+            print(eval(input('--> ')))
         except Exception as e:
             print(e)

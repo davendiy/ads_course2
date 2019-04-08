@@ -9,11 +9,12 @@ form = cgi.FieldStorage()
 if any([param in form for param in HOME_PARAMS]):
     name = '' if 'Name' not in form else form['Name'].value
     category = '' if 'Category' not in form else form['Category'].value
+    category_id = ''
 
     if category:
-        category = data_connector.find_category_id(category)
+        category_id = data_connector.find_category_id(category)
 
-    result = data_connector.find_item(piece_of_name=name, category=category)
+    result = data_connector.find_item(piece_of_name=name, category=category_id)
     with open(HOME_PAGE_PATTERN, 'r', encoding='utf-8') as file:
         page = file.read()
 

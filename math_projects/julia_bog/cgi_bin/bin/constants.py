@@ -9,48 +9,22 @@ HOME_PAGE_PATTERN = 'front/home_page_pattern.html'
 ADD_PAGE_PATTERN = 'front/add_page.html'
 
 
-DIAGRAM_PATTERN = 'front/diagram.html'
 ERROR_PAGE = 'front/error_page.html'
 
-DIALOG_REC_PATTERN = 'front/dialog_add_record.html'
-
 STYLE_SHEET = 'front/style.css'        # шлях до css файлу
-
-DIAGRAM_COSTS = 'diagram_costs.png'      # шлях до файлу, куди буде збережено діаграму
-DIAGRAM_REVENUES = 'diagram_revenues.png'
-
-# параметри, які необхідно вставляти в домашню сторінку
-HOME_PAGE_PARAMS = ('costs_day',
-                    'costs_month',
-                    'revenues_month',
-                    'balance')
-
-# параметри, які необхідно вставляти в сторінку створення нового запису
-DIALOG_PAGE_PARAMS = ('type',
-                      'cur_date')
-
-START_ADDING = 'Add'   # параметр методу POST, який вказує, що додавання запису тільки починається
-END_ADDING = 'Submit'       # параметр методу POST, який вказує, що додавання запису закінчується
-
-# Список полів з таблиці REVENUE, які будуть відображатись у GUI
-REVENUE_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
-
-# Список полів з таблиці COST, які будуть відображатись у GUI
-COSTS_FIELDS = ('id', 'Date', 'Sum', 'Category', 'Comments')
-
-COMMENTS = 'Comments'    # поле коментарі
 
 # К-ть елементів за умовчанням, які буде видавати пошук
 DEFAULT_N = 40
 
-# Константа, що означає тип транзакції 'Дохід'. Збігається з назвою таблиці з доходами
-REVENUE = 'Revenues'
-
-# Константа, що означає тип транзакції 'Витрата'. Збігається з назвою таблиці з витратами
-COST = 'Costs'
-
 # шлях за умовчанням до бази даних
 DEFAULT_DATABASE = 'storage.db'
+
+# Назва тимчасового exel файлу
+TMP_FILE_NAME = '___tmp.xlsx'
+
+DEFAULT_REPORT = 'report.docx'
+
+REPORT_TEMPLATE = 'template.docx'
 
 # параметри, які надсилає сторінка з витратами або доходами через метод POST
 ADD_PARAMS = ['Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']

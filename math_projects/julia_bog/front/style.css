@@ -68,7 +68,8 @@ li a:hover {background: crimson}
     background-color: white;
     border: 2px solid black;
     color: black;
-    margin-left: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 1%;
     width: 80px;
     height: 40px;
