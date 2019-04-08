@@ -53,7 +53,9 @@ COST = 'Costs'
 DEFAULT_DATABASE = 'storage.db'
 
 # параметри, які надсилає сторінка з витратами або доходами через метод POST
-POST_PARAMS = ['Day', 'Month', 'Year', 'Category', 'All_time']
+ADD_PARAMS = ['Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']
+HOME_PARAMS = ['Name', "Category", 'Find!']
+
 
 # html опис рядка таблиці
 HTML_PIECE = """

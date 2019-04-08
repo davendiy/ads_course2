@@ -11,7 +11,7 @@
 
 from http.server import HTTPServer, CGIHTTPRequestHandler
 import datetime
-from .cgi_bin.bin import *
+from cgi_bin.bin import *
 
 # необхідно змінити cgi-bin на cgi_bin щоб можна було імпортувати пакет з цієї папки
 CGIHTTPRequestHandler.cgi_directories = ['/cgi_bin', '/htbin']

@@ -205,6 +205,20 @@ class StorageCollection:
         curs.execute('DELETE FROM items WHERE Category_id=?', (item_id[0],))
         self.db.close()
 
+    def find_category_id(self, category):
+        """ Знайти id категорії за частиною імені.
+
+        Якщо такої категорії не існує - повертає порожній рядок
+        :param category: рядок - назва категорії
+        :return: рядок - id категорії
+        """
+        result = self.db.get_one_result('SELECT id FROM categories WHERE Name LIKE ?', category)
+        if result:
+            result = result[0]
+        else:
+            result = ''
+        return result
+
 
 data_curs = StorageDB(DEFAULT_DATABASE)
 data_connector = StorageCollection(data_curs)
