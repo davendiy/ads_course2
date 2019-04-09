@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="costs_page.html">Costs</a></li>
+            <li><a href="revenue_page.html">Revenues</a></li>
+        </ul>
+    </div>
+
+
+    <div align="center">
+        <table class="table_style">
+            <tr>
+                <td><b>Costs</b></td>
+                <td><b>UAH</b></td>
+            </tr>
+
+            <tr>
+                <td>Day</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Month</td>
+                <td>5400</td>
+            </tr>
+
+        </table>
+
+
+        <form method="post" action="../cgi_bin/dialog_add_record.py" name="start">
+            <input class="buttons1" type="submit" name="Costs" value="Add">
+        </form>
+
+        <table class="table_style">
+            <tr>
+                <td><b>Revenue</b></td>
+                <td><b>UAH</b></td>
+            </tr>
+
+            <tr>
+                <td>Month</td>
+                <td>21200</td>
+            </tr>
+
+        </table>
+
+        <form method="post" action="../cgi_bin/dialog_add_record.py" name="start">
+            <input class="buttons1" type="submit" name="Revenues" value="Add">
+        </form>
+
+        <table class="table_style">
+            <tr>
+                <td><b>Balance</b></td>
+                <td><b>UAH</b></td>
+            </tr>
+
+            <tr>
+                <td>All time</td>
+                <td>16750</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+</html>

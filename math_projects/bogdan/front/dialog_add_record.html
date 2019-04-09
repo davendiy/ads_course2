@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!-- params: type, cur_date -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home budget</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="costs_page.html">Costs</a></li>
+            <li><a href="revenue_page.html">Revenues</a></li>
+        </ul>
+    </div>
+
+    <div class="text_style" align="center">
+    Add the new {type}
+    </div>
+
+    <div align="center">
+        <form method="post" action="../cgi_bin/dialog_add_record.py">
+            <table class="table_style2">
+                <tr>
+                    <td>Date: </td>
+                    <td>
+                        <label><input type="text" name='Date' value="{cur_date}"></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sum: </td>
+                    <td>
+                        <label><input type="text" name="Sum" value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Category:</td>
+                    <td>
+                        <label><input type="text" name="Category" value=""></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Comments:</td>
+                    <td>
+                        <label><input type="text" name="Comments" value=""></label>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" class="buttons1" name="{type}" value="Submit">
+        </form>
+    </div>
+
+
+</body>
+</html>

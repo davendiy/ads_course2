@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="costs_page.html">Costs</a></li>
+            <li><a href="revenue_page.html">Revenues</a></li>
+        </ul>
+    </div>
+
+    <div align="center">
+        <form method="post" action="../cgi_bin/fill_page_revenues.py">
+            <table class="table_style3" >
+                <tr>
+                    <td>Category:</td>
+                    <td><label><input type="text" name="Category"></label></td>
+                    <td><input type="submit" name="Day" value="Day" class="buttons2"></td>
+                    <td><input type="submit" name="Month" value="Month" class="buttons2"></td>
+                    <td><input type='submit' name="Year" value="Year" class="buttons2"></td>
+                    <td><input type='submit' name="All_time" value="All time" class="buttons2"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div align="center">
+        <table class="table_style">
+            <tr>
+                <td><b>Id</b></td>
+                <td><b>Date</b></td>
+                <td><b>Sum</b></td>
+                <td><b>Category</b></td>
+                <td><b>Comments</b></td>
+            </tr>
+
+            
+            <tr>
+                <td>3</td>
+                <td>2019-03-09</td>
+                <td>1200</td>
+                <td>Prize</td>
+                <td>prize for olympiad</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>2019-03-09</td>
+                <td>2000</td>
+                <td>Salary</td>
+                <td>salary so big</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>2019-04-01</td>
+                <td>1000</td>
+                <td>Salary</td>
+                <td>test record of web2</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>2019-04-01</td>
+                <td>200</td>
+                <td>Prize</td>
+                <td>test record of web</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>2019-04-01</td>
+                <td>10000</td>
+                <td>BIG PRIZE</td>
+                <td>slkdfjsldkfjls</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>2019-04-01</td>
+                <td>10000</td>
+                <td>BIG SALARY</td>
+                <td>the last last one</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="buttons_list">
+    <form method="post" action="../cgi_bin/build_diagram.py">
+        <input class="buttons1" type="submit" name="Revenues" value="Diagram">
+    </form>
+    </div>
+</body>
+</html>

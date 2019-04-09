@@ -1,0 +1,248 @@
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')Please, fill all the fields (Comments - optional)
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test from firefox'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '100'), MiniFieldStorage('Category', 'New category'), MiniFieldStorage('Comments', 'testing'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '100'), MiniFieldStorage('Category', 'New category'), MiniFieldStorage('Comments', 'testing'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+Add
+MiniFieldStorage('Revenues', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '3000'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', '...'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '3000'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', '...'), MiniFieldStorage('Revenues', 'Submit')])
+Submit
+MiniFieldStorage('Revenues', 'Submit')
+
+=====================error=========================Please, fill all the fields (Comments - optional)
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+Add
+MiniFieldStorage('Costs', 'Add')
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+Submit
+MiniFieldStorage('Costs', 'Submit')
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+=====================error=========================Please, fill all the fields (Comments - optional)
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Prize'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Salary'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '1000'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'the last'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '10000'), MiniFieldStorage('Category', 'BIG PRIZE'), MiniFieldStorage('Comments', 'slkdfjsldkfjls'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Revenues', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '10000'), MiniFieldStorage('Category', 'BIG SALARY'), MiniFieldStorage('Comments', 'the last last one'), MiniFieldStorage('Revenues', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-0ваів'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01dfs'), MiniFieldStorage('Sum', '300'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Food'), MiniFieldStorage('Comments', 'the last'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Costs', 'Add')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Costs', 'Submit')])
+
+
+FieldStorage(None, None, [MiniFieldStorage('Date', '2019-04-01'), MiniFieldStorage('Sum', '200'), MiniFieldStorage('Category', 'Clothin'), MiniFieldStorage('Comments', 'test record of web2'), MiniFieldStorage('Costs', 'Submit')])
