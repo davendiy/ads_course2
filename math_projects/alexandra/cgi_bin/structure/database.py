@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-#!/usr/bin/env python3
-# -*-encoding: utf-8-*-
-
 """ Модуль з класами для зв'язку з базою даних.
 
 
