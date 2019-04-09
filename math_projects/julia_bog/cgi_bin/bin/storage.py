@@ -117,6 +117,11 @@ class StorageCollection:
         return items
 
     def get_item(self, id):
+        """ Знайти елемент за id
+
+        :param id: рядок-число
+        :return: {id: ..., Name: ..., ..}
+        """
         query = "SELECT * FROM items WHERE id=?"
         result = self.db.get_data_dicts(query, id)
         if result:
@@ -240,13 +245,15 @@ class StorageCollection:
             result = ''
         return result
 
+
+# клієнти бази даних за умовчанням (одні для всього проекта)
 data_curs = StorageDB(DEFAULT_DATABASE)
 data_connector = StorageCollection(data_curs)
 
 
 if __name__ == '__main__':
 
-    while True:
+    while True:         # тестування
         try:
             print(eval(input('--> ')))
         except Exception as e:

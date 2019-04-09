@@ -101,3 +101,43 @@ KeyboardInterrupt
 ====================2019-03-16 19:41:06.546442====================
 ====================2019-03-23 11:49:29.130200====================
 ====================2019-03-27 22:45:55.214987====================
+====================2019-04-08 16:41:43.406162====================
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/alina_merz/bin/main_window.py", line 254, in _change_element
+    default['Category_id'] = translator[default['Category']]
+KeyError: 'Category'
+====================2019-04-08 17:06:16.759735====================
+====================2019-04-08 18:21:28.588193====================
+====================2019-04-08 18:36:48.099582====================
+====================2019-04-08 20:33:27.829602====================
+====================2019-04-08 21:23:17.424058====================
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/alina_merz/main.py", line 24, in <module>
+    top = tk.Tk()
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 2023, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+KeyboardInterrupt

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Пакет з модулями, необхідними для роботи програми.
+"""
+
 from .constants import *
 from .storage import *
 from .html_redactors import *
@@ -18,7 +21,6 @@ __all__ = ['HOME_PAGE',
            'fill_cr_page',
            'HTML_PIECE',
            'STYLE_SHEET',
-           'fill_home',
            'data_curs',
            'data_connector',
            'FILE_MODE',
@@ -42,4 +44,6 @@ __all__ = ['HOME_PAGE',
            'create_xlsx',
            'FINAL_PAGE',
            'showhref',
+           'AUTHOR',
+           'TMP_FILE_NAME',
            ]

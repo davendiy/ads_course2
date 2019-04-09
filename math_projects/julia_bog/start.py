@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-# todo: change constants
-# todo: config find
-# todo: add backend for dialogs for adding new item
-# todo: don't forget to review comments
-# todo: remove redundant functions
-# todo: config report
-# todo: maybe add the number of items to dialog and modify the search to except repeats
+""" Головна програма, яка запускає сервер і виводить
+посилання на домашню сторінку
+"""
 
 from http.server import HTTPServer, CGIHTTPRequestHandler
-import datetime
 from cgi_bin.bin import *
 
 # необхідно змінити cgi-bin на cgi_bin щоб можна було імпортувати пакет з цієї папки
@@ -19,7 +14,7 @@ CGIHTTPRequestHandler.cgi_directories = ['/cgi_bin', '/htbin']
 HOST = ''               # Комп'ютер для з'єднання
 PORT = 8001             # Порт для з'єднання
 
-
+# оновлюємо домашню сторінку значеннями з бази даних
 data = data_connector.find_item('')
 categories = data_connector.get_categories()
 translator = id_dict(categories)

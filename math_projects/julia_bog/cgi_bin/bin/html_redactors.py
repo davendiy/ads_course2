@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from .storage import *
+""" Модуль з функціями, які змінюють html сторінки
+"""
+
 from .constants import *
-import datetime
-
-
-def fill_home(page, costs_day=0, costs_month=0, revenue_month=0, balance=0):
-    return page.format(costs_day=costs_day,
-                       costs_month=costs_month,
-                       revenues_month=revenue_month,
-                       balance=balance)
 
 
 def showerror(message):
@@ -24,6 +18,11 @@ def showerror(message):
 
 
 def showhref(path, message):
+    """ Показати сторінку з посиланням на файл
+
+    :param path: шлях до файлу, або просто посилання
+    :param message: текст, який буде посиланням
+    """
     with open(FINAL_PAGE, 'r', encoding='utf-8') as file:
         page = file.read().format(message=str(message), href=path)
     print(change_html(page, mode=STRING_MODE))
@@ -56,8 +55,6 @@ def change_html(filename_or_page, mode=FILE_MODE):
 
     text = text.replace('home_page.html', '../front/home_page.html')
     text = text.replace('add_page.html', '../front/add_page.html')
-    # text = text.replace('costs_page.html', '../front/costs_page.html')
-    # text = text.replace('revenue_page.html', '../front/revenue_page.html')
     return text
 
 

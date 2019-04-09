@@ -1,40 +1,41 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Глобальні константи та деякі додаткові функції.
+"""
+
+AUTHOR = 'Божок Юлія'
+
 # шляхи до html сторінок
 HOME_PAGE = 'front/home_page.html'
+RELEASE_PAGE = 'front/release_page.html'
+FINAL_PAGE = 'front/final.html'
+ERROR_PAGE = 'front/error_page.html'
 
 # шляхи до шаблонів html сторінок
 HOME_PAGE_PATTERN = 'front/home_page_pattern.html'
 ADD_PAGE_PATTERN = 'front/add_page.html'
 RELEASE_PAGE_PATTERN = 'front/release_page_pattern.html'
-RELEASE_PAGE = 'front/release_page.html'
-FINAL_PAGE = 'front/final.html'
-
-
-ERROR_PAGE = 'front/error_page.html'
 
 STYLE_SHEET = 'front/style.css'        # шлях до css файлу
 
 # К-ть елементів за умовчанням, які буде видавати пошук
 DEFAULT_N = 40
 
-# шлях за умовчанням до бази даних
-DEFAULT_DATABASE = 'storage.db'
+# шляхи за умовчанням
+DEFAULT_DATABASE = 'storage.db'    # до бази даних
+DEFAULT_REPORT = 'report.docx'     # до файлу, в якому буде зберігатись звіт
+REPORT_TEMPLATE = 'template.docx'  # до шаблону звіту
 
 # Назва тимчасового exel файлу
 TMP_FILE_NAME = '___tmp.xlsx'
 
-DEFAULT_REPORT = 'report.docx'
-
-REPORT_TEMPLATE = 'template.docx'
-
-# параметри, які надсилає сторінка з витратами або доходами через метод POST
+# параметри, які надсилають сторінки через метод POST
 ADD_PARAMS = ['Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']
 HOME_PARAMS = ['Name', "Category", 'Find!']
-
 RELEASE_PARAMS = ['id', 'Name', 'Category', 'Build_number', 'Department_id', 'Shelf_number']
 
+# додаткові параметри методу POST, які визначають режим роботи
 START_RELEASE = 'Start'
 END_RELEASE = 'End'
 CANCEL_RELEASE = 'Cancel'
@@ -51,8 +52,8 @@ HTML_PIECE = """
             </tr>
 """
 
-FILE_MODE = 'file'
-STRING_MODE = 'string'
+FILE_MODE = 'file'      # параметри функцій з html_redactors, які визначають режим,
+STRING_MODE = 'string'  # в якому змінюється сторінка
 
 
 def name_dict(dicts_list) -> dict:

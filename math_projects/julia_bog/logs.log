@@ -112,3 +112,35 @@ release form: FieldStorage(None, None, [MiniFieldStorage('id', '19'), MiniFieldS
 
 item for release: {'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}
 
+
+
+item for release: {'id': 42, 'Name': 'final test', 'Category_id': 12312321, 'Department_id': 12324234, 'Build_number': 434234, 'Shelf_number': 2342342}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+report parameters: {'id': '42', 'Name': 'final test', 'Category': 'Final category', 'Build_number': '434234', 'Department_id': '12324234', 'Shelf_number': '2342342', 'Category_id': 12312321, 'cur_date': '2019-04-09', 'author': 'Божок Юлія'}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+report parameters: {'id': '42', 'Name': 'final test', 'Category': 'Final category', 'Build_number': '434234', 'Department_id': '12324234', 'Shelf_number': '2342342', 'Category_id': 12312321, 'cur_date': '2019-04-09', 'author': 'Божок Юлія'}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+report parameters: {'id': '42', 'Name': 'final test', 'Category': 'Final category', 'Build_number': '434234', 'Department_id': '12324234', 'Shelf_number': '2342342', 'Category_id': 12312321, 'cur_date': '2019-04-09', 'author': 'Божок Юлія'}
+
+
+
+release form: FieldStorage(None, None, [MiniFieldStorage('id', '42'), MiniFieldStorage('Name', 'final test'), MiniFieldStorage('Category', 'Final category'), MiniFieldStorage('Department_id', '12324234'), MiniFieldStorage('Build_number', '434234'), MiniFieldStorage('Shelf_number', '2342342'), MiniFieldStorage('End', 'Release')])
+
+report parameters: {'id': '42', 'Name': 'final test', 'Category': 'Final category', 'Build_number': '434234', 'Department_id': '12324234', 'Shelf_number': '2342342', 'Category_id': 12312321, 'cur_date': '2019-04-09', 'author': 'Божок Юлія'}
+
