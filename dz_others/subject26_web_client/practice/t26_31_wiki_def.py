@@ -1,7 +1,7 @@
 # T26_31 Отримання означення з вікіпедії за запитом.
 
 import html.parser
-from t26_01_get_url_v2 import *
+from .t26_01_get_url_v2 import *
 from urllib.request import urlopen
 from urllib.parse import urlencode
 from urllib.error import HTTPError
