@@ -10,3 +10,12 @@ LINK = 'Links'
 
 # назва таблиці категорій
 CATEGORIES = 'Categories'
+
+DEFAULT_DATABASE = 'data.db'
+
+DEFAULT_LOG_CLIENT = 'parser_client.log'
+FORMAT = '%(asctime) -15s %(message)s'  # формат запису: <час> <повідомлення>
+
+DEFAULT_LOG_GUI = 'parser_gui.log'
+
+SLEEP = 1

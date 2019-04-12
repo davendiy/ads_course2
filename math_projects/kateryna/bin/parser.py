@@ -3,6 +3,7 @@
 
 from urllib.request import urlopen
 from urllib.error import HTTPError
+from urllib.parse import urljoin
 
 import html.parser
 import re
@@ -32,9 +33,17 @@ class Parser(html.parser.HTMLParser):
     пов'язані з ключовими словами.
     """
 
-    def __init__(self, key_re: re.compile, *args, **kwargs):
+    def __init__(self, url, key_re: re.compile, *args, **kwargs):
+        """ Конструктор
+
+        :param url: адреса сайту для нормального виводу відносних посилань
+        :param key_re: регулярний вираз для пошуку
+        :param args: додаткові параметри для html.parser.HTMLParser
+        :param kwargs: додаткові параметри для html.parser.HTMLParser
+        """
         html.parser.HTMLParser.__init__(self, *args, **kwargs)
         self.res_links = {}     # посилання, які було знайдено
+        self._url = url
         self._key_re = key_re   # ключові слова (регулярний вираз)
         self._in_tag = False    # True, якщо парсер відкрив необхідний тег
         self._link = ''         # змінна, яка тимчасово зберігає посилання
@@ -61,7 +70,7 @@ class Parser(html.parser.HTMLParser):
             res = self._key_re.search(data)   # шукаємо ключові слова
             if res and self._link:            # якщо є посилання і знайдені ключові слова - додаємо
                 # в текстах дуже багато пробілів і символів переведення рядку
-                self.res_links[self._link] = data.strip()
+                self.res_links[urljoin(self._url, self._link)] = data.strip()
 
     def handle_endtag(self, tag):
         """ Обробити кінцевий тег
@@ -72,25 +81,29 @@ class Parser(html.parser.HTMLParser):
             self._in_tag = False
 
 
+def parse_page(url, key_re):
+    """ Функція-обгортка, яка повністю парсить сторінку.
+
+    :param url: адреса сторінки
+    :param key_re: скомпільований регулярний вираз
+    :return: словник {url: text}
+    """
+    try:
+        page = urlopen(url)
+        encoding = getencoding(page)
+        parser = Parser(url, key_re)
+        converted_page = str(page.read(), encoding=encoding, errors='ignore')
+        parser.feed(converted_page)
+        return parser.res_links
+    except HTTPError:
+        return {}
+
+
 if __name__ == '__main__':
 
     # тестування: намагаємось знайти новини за ключовими словами
-    # url = 'https://gordonua.com/news/kiev.html'
-    url = 'https://ukraina.ru/news/'
-    # url_start = 'https://gordonua.com'
+    test_url = 'https://gordonua.com/'
 
-    url_start = 'https://ukraina.ru'
-
-    page = urlopen(url)
-    encoding = getencoding(page)
-    try:
-        parser = Parser(re.compile('президент|выборы|Зеленск|Порошенк'))
-        converted_page = str(page.read(), encoding=encoding, errors='ignore')
-        parser.feed(converted_page)
-        for row, words in parser.res_links.items():
-            # якщо посилання відносне, то додаємо глобальну адресу сайту
-            if 'https' not in row and 'http' not in row:
-                row = url_start + row
-            print(row, words)
-    except HTTPError as e:
-        print(e)
+    result = parse_page(test_url, re.compile('Порошенк'))
+    for http, text in result.items():
+        print(http, text, sep=': ')

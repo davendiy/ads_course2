@@ -5,6 +5,32 @@ import sqlite3
 from .constants import *
 
 
+def name_dict(dicts_list) -> dict:
+    """ Функція, яка з списку словників (дані з бази даних) формує
+    словник {Name: id}
+
+    :param dicts_list: [dict('field1': 'val1' ... ), dict('field1': 'val1' ... )]
+    :return: dict(Name1: id1, Name2: id2)
+    """
+    res = {}
+    for el in dicts_list:
+        res[el['Name']] = el['Id']
+    return res
+
+
+def id_dict(dicts_list):
+    """ Функція, яка з списку словників (дані з бази даних) формує
+    словник {id: Name}
+
+    :param dicts_list: [dict('field1': 'val1' ... ), dict('field1': 'val1' ... )]
+    :return: dict(id1: Name1, id2: Name2)
+    """
+    res = {}
+    for el in dicts_list:
+        res[el['Id']] = el['Name']
+    return res
+
+
 class ConnectorDB:
     """Клас з'єднання з базою даних.
 
@@ -99,8 +125,8 @@ class Storage:
             res = self.db.get_data_dicts(query, n=n)
         return res
 
-    def change_item(self, item_id, item_type=KEY_WORD, **params):
-        """ Змінити елемент у базі даних
+    def change_item_id(self, item_id, item_type=KEY_WORD, **params):
+        """ Змінити елемент у базі даних по id
 
         :param item_id: ідентифікатор елемента
         :param item_type: тип елемента (KEY_WORD, SITE, LINK)
@@ -108,12 +134,25 @@ class Storage:
         """
         assert item_type in [KEY_WORD, SITE, LINK], 'bad item_type'
         tmp_params = list(params.items())
-        query = 'UPDATE {} SET'.format(item_type) \
-                + ' '.join(['{}=?'.format(key[0]) for key in tmp_params]) \
+        query = 'UPDATE {} SET '.format(item_type) \
+                + ', '.join(['{}=?'.format(key[0]) for key in tmp_params]) \
                 + ' WHERE Id=?'
 
         parameters = [el[1] for el in tmp_params]
         parameters.append(item_id)
+        curs = self.db.get_cursor()
+        curs.execute(query, parameters)
+        self.db.close()
+
+    def change_link(self, link, **params):
+        tmp_params = list(params.items())
+
+        query = 'UPDATE Links SET ' \
+                + ', '.join(['{}=?'.format(key[0]) for key in tmp_params]) \
+                + ' WHERE Link=?'
+
+        parameters = [el[1] for el in tmp_params]
+        parameters.append(link)
         curs = self.db.get_cursor()
         curs.execute(query, parameters)
         self.db.close()
@@ -146,8 +185,9 @@ class Storage:
         # формуємо запит виду INSERT INTO table (param1, param2) values (?, ?)
         query = 'INSERT INTO {}'.format(item_type) \
                 + '(' + ', '.join([el[0] for el in tmp_params]) + ')' \
-                + ' values (' + '?, '*len(tmp_params) + ")"
+                + ' values (' + ('?, '*len(tmp_params)).strip(', ') + ")"
         parameters = [el[1] for el in tmp_params]   # значення параметрів
+        # print(query)
         curs = self.db.get_cursor()
         curs.execute(query, parameters)
         self.db.close()
@@ -187,3 +227,10 @@ class Storage:
         """
         _id = self.db.get_one_result('SELECT Id FROM Categories WHERE Name=?', name)
         return _id
+
+    def get_categories(self):
+        return self.db.get_data_dicts('SELECT * FROM Categories')
+
+
+data_conn = ConnectorDB(DEFAULT_DATABASE)
+database = Storage(data_conn)
