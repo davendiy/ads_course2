@@ -226,7 +226,7 @@ class Storage:
         :return: рядок - ід
         """
         _id = self.db.get_one_result('SELECT Id FROM Categories WHERE Name=?', name)
-        return _id
+        return '' if not _id else _id[0]
 
     def get_categories(self):
         return self.db.get_data_dicts('SELECT * FROM Categories')

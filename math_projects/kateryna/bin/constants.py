@@ -24,6 +24,6 @@ SLEEP = 1
 LINKS_FIELDS = ['Link', 'Category', 'Date', 'Information']
 
 
-SITES_FIELDS = ['Id', 'Name', 'Link', 'Category_id']
+SITES_FIELDS = ['Id', 'Name', 'Link']
 KEY_WORDS_FIELDS = ['Id', 'Word', 'Category_id']
 CATEGORIES_FIELDS = ['Id', 'Name']
