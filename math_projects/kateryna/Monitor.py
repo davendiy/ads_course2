@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from math_projects.kateryna.bin import *
+from bin import *
+import logging
 
 # curs = data_conn.get_cursor()
 # curs.execute('DELETE FROM Links')

@@ -1,6 +1,34 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Модуль з функціями та класами для роботи з базою даних.
+
+Схема бази даних:
+
+    Categories -> Id
+               -> Name
+
+    # ключові слова
+    Key_words -> Id
+              -> Word                # власне слово
+              -> Category_id         # id категорії (з таблиці categories)
+
+    # сайти для моніторингу
+    Sites     -> Id
+              -> Name                # Назва сайту
+              -> Link                # адреса
+              -> Category_id         # id категорії (з таблиці categories)
+
+    # знайдені статті
+    Links     -> Id
+              -> Link                # адреса статті
+              -> Category_id         # id категорії (з таблиці categories)
+              -> Date                # дата (і час) додання
+              -> Information         # текст, у якому було знайдено клбчові слова
+
+"""
+
+
 import sqlite3
 import openpyxl
 from .constants import *
@@ -167,19 +195,6 @@ class Storage:
         curs.execute(query, parameters)
         self.db.close()
 
-    def change_link(self, link, **params):
-        tmp_params = list(params.items())
-
-        query = 'UPDATE Links SET ' \
-                + ', '.join(['{}=?'.format(key[0]) for key in tmp_params]) \
-                + ' WHERE Link=?'
-
-        parameters = [el[1] for el in tmp_params]
-        parameters.append(link)
-        curs = self.db.get_cursor()
-        curs.execute(query, parameters)
-        self.db.close()
-
     def del_item(self, item_id, item_type=KEY_WORD):
         """ Видалити елемент з бази даних
 
@@ -252,8 +267,13 @@ class Storage:
         return '' if not _id else _id[0]
 
     def get_categories(self):
+        """ Повернути список всіх категорій
+
+        :return:
+        """
         return self.db.get_data_dicts('SELECT * FROM Categories')
 
 
+# об'єкти для зв'язку з БД за умовчанням
 data_conn = ConnectorDB(DEFAULT_DATABASE)
 database = Storage(data_conn)

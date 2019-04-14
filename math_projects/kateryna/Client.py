@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from math_projects.kateryna.bin import *
+from bin import *
 from time import sleep
 import sys
+import logging
 
 logging.basicConfig(filename=DEFAULT_LOG_CLIENT, format=FORMAT, level=logging.DEBUG)
 
