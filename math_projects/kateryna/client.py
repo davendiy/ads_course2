@@ -3,11 +3,7 @@
 
 from math_projects.kateryna.bin import *
 import datetime
-import logging
 from time import sleep
-
-# логування
-logging.basicConfig(filename=DEFAULT_LOG_CLIENT, format=FORMAT, level=logging.DEBUG)
 
 
 def create_pattern(listdicts):

@@ -199,7 +199,7 @@ class Storage:
         """
         curs = self.db.get_cursor()
         curs.execute('INSERT INTO Categories (Name) values (?)', (name,))
-        curs.close()
+        self.db.close()
 
     def del_category(self, name):
         """ Видалити категорію за назвою і всі елементи цієї категорії

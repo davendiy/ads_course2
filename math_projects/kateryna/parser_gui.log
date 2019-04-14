@@ -33,3 +33,10 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/urllib/request.py", line 384, in _parse
     raise ValueError("unknown url type: %r" % self.full_url)
 ValueError: unknown url type: 'link.com'
+2019-04-14 18:53:00,033 bad item_type
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/kateryna/bin/dialogs.py", line 59, in _delete
+    database.del_item(item_type=self._type, item_id=self.default['Id'])
+  File "/files/univer/python/course2/math_projects/kateryna/bin/database.py", line 166, in del_item
+    assert item_type in [KEY_WORD, SITE, LINK], 'bad item_type'
+AssertionError: bad item_type
