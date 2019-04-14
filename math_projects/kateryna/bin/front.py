@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-import datetime
 from .dialogs import *
+from .client import *
 
 from tkinter.messagebox import showwarning
+from tkinter.filedialog import asksaveasfilename
 from webbrowser import open
 
 from urllib.request import urlopen
@@ -22,6 +23,21 @@ class MainWindow(Tk):
 
     def _make_widgets(self):
         self.title('MonitorGui')
+
+        # меню
+        self.menubar = Menu(self)
+        filemenu = Menu(self.menubar, tearoff=0)
+        filemenu.add_command(label="Save as", command=self._save_database)
+        filemenu.add_separator()
+        filemenu.add_command(label="Exit", command=self.quit)
+        self.menubar.add_cascade(label="File", menu=filemenu)
+
+        optionsmenu = Menu(self.menubar, tearoff=0)
+        optionsmenu.add_command(label="Monitor now", command=self._monitor)
+        self.menubar.add_cascade(label="Monitoring", menu=optionsmenu)
+
+        self.config(menu=self.menubar)
+
         self._nb_frame = ttk.Frame(self)
         self._nb_frame.pack(side=TOP)
         self.nb = ttk.Notebook(self._nb_frame, height=340)
@@ -277,3 +293,27 @@ class MainWindow(Tk):
     def _destroy_dialog(self, dialog, entry):
         self._dialog_category = entry.get()
         dialog.destroy()
+
+    def _monitor(self, ev=None):
+        self._nb_frame.destroy()
+        frame = ttk.Frame(self)
+        ttk.Label(frame, text='Monitoring...', font=('arial', '16', 'bold')).pack(padx=5, pady=5)
+        frame.pack()
+        monitoring()
+        frame.destroy()
+        self._make_widgets()
+
+    def _save_database(self, ev=None):
+        path = asksaveasfilename(defaultextension='.xlsx')
+        if path:
+            data = database.get_items(item_type=LINK)
+            translator = id_dict(database.get_categories())
+            for el in data:
+                el['Category'] = translator[el['Category_id']]
+                del el['Category_id']
+            try:
+                create_xlsx(path, data)
+                showinfo('Successful', 'All the links are successfully saved to {}'.format(path))
+            except Exception as e:
+                showerror('Error', e)
+                logging.exception(e)

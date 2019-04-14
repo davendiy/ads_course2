@@ -1,42 +1,50 @@
-2019-04-13 15:14:41,884 invalid literal for int() with base 10: 'lkjh01'
-Traceback (most recent call last):
-  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 81, in _fill_monitor_tree
-    date_from = list(map(int, self._date_from.get().split('-')))
-ValueError: invalid literal for int() with base 10: 'lkjh01'
-2019-04-13 16:24:22,015 unknown url type: 'fjgdkf'
-Traceback (most recent call last):
-  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 223, in _add_site
-    urlopen(link)
-  File "/usr/lib/python3.6/urllib/request.py", line 223, in urlopen
-    return opener.open(url, data, timeout)
-  File "/usr/lib/python3.6/urllib/request.py", line 511, in open
-    req = Request(fullurl, data)
-  File "/usr/lib/python3.6/urllib/request.py", line 329, in __init__
-    self.full_url = url
-  File "/usr/lib/python3.6/urllib/request.py", line 355, in full_url
-    self._parse()
-  File "/usr/lib/python3.6/urllib/request.py", line 384, in _parse
-    raise ValueError("unknown url type: %r" % self.full_url)
-ValueError: unknown url type: 'fjgdkf'
-2019-04-13 16:24:29,305 unknown url type: 'link.com'
-Traceback (most recent call last):
-  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 223, in _add_site
-    urlopen(link)
-  File "/usr/lib/python3.6/urllib/request.py", line 223, in urlopen
-    return opener.open(url, data, timeout)
-  File "/usr/lib/python3.6/urllib/request.py", line 511, in open
-    req = Request(fullurl, data)
-  File "/usr/lib/python3.6/urllib/request.py", line 329, in __init__
-    self.full_url = url
-  File "/usr/lib/python3.6/urllib/request.py", line 355, in full_url
-    self._parse()
-  File "/usr/lib/python3.6/urllib/request.py", line 384, in _parse
-    raise ValueError("unknown url type: %r" % self.full_url)
-ValueError: unknown url type: 'link.com'
-2019-04-14 18:53:00,033 bad item_type
-Traceback (most recent call last):
-  File "/files/univer/python/course2/math_projects/kateryna/bin/dialogs.py", line 59, in _delete
-    database.del_item(item_type=self._type, item_id=self.default['Id'])
-  File "/files/univer/python/course2/math_projects/kateryna/bin/database.py", line 166, in del_item
-    assert item_type in [KEY_WORD, SITE, LINK], 'bad item_type'
-AssertionError: bad item_type
+2019-04-14 19:52:06,023 
+
+Starting parse...
+
+
+2019-04-14 19:52:06,024 
+
+------------------------Category: Вибори президента----------------------------
+2019-04-14 19:52:06,026 pattern = re.compile('президент|Зеленськ|Порошенк|вибори|Вибори')
+2019-04-14 19:52:06,027 site: https://gordonua.com/news/kiev.html
+2019-04-14 19:52:09,841 site: https://censor.net.ua/ua/news/all
+2019-04-14 19:52:09,930 site: https://www.pravda.com.ua/news/
+2019-04-14 19:52:13,770 
+
+------------------------Category: Спорт----------------------------
+2019-04-14 19:52:13,774 pattern = re.compile('спорт|змагання|олімпіад')
+2019-04-14 19:52:13,774 site: https://www.ukr.net/ua/news/sport.html
+2019-04-14 19:52:14,964 site: https://www.obozrevatel.com/ukr/sport/
+2019-04-14 19:52:16,103 successful
+====================================================================================
+
+
+2019-04-14 19:55:28,076 
+
+Starting parse...
+
+
+2019-04-14 19:55:28,077 
+
+------------------------Category: Вибори президента----------------------------
+2019-04-14 19:55:28,080 pattern = re.compile('президент|Зеленськ|Порошенк|вибори|Вибори')
+2019-04-14 19:55:28,081 site: https://gordonua.com/news/kiev.html
+2019-04-14 19:55:31,976 site: https://censor.net.ua/ua/news/all
+2019-04-14 19:55:32,154 site: https://www.pravda.com.ua/news/
+2019-04-14 19:55:35,754 
+
+------------------------Category: Спорт----------------------------
+2019-04-14 19:55:35,757 pattern = re.compile('спорт|змагання|олімпіад')
+2019-04-14 19:55:35,757 site: https://www.ukr.net/ua/news/sport.html
+2019-04-14 19:55:37,077 site: https://www.obozrevatel.com/ukr/sport/
+2019-04-14 19:55:38,377 
+
+------------------------Category: Наука----------------------------
+2019-04-14 19:55:38,381 pattern = re.compile('ученые|коты')
+2019-04-14 19:55:38,382 site: https://www.gazeta.ru/science/
+2019-04-14 19:55:39,013 site: https://korrespondent.net/tech/science/
+2019-04-14 19:55:40,033 successful
+====================================================================================
+
+

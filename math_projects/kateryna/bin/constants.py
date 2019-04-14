@@ -3,7 +3,7 @@
 
 import logging
 
-DEFAULT_N = 100    # к-ть елементів, які повертає пошук за умовчанням
+DEFAULT_N = 1000    # к-ть елементів, які повертає пошук за умовчанням
 
 # типи елементів (значення - назви таблиць у БД)
 KEY_WORD = 'Key_words'
@@ -33,5 +33,3 @@ SITES_DATA_FIELDS = ['Id', 'Name', 'Link', 'Category_id']
 KEY_WORDS_DATA_FIELDS = ['Id', 'Word', "Category_id"]
 
 CATEGORIES_FIELDS = ['Id', 'Name']
-
-logging.basicConfig(filename=DEFAULT_LOG_GUI, format=FORMAT, level=logging.DEBUG)

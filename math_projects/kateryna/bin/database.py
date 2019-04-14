@@ -2,6 +2,7 @@
 # -*-encoding: utf-8-*-
 
 import sqlite3
+import openpyxl
 from .constants import *
 
 
@@ -29,6 +30,28 @@ def id_dict(dicts_list):
     for el in dicts_list:
         res[el['Id']] = el['Name']
     return res
+
+
+def create_xlsx(outfile, data):
+    """ Запис результату в exel таблицю
+
+    :param outfile: назва таблиці
+    :param data: список з словників [dict('field1': 'val1' ... ), dict('field1': 'val1' ... )] -
+                 інформація з бази даних.
+    """
+    wb = openpyxl.Workbook()      # записуємо дані так у форматі t23_21 (приклад з лекцій)
+    ws = wb.active
+    names = []
+    for i, el in enumerate(data[0], start=1):
+        c = ws.cell(row=1, column=i)
+        c.value = el
+        names.append(el)
+
+    for i, row in enumerate(data, start=2):
+        for j, column in enumerate(names, start=1):
+            c = ws.cell(row=i, column=j)
+            c.value = row[column]
+    wb.save(outfile)
 
 
 class ConnectorDB:

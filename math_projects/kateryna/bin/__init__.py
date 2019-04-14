@@ -6,3 +6,4 @@ from .parser import *
 from .database import *
 from .dialogs import *
 from .front import *
+from .client import *

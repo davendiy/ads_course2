@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-from math_projects.kateryna.bin import *
+from .parser import *
+from .database import *
 import datetime
-from time import sleep
 
 
 def create_pattern(listdicts):
@@ -42,24 +42,4 @@ def monitoring():
                                   Date=now,
                                   Information=_text,
                                   )
-                logging.info('added {} because of {}'.format(link, _text))
     logging.info('successful\n====================================================================================\n\n')
-
-
-if __name__ == '__main__':
-    import sys
-
-    if len(sys.argv) == 1:
-        sleeptime = int(SLEEP * 3600)
-    else:
-        sleeptime = int(sys.argv[1] * 3600)
-
-    while True:         # моніторинг з певним періодом
-        print('starting parse...')
-        try:
-            monitoring()
-            print('successful')
-        except Exception as e:
-            logging.exception(e)
-            print('ends')
-        sleep(sleeptime)

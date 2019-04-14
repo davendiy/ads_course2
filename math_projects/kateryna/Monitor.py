@@ -3,10 +3,11 @@
 
 from math_projects.kateryna.bin import *
 
-# TODO add logging
-# TODO add tab with settings
-# TODO add dialogs
-# TODO add start of monitoring
+# curs = data_conn.get_cursor()
+# curs.execute('DELETE FROM Links')
+# data_conn.close()
+
+logging.basicConfig(filename=DEFAULT_LOG_GUI, format=FORMAT, level=logging.DEBUG)
 
 test = MainWindow()
 test.mainloop()
