@@ -60,7 +60,7 @@ class MainWindow(Tk):
 
         ttk.Label(main_frame, text='From:').grid(row=1, column=1, padx=5, pady=5)
         self._date_from = ttk.Entry(main_frame, width=12)
-        self._date_from.insert(0, '2000-01-01')
+        self._date_from.insert(0, '1950-01-01')
         self._date_from.grid(row=1, column=2, padx=5, pady=5)
 
         ttk.Label(main_frame, text='To:').grid(row=1, column=3, padx=5, pady=5)

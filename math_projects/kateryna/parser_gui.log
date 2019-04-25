@@ -76,3 +76,71 @@ Starting parse...
 ====================================================================================
 
 
+2019-04-15 22:08:28,984 invalid literal for int() with base 10: 'лрор'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 102, in _fill_monitor_tree
+    date_from = list(map(int, self._date_from.get().split('-')))   # намагаємось зчитати введену дату
+ValueError: invalid literal for int() with base 10: 'лрор'
+2019-04-15 22:09:01,894 invalid literal for int() with base 10: 'лрор'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 102, in _fill_monitor_tree
+    date_from = list(map(int, self._date_from.get().split('-')))   # намагаємось зчитати введену дату
+ValueError: invalid literal for int() with base 10: 'лрор'
+2019-04-15 22:10:05,667 unknown url type: 'ларпвлоп'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 286, in _add_site
+    urlopen(link)     # намагаємось підключитись до введеного сайту
+  File "/usr/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.6/urllib/request.py", line 511, in open
+    req = Request(fullurl, data)
+  File "/usr/lib/python3.6/urllib/request.py", line 329, in __init__
+    self.full_url = url
+  File "/usr/lib/python3.6/urllib/request.py", line 355, in full_url
+    self._parse()
+  File "/usr/lib/python3.6/urllib/request.py", line 384, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'ларпвлоп'
+2019-04-15 22:10:39,041 unknown url type: 'іва'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/kateryna/bin/front.py", line 286, in _add_site
+    urlopen(link)     # намагаємось підключитись до введеного сайту
+  File "/usr/lib/python3.6/urllib/request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.6/urllib/request.py", line 511, in open
+    req = Request(fullurl, data)
+  File "/usr/lib/python3.6/urllib/request.py", line 329, in __init__
+    self.full_url = url
+  File "/usr/lib/python3.6/urllib/request.py", line 355, in full_url
+    self._parse()
+  File "/usr/lib/python3.6/urllib/request.py", line 384, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'іва'
+2019-04-15 22:11:13,389 
+
+Starting parse...
+
+
+2019-04-15 22:11:13,390 
+
+------------------------Category: Вибори президента----------------------------
+2019-04-15 22:11:13,394 pattern = re.compile('президент|Зеленськ|Порошенк|вибори|Вибори')
+2019-04-15 22:11:13,394 site: https://gordonua.com/news/kiev.html
+2019-04-15 22:11:15,107 site: https://censor.net.ua/ua/news/all
+2019-04-15 22:11:15,163 site: https://www.pravda.com.ua/news/
+2019-04-15 22:11:18,777 
+
+------------------------Category: Спорт----------------------------
+2019-04-15 22:11:18,781 pattern = re.compile('спорт|змагання|олімпіад')
+2019-04-15 22:11:18,781 site: https://www.ukr.net/ua/news/sport.html
+2019-04-15 22:11:19,572 site: https://www.obozrevatel.com/ukr/sport/
+2019-04-15 22:11:20,751 
+
+------------------------Category: Наука----------------------------
+2019-04-15 22:11:20,756 pattern = re.compile('ученые|коты')
+2019-04-15 22:11:20,756 site: https://www.gazeta.ru/science/
+2019-04-15 22:11:22,028 site: https://korrespondent.net/tech/science/
+2019-04-15 22:11:23,861 successful
+====================================================================================
+
+
