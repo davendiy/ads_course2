@@ -82,7 +82,7 @@ class Database:
         return self.db.get_one_result(query, name)
 
     def add_element(self, name, description):
-        query = "INSERT into Base (Name, Descriprtion) values (?, ?)"
+        query = "INSERT into Base (Name, Description) values (?, ?)"
         curs = self.db.get_cursor()
         curs.execute(query, (name, description))
         self.db.close()
