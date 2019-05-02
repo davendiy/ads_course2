@@ -67,7 +67,6 @@ class Connector:
         Як відповідь на запит query з параметрами param.
         :param query: запит SqLite
         :param parameters: змінні параметри запиту, якщо є
-        :param n: к-ть елеменів, які повернуться
         :return: [{name_field1: value1, name_field2: value2 ...}, ...]
         """
         curs = self.get_cursor()
