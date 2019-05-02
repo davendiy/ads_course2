@@ -114,6 +114,37 @@ class ShopStorage:
         res = self.db.get_one_result(query, category_name)
         return '' if not res else res[0]
 
+    def get_categories(self):
+        return self.db.get_data_dicts('SELECT * FROM {}'.format(CATEGORIES_TABLE))
+
+    def add_record(self, item_type, **params):
+
+        assert item_type in [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE]
+
+        # словник -> список кортежів для того, щоб не змінювався порядок елементів
+        tmp_params = list(params.items())
+
+        # формуємо запит виду INSERT INTO table (param1, param2) values (?, ?)
+        query = 'INSERT INTO {}'.format(item_type) \
+                + '(' + ', '.join([el[0] for el in tmp_params]) + ')' \
+                + ' values (' + ('?, ' * len(tmp_params)).strip(', ') + ")"
+        parameters = [el[1] for el in tmp_params]  # значення параметрів
+        # print(query)
+        curs = self.db.get_cursor()
+        curs.execute(query, parameters)
+        self.db.close()
+
+    def get_cart(self, user_id):
+
+        query = 'SELECT Item_id FROM {} WHERE User_id=?'.format(CARTS_TABLE)
+        return self.db.get_data_dicts(query, user_id)
+
+    def close_cart(self, user_id):
+        query = 'DELETE FROM {} WHERE User_id=?'.format(user_id)
+        curs = self.db.get_cursor()
+        curs.execute(query)
+        self.db.close()
+
 
 default_conn = Connector(DEFAULT_DATABASE)
 database = ShopStorage(default_conn)
