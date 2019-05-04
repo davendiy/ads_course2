@@ -150,6 +150,10 @@ class ShopStorage:
         res = self.db.get_one_result(query, user)
         return '' if not res else res[0]
 
+    def get_user_id(self, user):
+        query = 'SELECT Id FROM {} WHERE Name=?'.format(USERS_TABLE)
+        res = self.db.get_one_result(query, user)
+        return '' if not res else res[0]
 
 default_conn = Connector(DEFAULT_DATABASE)
 database = ShopStorage(default_conn)
