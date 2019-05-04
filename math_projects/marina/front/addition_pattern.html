@@ -30,22 +30,29 @@
 
         <ul>
             <li>
-                <input type=text name=name value="name">
+                <label><input type=text name=Name value="Name"></label>>
             </li>
             <li>
-                <input type=text name=description value="description">
+                <label><input type=text name=Category value="Category"></label>
             </li>
             <li>
-                <input type=text name=characteristics value="characteristics">
+                <label><input type=text name=Description value="Description"></label>
             </li>
             <li>
-                <input type=file name=photo value="photo">
+                <label><input type=text name=Characteristics value="Characteristics"></label>
+            </li>
+            <li>
+                <input type=file name=Photo value="Photo">
+            </li>
+            <li>
+                <label><input type=text name=Price value="Price"></label>
             </li>
             <li>
                 <input type=submit value="Add">
             </li>
         </ul>
         <input type="hidden" name="session" value="{session}">
+        <input type="hidden" name="adding">
     </form>
 
 </div>

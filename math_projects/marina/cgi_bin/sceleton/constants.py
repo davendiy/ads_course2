@@ -39,12 +39,14 @@ ERROR_PAGE = """Content-type: text/html charset=utf-8
 
 FORMAT_PLACE = "<!--LIST_HERE-->"
 CREATE_PARAM = 'page_type'
+ADDING_PARAM = 'adding'
 PARAMS_PAGE_DICT = {'admin': ADMIN_PAGE_PATTERN,
                     'cart': CART_PAGE_PATTERN,
                     'addition': ADD_PAGE_PATTERN,
                     'user': HOME_USER_PAGE_PATTERN}
 
 SESSION_PARAM = 'session'
+UPDATE_PARAM = 'Update'
 
 DEFAULT_DATABASE = 'storage.db'
 

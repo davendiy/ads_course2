@@ -24,7 +24,9 @@
         </li>
         <li>
             <form method=POST action="../cgi_bin/update.py">
-                <input type=submit value="Update">
+                <label><input type=text name=Category value="Update"></label>
+                <input type=submit name=Update value="Update">
+                <input type=hidden name="page_type" value="admin">
                 <input type="hidden" name="session" value="{session}">
             </form>
         </li>

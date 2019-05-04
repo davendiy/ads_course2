@@ -26,11 +26,16 @@ if 'login' and 'password' in form:
         if login == ADMIN:
             page = change_html(ADMIN_PAGE_PATTERN, FILE_MODE)
             page = page.format(session=cur_session)
+            data = database.get_items()
+            page = fill_page(page, data, STRING_MODE)
             print(page)
         else:
-            page = change_html(CART_PAGE_PATTERN, FILE_MODE)
+            page = change_html(HOME_USER_PAGE_PATTERN, FILE_MODE)
             page = page.format(session=cur_session)
+            data = database.get_items()
+            page = fill_page(page, data, STRING_MODE)
             print(page)
+
     else:
         page = change_html(LOGIN_PAGE, FILE_MODE)
         page = page.replace(FORMAT_PLACE, HTML_WRONG_PASS)
