@@ -2,7 +2,7 @@
 # -*-encoding: utf-8-*-
 
 import cgi
-from .sceleton import *
+from sceleton import *
 import pickle
 
 form = cgi.FieldStorage()
@@ -21,21 +21,21 @@ if CREATE_PARAM in form:
 
     if page_path in [ADMIN_PAGE_PATTERN, HOME_USER_PAGE_PATTERN]:
         page = change_html(page_path, FILE_MODE)
-        page = page.format(session=cur_session)
+        page = page.replace('{session}', cur_session)
         data = database.get_items()
         page = fill_page(page, data, mode=STRING_MODE)
         print(page)
 
     elif page_path == CART_PAGE_PATTERN:
         page = change_html(page_path, FILE_MODE)
-        page = page.format(session=cur_session)
+        page = page.replace('{session}', cur_session)
         data = database.get_cart(user_id)
         page = fill_page(page, data, mode=STRING_MODE)
         print(page)
 
     elif page_path == ADD_PAGE_PATTERN:
         page = change_html(page_path, FILE_MODE)
-        page = page.format(session=cur_session)
+        page = page.replace('session', cur_session)
         print(page)
 
     else:

@@ -2,7 +2,7 @@
 # -*-encoding: utf-8-*-
 
 import cgi
-from .sceleton import *
+from sceleton import *
 import pickle
 
 form = cgi.FieldStorage()
@@ -20,7 +20,7 @@ if UPDATE_PARAM in form:
     page_type = form[CREATE_PARAM].value
     page_path = PARAMS_PAGE_DICT[page_type]
     page = change_html(page_path)
-    page = page.format(session=cur_session)
+    page = page.replace('{session}', cur_session)
     category = form['category'] if 'category' in form else ''
     page = fill_page(page, database.get_items(category), STRING_MODE)
     print(page)

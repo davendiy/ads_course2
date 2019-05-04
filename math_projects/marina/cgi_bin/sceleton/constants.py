@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-HOME_USER_PAGE_PATTERN = '/front/user_pattern.html'
-CART_PAGE_PATTERN = '/front/cart_pattern.html'
-ADD_PAGE_PATTERN = '/front/addition_pattern.html'
-ADMIN_PAGE_PATTERN = '/front/admin_pattern.html'
-PRODUCT_PATTERN = "/front/product.html"
+HOME_USER_PAGE_PATTERN = 'front/user_pattern.html'
+CART_PAGE_PATTERN = 'front/cart_pattern.html'
+ADD_PAGE_PATTERN = 'front/addition_pattern.html'
+ADMIN_PAGE_PATTERN = 'front/admin_pattern.html'
+PRODUCT_PATTERN = "front/product.html"
 
-STYLESHEET = '/front/main.css'
-LOGIN_PAGE = '/front/login.html'
+STYLESHEET = 'front/main.css'
+LOGIN_PAGE = 'front/login.html'
 
 SESSIONS_URL = '.tmpfile'
 
@@ -18,7 +18,7 @@ HTML_WRONG_PASS = """
 <p align=center>
     <font size="4" color="red">
 
-         Неверный логин/пароль. Попробуйте снова.
+         Incorrect login/password. Try again.
     </font>
 </p>
 """

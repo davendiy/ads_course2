@@ -2,7 +2,7 @@
 # -*-encoding: utf-8-*-
 
 import cgi
-from .sceleton import *
+from sceleton import *
 import pickle
 
 form = cgi.FieldStorage()
