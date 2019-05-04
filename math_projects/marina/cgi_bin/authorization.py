@@ -18,8 +18,8 @@ if 'login' and 'password' in form:
         with open(SESSIONS_URL, 'rb') as file:
             sessions = pickle.load(file)
 
-        cur_session = random.randint(0, 100500) # створення унікального id для кожного користувача, що заходить на сайт
-        sessions[cur_session] = login           # запис його в словник користувачів
+        cur_session = random.randint(0, 100500)   # створення унікального id для кожного користувача, що заходить на сайт
+        sessions[cur_session] = login             # запис його в словник користувачів
         with open(SESSIONS_URL, 'wb') as file:
             pickle.dump(sessions, file)
 
