@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-# TODO authorization with unique number of session
-# TODO modify login page, add css
 # TODO create different html pages for admin and guesses
+# TODO rebuild logic of pages: cart page doesn't have to exist, if must be created for each user
+# TODO i think, hrefs must be destroyed for norm work because of big number of users
+
+# TODO modify login page, add css
 # TODO complete database
 # TODO add backend for each html page
 # TODO add comments

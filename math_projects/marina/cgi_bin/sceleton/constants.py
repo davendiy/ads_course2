@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-HOME_USER_PAGE_PATTERN = '/front/main_pattern.html'
+HOME_USER_PAGE_PATTERN = '/front/user_pattern.html'
 CART_PAGE_PATTERN = '/front/cart_pattern.html'
 ADD_PAGE_PATTERN = '/front/addition_pattern.html'
 ADMIN_PAGE_PATTERN = '/front/admin_pattern.html'
