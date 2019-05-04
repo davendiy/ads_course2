@@ -3,8 +3,8 @@
 
 import cgi
 import os
-from .t29_21_courses_db_io import *
-from .t29_22_courses_iface import *
+from dz_others.subject29_db.t29_21_courses_db_io import *
+from dz_others.subject29_db.t29_22_courses_iface import *
 
 MAX_APPLY = 2  # максимальна кількість курсів для запису
 

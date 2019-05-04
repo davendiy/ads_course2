@@ -41,12 +41,12 @@ HTML_APPLIED = """
 HTML_COURSE = "<tr><td>{0}</td>"
 HTML_STUD = "<tr><td>{0}</td><td>{1}</td><td>{2}</td>"
 
-LOGIN_HTML_FILE = "course_login.html"
-COURSES_HTML_FILE = "courses.html"
-COURSE_ROW_HTML_FILE = "course_row.html"
-CREATE_HTML_FILE = "course_create.html"
-VIEW_HTML_FILE = "course_view.html"
-LIST_HTML_FILE = "course_list.html"
+LOGIN_HTML_FILE = "front/course_login.html"
+COURSES_HTML_FILE = "front/courses.html"
+COURSE_ROW_HTML_FILE = "front/course_row.html"
+CREATE_HTML_FILE = "front/course_create.html"
+VIEW_HTML_FILE = "front/course_view.html"
+LIST_HTML_FILE = "front/course_list.html"
 
 
 class CoursesInterface:
