@@ -9,13 +9,18 @@
 <div class="menu">
     <ul>
         <li>
-            <a href="admin.html">Главная</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="user">
+            </form>
         </li>
         <li>
-            <a href="cart.html">Корзина</a>
-        </li>
-        <li>
-            <a href="addition.html">Добавить товар</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Cart">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="cart">
+            </form>
         </li>
     </ul>
 </div>

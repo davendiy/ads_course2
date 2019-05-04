@@ -9,16 +9,24 @@
 <div class="menu">
     <ul>
         <li>
-            <a href="admin.html">Главная</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="admin">
+            </form>
         </li>
         <li>
-            <a href="addition.html">Добавить товар</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Add item">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="addition">
+            </form>
         </li>
     </ul>
 </div>
 
 <div class="add">
-    <form method=POST action="http://localhost:8000/cgi-bin/add.py">
+    <form method=POST action="../cgi_bin/add.py">
 
         <ul>
             <li>
@@ -31,10 +39,10 @@
                 <input type=text name=characteristics value="characteristics">
             </li>
             <li>
-                <input type=text name=photo value="photo">
+                <input type=file name=photo value="photo">
             </li>
             <li>
-                <input type=submit value="добавить">
+                <input type=submit value="Add">
             </li>
         </ul>
         <input type="hidden" name="session" value="{session}">

@@ -9,14 +9,22 @@
 <div class="menu">
     <ul>
         <li>
-            <a href="admin.html">Главная</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="admin">
+            </form>
         </li>
         <li>
-            <a href="addition.html">Добавить товар</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Add item">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="addition">
+            </form>
         </li>
         <li>
-            <form method=POST action="http://localhost:8000/cgi_bin/update.py">
-                <input type=submit value="Обновить">
+            <form method=POST action="../cgi_bin/update.py">
+                <input type=submit value="Update">
                 <input type="hidden" name="session" value="{session}">
             </form>
         </li>
