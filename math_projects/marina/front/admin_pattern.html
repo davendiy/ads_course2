@@ -9,7 +9,7 @@
 <div class="menu">
     <ul>
         <li>
-            <a href="main.html">Главная</a>
+            <a href="admin.html">Главная</a>
         </li>
         <li>
             <a href="cart.html">Корзина</a>
@@ -20,12 +20,13 @@
         <li>
             <form method=POST action="http://localhost:8000/cgi_bin/update.py">
                 <input type=submit value="Обновить">
+                <input type="hidden" name="session" value="{session}">
             </form>
         </li>
     </ul>
 </div>
 
-<!--{}-->
+<!--LIST_HERE-->
 
 
 </body>

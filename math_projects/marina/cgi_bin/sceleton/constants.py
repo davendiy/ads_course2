@@ -1,43 +1,34 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+HOME_USER_PAGE_PATTERN = '/front/main_pattern.html'
+CART_PAGE_PATTERN = '/front/cart_pattern.html'
+ADD_PAGE_PATTERN = '/front/addition_pattern.html'
+ADMIN_PAGE_PATTERN = '/front/admin_pattern.html'
 
-HOME_PAGE = '/front/main.html'
+STYLESHEET = '/front/main.css'
+LOGIN_PAGE = '/front/login.html'
+HOME_USER_PAGE = '/front/main.html'
 CART_PAGE = '/front/cart.html'
 ADD_PAGE = '/front/addition.html'
-STYLESHEET = '/front/main.css'
+ADMIN_PAGE = '/front/admin.html'
+
+SESSIONS_URL = '.tmpfile'
+
+PRODUCT_PATTERN = "/front/product.html"
 
 
-PRODUCT_PATTERN = """<div class="product">
-    <ul>
-        <li>
-            <!--название-->
-            {}
-        </li>
-        <li>
-            <!--описание-->
-            {}
-        </li>
-        <li>
-            <!--характеристики-->
-            {}
-        </li>
-        <li>
-            <!--фото-->
-            {}
-        </li>
-        <li>
-            <!--цена-->
-            {}
-        </li>
-        <li>
-            <!--количество-->
-            {}
-        </li>
+HTML_WRONG_PASS = """
 
-    </ul>
-</div>"""
+<p align=center>
+    <font size="4" color="red">
 
+         Неверный логин/пароль. Попробуйте снова.
+    </font>
+</p>
+"""
+
+FORMAT_PLACE = "<!--LIST_HERE-->"
 
 DEFAULT_DATABASE = 'storage.db'
 
@@ -47,6 +38,12 @@ CARTS_TABLE = 'Carts_items'
 USERS_TABLE = 'Users'
 
 CATEGORIES_FIELDS = ('Id', 'Name')
-ITEMS_FIELDS = ('Id', 'Name', 'Category_id', 'Description', 'Characteristics', 'Photo')
+ITEMS_FIELDS = ('Id', 'Name', 'Category_id', 'Description', 'Characteristics', 'Photo', 'Price')
 CARTS_FIELDS = ('Item_id', 'User_id')
 USERS_FIELDS = ('Id', 'Name', 'Password_hash')
+
+
+FILE_MODE = 'file'
+STRING_MODE = 'string'
+
+ADMIN = 'admin'

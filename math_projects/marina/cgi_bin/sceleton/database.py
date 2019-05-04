@@ -13,6 +13,7 @@
                 -> Description
                 -> Characteristics
                 -> Photo
+                -> Price
 
     Users       -> Id
                 -> Name
@@ -143,6 +144,11 @@ class ShopStorage:
         curs = self.db.get_cursor()
         curs.execute(query)
         self.db.close()
+
+    def get_user_pass(self, user):
+        query = 'SELECT Password_hash FROM {} WHERE Name=?'.format(USERS_TABLE)
+        res = self.db.get_one_result(query, user)
+        return '' if not res else res[0]
 
 
 default_conn = Connector(DEFAULT_DATABASE)
