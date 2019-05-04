@@ -8,15 +8,17 @@
 <body>
 <div class="menu">
     <ul>
+
         <li>
-            <a href="user_pattern.html">Главная</a>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Cart">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="cart">
+            </form>
         </li>
         <li>
-            <a href="cart_pattern.html"
-        </li>
-        <li>
-            <form method=POST action="http://localhost:8000/cgi_bin/update.py">
-                <input type=submit value="Обновить">
+            <form method=POST action="../cgi_bin/update.py">
+                <input type=submit value="Update">
                 <input type="hidden" name="session" value="{session}">
             </form>
         </li>
