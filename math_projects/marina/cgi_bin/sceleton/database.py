@@ -100,15 +100,20 @@ class ShopStorage:
         self.db = db
 
     def get_items(self, category=''):
+
         if category:
             category_id = self.get_category_id(category)
-            query = 'SELECT * FROM {} WHERE Category_id=?'.format(CATEGORIES_TABLE)
-            res = self.db.get_data_dicts(query, category_id)
+            if category_id:
+                query = 'SELECT * FROM {} WHERE Category_id=?'.format(ITEMS_TABLE)
+                res = self.db.get_data_dicts(query, category_id)
+            else:
+                res = []
         else:
-            query = 'SELECT * FROM {}'.format(CATEGORIES_TABLE)
+            query = 'SELECT * FROM {}'.format(ITEMS_TABLE)
             res = self.db.get_data_dicts(query)
-        return res
 
+        return res
+        
     def get_category_id(self, category_name):
         query = 'SELECT Id FROM {} WHERE Name=?'.format(CATEGORIES_TABLE)
         res = self.db.get_one_result(query, category_name)

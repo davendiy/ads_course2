@@ -29,14 +29,14 @@ if 'Sign_in' in form:
             page = page.replace('{session}', cur_session)
             data = database.get_items()
             page = fill_page(page, data, STRING_MODE)
-            logging.debug(page)
+            # logging.debug(page)
             print(page)
         else:
             page = change_html(HOME_USER_PAGE_PATTERN, FILE_MODE)
             page = page.replace('{session}', cur_session)
             data = database.get_items()
             page = fill_page(page, data, STRING_MODE)
-            logging.debug(page)
+            # logging.debug(page)
             print(page)
 
     else:

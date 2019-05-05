@@ -24,7 +24,7 @@ def name_dict(dicts_list) -> dict:
     """
     res = {}
     for el in dicts_list:
-        res[el['Name']] = el['id']
+        res[el['Name']] = el['Id']
     return res
 
 
@@ -37,5 +37,5 @@ def id_dict(dicts_list):
     """
     res = {}
     for el in dicts_list:
-        res[el['id']] = el['Name']
+        res[el['Id']] = el['Name']
     return res

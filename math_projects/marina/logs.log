@@ -1,0 +1,543 @@
+2019-05-04 23:29:02,822 STARTED
+2019-05-04 23:31:32,585 STARTED
+2019-05-04 23:32:33,691 STARTED
+2019-05-04 23:33:48,934 STARTED
+2019-05-04 23:34:56,089 STARTED
+2019-05-04 23:35:09,590 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:36:36,072 STARTED
+2019-05-04 23:36:43,834 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:36:44,971 PASSWORD CHECKED
+2019-05-04 23:37:41,061 STARTED
+2019-05-04 23:37:48,088 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:37:49,242 PASSWORD CHECKED
+2019-05-04 23:38:28,976 STARTED
+2019-05-04 23:38:35,204 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:38:36,308 PASSWORD CHECKED
+2019-05-04 23:39:29,581 STARTED
+2019-05-04 23:39:36,250 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:39:37,356 PASSWORD CHECKED
+2019-05-04 23:41:05,663 STARTED
+2019-05-04 23:41:12,201 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:41:13,335 PASSWORD CHECKED
+2019-05-04 23:43:47,498 STARTED
+2019-05-04 23:43:54,560 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:43:55,706 PASSWORD CHECKED
+2019-05-04 23:44:36,682 STARTED
+2019-05-04 23:44:43,111 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:44:44,247 PASSWORD CHECKED
+2019-05-04 23:44:44,254 Content-type: text/html charset=utf-8
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <style>
+/*========== MENU ========== */
+
+
+.menu {
+    border: 2px solid black;
+}
+
+.menu ul{
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /MENU ========== */
+
+
+
+
+
+/*========== PRODUCT ========== */
+
+.product {
+    border: 2px solid gray;
+}
+
+.product ul{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.product ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+
+/*========== /PRODUCT ========== */
+
+
+/*========== ADDITION ========== */
+
+.add {
+    border: 2px solid gray;
+}
+
+.add ul{
+    list-style: none;
+    text-align: center;
+}
+
+.add ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /ADDITION ========== */</style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="72355">
+                <input type="hidden" name="page_type" value="admin">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Add item">
+                <input type="hidden" name='session' value="72355">
+                <input type="hidden" name="page_type" value="addition">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/update.py">
+                <label><input type=text name=Category value="Update"></label>
+                <input type=submit name=Update value="Update">
+                <input type=hidden name="page_type" value="admin">
+                <input type="hidden" name="session" value="72355">
+            </form>
+        </li>
+    </ul>
+</div>
+
+<!--LIST_HERE-->
+
+
+</body>
+</html>
+2019-05-04 23:46:33,052 STARTED
+2019-05-04 23:46:36,657 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-04 23:46:37,783 PASSWORD CHECKED
+2019-05-04 23:46:37,790 Content-type: text/html charset=utf-8
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <style>
+/*========== MENU ========== */
+
+
+.menu {
+    border: 2px solid black;
+}
+
+.menu ul{
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /MENU ========== */
+
+
+
+
+
+/*========== PRODUCT ========== */
+
+.product {
+    border: 2px solid gray;
+}
+
+.product ul{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.product ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+
+/*========== /PRODUCT ========== */
+
+
+/*========== ADDITION ========== */
+
+.add {
+    border: 2px solid gray;
+}
+
+.add ul{
+    list-style: none;
+    text-align: center;
+}
+
+.add ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /ADDITION ========== */</style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="27180">
+                <input type="hidden" name="page_type" value="admin">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Add item">
+                <input type="hidden" name='session' value="27180">
+                <input type="hidden" name="page_type" value="addition">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/update.py">
+                <label><input type=text name=Category value="Update"></label>
+                <input type=submit name=Update value="Update">
+                <input type=hidden name="page_type" value="admin">
+                <input type="hidden" name="session" value="27180">
+            </form>
+        </li>
+    </ul>
+</div>
+
+<!--LIST_HERE-->
+
+
+</body>
+</html>
+2019-05-05 10:25:16,527 STARTED
+2019-05-05 10:25:23,842 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:25:24,968 PASSWORD CHECKED
+2019-05-05 10:25:24,975 Content-type: text/html charset=utf-8
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <style>
+/*========== MENU ========== */
+
+
+.menu {
+    border: 2px solid black;
+}
+
+.menu ul{
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /MENU ========== */
+
+
+
+
+
+/*========== PRODUCT ========== */
+
+.product {
+    border: 2px solid gray;
+}
+
+.product ul{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.product ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+
+/*========== /PRODUCT ========== */
+
+
+/*========== ADDITION ========== */
+
+.add {
+    border: 2px solid gray;
+}
+
+.add ul{
+    list-style: none;
+    text-align: center;
+}
+
+.add ul li{
+    display: inline-block;
+    padding: 2px 20px 2px 20px;
+    margin: 2px 20px 2px 20px;
+}
+
+/*========== /ADDITION ========== */</style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page">
+                <input type="hidden" name='session' value="18025">
+                <input type="hidden" name="page_type" value="admin">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Add item">
+                <input type="hidden" name='session' value="18025">
+                <input type="hidden" name="page_type" value="addition">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/update.py">
+                <label><input type=text name=Category value="Update"></label>
+                <input type=submit name=Update value="Update">
+                <input type=hidden name="page_type" value="admin">
+                <input type="hidden" name="session" value="18025">
+            </form>
+        </li>
+    </ul>
+</div>
+
+<!--LIST_HERE-->
+
+
+</body>
+</html>
+2019-05-05 10:28:00,432 STARTED
+2019-05-05 10:28:06,924 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:28:08,089 PASSWORD CHECKED
+2019-05-05 10:28:18,597 session id: MiniFieldStorage('session', '35802')
+2019-05-05 10:28:18,597 user_id: None
+2019-05-05 10:28:50,969 STARTED
+2019-05-05 10:28:54,502 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:28:55,625 PASSWORD CHECKED
+2019-05-05 10:28:56,976 session id: 34191
+2019-05-05 10:28:56,977 user_id: 1
+2019-05-05 10:28:58,865 session id: 34191
+2019-05-05 10:28:58,865 user_id: 1
+2019-05-05 10:29:21,875 STARTED
+2019-05-05 10:29:27,081 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:29:28,209 PASSWORD CHECKED
+2019-05-05 10:29:37,719 session id: 84004
+2019-05-05 10:29:37,719 user_id: 1
+2019-05-05 10:29:44,162 session id: 84004
+2019-05-05 10:29:44,162 user_id: 1
+2019-05-05 10:30:17,585 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:30:18,710 PASSWORD CHECKED
+2019-05-05 10:30:21,267 session id: 88394
+2019-05-05 10:30:21,267 user_id: 1
+2019-05-05 10:30:23,096 session id: 88394
+2019-05-05 10:30:23,096 user_id: 1
+2019-05-05 10:30:24,735 session id: 88394
+2019-05-05 10:30:24,736 user_id: 1
+2019-05-05 10:30:26,210 session id: 88394
+2019-05-05 10:30:26,210 user_id: 1
+2019-05-05 10:30:27,501 session id: 88394
+2019-05-05 10:30:27,501 user_id: 1
+2019-05-05 10:30:45,583 session id: 88394
+2019-05-05 10:30:45,583 user_id: 1
+2019-05-05 10:35:29,343 STARTED
+2019-05-05 10:35:33,229 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:35:34,352 PASSWORD CHECKED
+2019-05-05 10:35:36,159 session id: 1151
+2019-05-05 10:35:36,160 user_id: 1
+2019-05-05 10:37:36,128 STARTED
+2019-05-05 10:37:40,602 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 10:37:41,738 PASSWORD CHECKED
+2019-05-05 10:37:43,913 session id: 90507
+2019-05-05 10:37:43,913 user_id: 1
+2019-05-05 10:39:29,588 FieldStorage(None, None, [MiniFieldStorage('Name', 'Test'), MiniFieldStorage('Category', 'test category'), MiniFieldStorage('Description', 'test item '), MiniFieldStorage('Characteristics', 'size=3'), MiniFieldStorage('Photo', '03853_foggypier_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '90507')])
+2019-05-05 10:40:20,970 session id: 90507
+2019-05-05 10:40:20,970 user_id: 1
+2019-05-05 10:40:22,357 session id: 90507
+2019-05-05 10:40:22,358 user_id: 1
+2019-05-05 10:40:44,926 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '90507'), MiniFieldStorage('adding', 'true')])
+2019-05-05 10:42:37,497 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '90507'), MiniFieldStorage('adding', 'true')])
+2019-05-05 10:42:37,498 session id: 90507
+2019-05-05 10:42:37,498 user_id: 1
+2019-05-05 10:43:08,418 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '90507'), MiniFieldStorage('adding', 'true')])
+2019-05-05 10:43:08,419 session id: 90507
+2019-05-05 10:43:08,419 user_id: 1
+2019-05-05 10:43:08,419 'Category'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/marina/cgi_bin/add.py", line 28, in <module>
+    category = params['Category']
+KeyError: 'Category'
+2019-05-05 10:44:27,338 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '90507'), MiniFieldStorage('adding', 'true')])
+2019-05-05 10:44:27,338 session id: 90507
+2019-05-05 10:44:27,339 user_id: 1
+2019-05-05 10:44:27,339 params before substitution: {'Name': 'Name', 'Category_id': '', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 10:44:27,339 'Category'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/marina/cgi_bin/add.py", line 29, in <module>
+    category = params['Category']
+KeyError: 'Category'
+2019-05-05 12:31:03,926 STARTED
+2019-05-05 12:31:07,691 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:31:08,810 PASSWORD CHECKED
+2019-05-05 12:31:10,901 session id: 23883
+2019-05-05 12:31:10,901 user_id: 1
+2019-05-05 12:31:20,235 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '23883'), MiniFieldStorage('adding', 'true')])
+2019-05-05 12:31:20,236 session id: 23883
+2019-05-05 12:31:20,236 user_id: 1
+2019-05-05 12:31:20,237 params before substitution: {'Name': 'Name', 'Category_id': '', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 12:31:20,710 'Category'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/marina/cgi_bin/add.py", line 35, in <module>
+    del params['Category']
+KeyError: 'Category'
+2019-05-05 12:33:15,224 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '23883'), MiniFieldStorage('adding', 'true')])
+2019-05-05 12:33:15,224 session id: 23883
+2019-05-05 12:33:15,224 user_id: 1
+2019-05-05 12:33:15,225 params before substitution: {'Name': 'Name', 'Category_id': '', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 12:33:15,226 params after substitution: {'Name': 'Name', 'Category_id': 1, 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 12:33:15,398 '\n    border'
+Traceback (most recent call last):
+  File "/files/univer/python/course2/math_projects/marina/cgi_bin/add.py", line 39, in <module>
+    page = page.format(session=cur_session)
+KeyError: '\n    border'
+2019-05-05 12:33:44,612 FieldStorage(None, None, [MiniFieldStorage('Name', 'Name'), MiniFieldStorage('Category', 'Category'), MiniFieldStorage('Description', 'Description'), MiniFieldStorage('Characteristics', 'Characteristics'), MiniFieldStorage('Photo', '03962_centralpark_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '23883'), MiniFieldStorage('adding', 'true')])
+2019-05-05 12:33:44,613 session id: 23883
+2019-05-05 12:33:44,613 user_id: 1
+2019-05-05 12:33:44,613 params before substitution: {'Name': 'Name', 'Category_id': '', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 12:33:44,615 params after substitution: {'Name': 'Name', 'Category_id': 1, 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 12:34:10,978 session id: 23883
+2019-05-05 12:34:10,978 user_id: 1
+2019-05-05 12:34:28,859 session id: 23883
+2019-05-05 12:34:28,860 user_id: 1
+2019-05-05 12:34:50,310 session id: 23883
+2019-05-05 12:34:50,310 user_id: 1
+2019-05-05 12:35:33,425 session id: 23883
+2019-05-05 12:35:33,425 user_id: 1
+2019-05-05 12:35:33,430 tmp_el:
+2019-05-05 12:37:46,849 STARTED
+2019-05-05 12:37:55,967 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:37:57,091 PASSWORD CHECKED
+2019-05-05 12:37:57,097 tmp_el: {'Id': 1, 'Name': 'Category'}
+2019-05-05 12:39:31,382 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:39:32,504 PASSWORD CHECKED
+2019-05-05 12:39:32,510 tmp_el: {'Id': 1, 'Name': 'Category'}
+2019-05-05 12:40:00,364 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:40:01,483 PASSWORD CHECKED
+2019-05-05 12:41:02,681 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:41:03,801 PASSWORD CHECKED
+2019-05-05 12:41:03,808 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:42:19,488 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:42:20,615 PASSWORD CHECKED
+2019-05-05 12:42:20,622 translate: {1: 'Category'}
+2019-05-05 12:42:20,622 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:42:57,307 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 12:42:58,436 PASSWORD CHECKED
+2019-05-05 12:42:58,442 translate: {1: 'Category'}
+2019-05-05 12:42:58,442 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:42:58,442 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:42,462 session id: 39789
+2019-05-05 12:43:42,462 user_id: 1
+2019-05-05 12:43:42,465 data for home page: [{'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}, {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}]
+2019-05-05 12:43:42,467 translate: {1: 'Category'}
+2019-05-05 12:43:42,467 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:42,468 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:49,401 translate: {1: 'Category'}
+2019-05-05 12:43:49,401 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:49,401 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:54,143 translate: {1: 'Category'}
+2019-05-05 12:43:54,143 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 12:43:54,144 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:16:28,555 STARTED
+2019-05-05 13:18:04,959 STARTED
+2019-05-05 13:18:11,832 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 13:18:12,971 PASSWORD CHECKED
+2019-05-05 13:18:12,977 translate: {1: 'Category'}
+2019-05-05 13:18:12,977 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:18:12,977 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:18:52,535 translate: {1: 'Category'}
+2019-05-05 13:19:12,172 translate: {1: 'Category'}
+2019-05-05 13:19:12,172 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:19:12,172 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:20:43,756 STARTED
+2019-05-05 13:20:48,090 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 13:20:49,215 PASSWORD CHECKED
+2019-05-05 13:20:49,222 translate: {1: 'Category'}
+2019-05-05 13:20:49,222 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:20:49,223 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:23:40,067 STARTED
+2019-05-05 13:23:43,910 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 13:23:45,034 PASSWORD CHECKED
+2019-05-05 13:23:45,041 translate: {1: 'Category'}
+2019-05-05 13:23:45,042 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:23:45,042 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:06,182 STARTED
+2019-05-05 13:24:09,582 FieldStorage(None, None, [MiniFieldStorage('login', 'admin'), MiniFieldStorage('password', '1234'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-05 13:24:10,706 PASSWORD CHECKED
+2019-05-05 13:24:10,713 translate: {1: 'Category'}
+2019-05-05 13:24:10,714 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:10,714 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:12,313 session id: 86251
+2019-05-05 13:24:12,313 user_id: 1
+2019-05-05 13:24:12,316 data for home page: [{'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}, {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}]
+2019-05-05 13:24:12,318 translate: {1: 'Category'}
+2019-05-05 13:24:12,318 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:12,318 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:13,670 session id: 86251
+2019-05-05 13:24:13,671 user_id: 1
+2019-05-05 13:24:54,637 FieldStorage(None, None, [MiniFieldStorage('Name', 'Test'), MiniFieldStorage('Category', 'test category'), MiniFieldStorage('Description', 'test description'), MiniFieldStorage('Characteristics', 'test characteristics'), MiniFieldStorage('Photo', '04087_riomaggioreatsunset_2880x1800.jpg'), MiniFieldStorage('Price', '1000'), MiniFieldStorage('session', '86251'), MiniFieldStorage('adding', 'true')])
+2019-05-05 13:24:54,637 session id: 86251
+2019-05-05 13:24:54,637 user_id: 1
+2019-05-05 13:24:54,638 params before substitution: {'Name': 'Test', 'Category_id': '', 'Description': 'test description', 'Characteristics': 'test characteristics', 'Photo': '04087_riomaggioreatsunset_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 13:24:55,099 params after substitution: {'Name': 'Test', 'Category_id': 2, 'Description': 'test description', 'Characteristics': 'test characteristics', 'Photo': '04087_riomaggioreatsunset_2880x1800.jpg', 'Price': '1000'}
+2019-05-05 13:24:58,802 session id: 86251
+2019-05-05 13:24:58,803 user_id: 1
+2019-05-05 13:24:58,806 data for home page: [{'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}, {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}, {'Id': 3, 'Name': 'Test', 'Category_id': '2', 'Description': 'test description', 'Characteristics': 'test characteristics', 'Photo': '04087_riomaggioreatsunset_2880x1800.jpg', 'Price': 1000}]
+2019-05-05 13:24:58,808 translate: {1: 'Category', 2: 'test category'}
+2019-05-05 13:24:58,808 tmp_el: {'Id': 1, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:58,808 tmp_el: {'Id': 2, 'Name': 'Name', 'Category_id': '1', 'Description': 'Description', 'Characteristics': 'Characteristics', 'Photo': '03962_centralpark_2880x1800.jpg', 'Price': 1000}
+2019-05-05 13:24:58,808 tmp_el: {'Id': 3, 'Name': 'Test', 'Category_id': '2', 'Description': 'test description', 'Characteristics': 'test characteristics', 'Photo': '04087_riomaggioreatsunset_2880x1800.jpg', 'Price': 1000}

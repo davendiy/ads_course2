@@ -55,11 +55,12 @@ def fill_page(page_or_filename, data, mode=FILE_MODE):
         template = file.read()
 
     res = ''
-
     translate = id_dict(database.get_categories())
+    logging.debug('translate: {}'.format(translate))
     for el in data:                               # створення списку товарів
-        tmp_el = el[:]
-        tmp_el["Category"] = translate[tmp_el['Category_id']]
+        tmp_el = el.copy()
+        logging.debug('tmp_el: {}'.format(tmp_el))
+        tmp_el["Category"] = translate[int(tmp_el['Category_id'])]
         del tmp_el['Category_id']
         del tmp_el['Id']
         # можна використовувати ** завдяки тому, що назви полів і ключові параметри однакові

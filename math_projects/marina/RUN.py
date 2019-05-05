@@ -17,6 +17,8 @@ logging.debug('STARTED')
 HOST = ''               # Комп'ютер для з'єднання
 PORT = 8001             # Порт для з'єднання
 
+print(database.get_items('Update'))
+
 with open(SESSIONS_URL, 'wb') as file:
     pickle.dump({}, file)
 

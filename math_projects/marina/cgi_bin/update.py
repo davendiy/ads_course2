@@ -8,7 +8,7 @@ import pickle
 form = cgi.FieldStorage()
 
 if UPDATE_PARAM in form:
-    cur_session = form[SESSION_PARAM]
+    cur_session = form[SESSION_PARAM].value
 
     with open(SESSIONS_URL, 'rb') as file:  # check session
         sessions = pickle.load(file)  # type: dict
@@ -21,6 +21,6 @@ if UPDATE_PARAM in form:
     page_path = PARAMS_PAGE_DICT[page_type]
     page = change_html(page_path)
     page = page.replace('{session}', cur_session)
-    category = form['category'] if 'category' in form else ''
+    category = form['Category'].value if 'Category' in form else ''
     page = fill_page(page, database.get_items(category), STRING_MODE)
     print(page)
