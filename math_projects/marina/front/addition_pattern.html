@@ -10,14 +10,14 @@
     <ul>
         <li>
             <form method=POST action="../cgi_bin/create_page.py">
-                <input type="submit" value="Home page">
+                <input type="submit" value="Home page" class="button">
                 <input type="hidden" name='session' value="{session}">
                 <input type="hidden" name="page_type" value="admin">
             </form>
         </li>
         <li>
             <form method=POST action="../cgi_bin/create_page.py">
-                <input type="submit" value="Add item">
+                <input type="submit" value="Add item" class="button">
                 <input type="hidden" name='session' value="{session}">
                 <input type="hidden" name="page_type" value="addition">
             </form>
@@ -26,31 +26,37 @@
 </div>
 
 <div class="add">
-    <form method=POST action="../cgi_bin/add.py">
-
-        <ul>
-            <li>
+    <form method=POST action="../cgi_bin/add.py" enctype="multipart/form-data">
+        <table>
+        <tr>
+            <td>
                 <label><input type=text name=Name value="Name"></label>
-            </li>
-            <li>
+            </td>
+            <td>
                 <label><input type=text name=Category value="Category"></label>
-            </li>
-            <li>
-                <label><input type=text name=Description value="Description"></label>
-            </li>
-            <li>
-                <label><input type=text name=Characteristics value="Characteristics"></label>
-            </li>
-            <li>
+            </td>
+            <td>
                 <input type=file name=Photo value="Photo">
-            </li>
-            <li>
+            </td>
+            <td>
                 <label><input type=text name=Price value="Price"></label>
-            </li>
-            <li>
-                <input type=submit value="Add">
-            </li>
-        </ul>
+            </td>
+            <td>
+                <input type=submit value="Add" class="button">
+            </td>
+        </tr>
+        </table>
+        <table>
+            <tr>
+                <td><label><textarea rows="5" cols="60" name=Description>Description</textarea></label></td>
+
+                <td>
+                    <label>
+                        <textarea rows="5" cols="60" type=text name=Characteristics >Characteristics</textarea>
+                    </label>
+                </td>
+            </tr>
+        </table>
         <input type="hidden" name="session" value="{session}">
         <input type="hidden" name="adding" value="true">
     </form>

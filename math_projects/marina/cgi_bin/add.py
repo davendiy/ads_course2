@@ -4,10 +4,11 @@
 import cgi
 from sceleton import *
 import pickle
+import os
+
 
 form = cgi.FieldStorage()
 
-logging.debug(str(form))
 
 if ADDING_PARAM in form:
     cur_session = form[SESSION_PARAM].value
@@ -23,7 +24,24 @@ if ADDING_PARAM in form:
         exit(1)
 
     try:
-        params = {el: form[el].value if el in form else '' for el in ITEMS_FIELDS if el != 'Id'}
+        params = {el: form[el].value if el in form and el != 'Photo' else '' for el in ITEMS_FIELDS if el != 'Id'}
+
+        # IF A FILE WAS UPLOADED (name=file) we can find it here.
+        if "Photo" in form:
+            form_file = form['Photo']
+            # form_file is now a file object in python
+            if form_file.filename:
+
+                uploaded_file_path = os.path.join(UPLOAD_DIR, os.path.basename(form_file.filename))
+                with open(uploaded_file_path, 'wb') as fout:
+                    # read the file in chunks as long as there is data
+                    while True:
+                        chunk = form_file.file.read(100000)
+                        if not chunk:
+                            break
+                        # write the file content on a file on the hdd
+                        fout.write(chunk)
+                params["Photo"] = uploaded_file_path
 
         logging.debug('params before substitution: {}'.format(params))
         category = form['Category'].value

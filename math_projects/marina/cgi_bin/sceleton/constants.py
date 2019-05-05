@@ -48,6 +48,8 @@ PARAMS_PAGE_DICT = {'admin': ADMIN_PAGE_PATTERN,
 SESSION_PARAM = 'session'
 UPDATE_PARAM = 'Update'
 
+UPLOAD_DIR = 'uploads'
+
 DEFAULT_DATABASE = 'storage.db'
 
 CATEGORIES_TABLE = 'Categories'

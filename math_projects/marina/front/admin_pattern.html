@@ -10,22 +10,24 @@
     <ul>
         <li>
             <form method=POST action="../cgi_bin/create_page.py">
-                <input type="submit" value="Home page">
+                <input type="submit" value="Home page" class="button">
                 <input type="hidden" name='session' value="{session}">
                 <input type="hidden" name="page_type" value="admin">
             </form>
         </li>
         <li>
             <form method=POST action="../cgi_bin/create_page.py">
-                <input type="submit" value="Add item">
+                <input type="submit" value="Add item" class="button">
                 <input type="hidden" name='session' value="{session}">
                 <input type="hidden" name="page_type" value="addition">
             </form>
         </li>
         <li>
             <form method=POST action="../cgi_bin/update.py">
-                <label><input type=text name=Category value="Update"></label>
-                <input type=submit name=Update value="Update">
+                <ul>
+                <li><label><input type=text name=Category value="Category" class="entry"></label></li>
+                <li><input type=submit name=Update value="Update" class="button"></li>
+                </ul>
                 <input type=hidden name="page_type" value="admin">
                 <input type="hidden" name="session" value="{session}">
             </form>
