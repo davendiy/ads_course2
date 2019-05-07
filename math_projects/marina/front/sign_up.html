@@ -7,8 +7,8 @@
 
 	<title>Shop</title>
 	<body>
-		<h2 align=center>Please, enter the login and the password</h2>
-		<form method=POST action="../cgi_bin/authorization.py">
+		<h2 align=center>Registration</h2>
+		<form method=POST action="../cgi_bin/registration.py">
 			<table align=center>
 				<tr>
 					<td align=left>
@@ -29,18 +29,22 @@
 						<input type=password name=password value="" class="entry">
 					</td>
 				<tr>
-					<td colspan=2 align=right>
-						<input type=submit name="Sign_in" value="Sign in" class="button">
+                <tr>
+					<td align=left>
+						<font size="5">
+							Confirm Password
+						</font>
 					</td>
-				</tr>
-
+					<td>
+						<input type=password name=password2 value="" class="entry">
+					</td>
 				<tr>
 					<td colspan=2 align=right>
 						<input type=submit name="Sign_up" value="Sign up" class="button">
 					</td>
-				</tr>
 			</table>
 		</form>
+
 <!--LIST_HERE-->
 
 	</body>

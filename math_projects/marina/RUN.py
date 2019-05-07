@@ -26,4 +26,5 @@ print('=== Local webserver ===')
 print("стартова сторінка:", "http://localhost:{}/front/login.html".format(PORT))
 print("ADMIN PARAMS\nlogin: admin\npassword: 1234")
 
+print('\nUSER PARAMS\nlogin: test user\npassword: test')
 HTTPServer((HOST, PORT), CGIHTTPRequestHandler).serve_forever()

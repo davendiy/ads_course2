@@ -11,21 +11,32 @@
 
         <li>
             <form method=POST action="../cgi_bin/create_page.py">
-                <input type="submit" value="Cart">
+                <input type="submit" value="Home page" class="button">
+                <input type="hidden" name='session' value="{session}">
+                <input type="hidden" name="page_type" value="user">
+            </form>
+        </li>
+
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Cart" class="button">
                 <input type="hidden" name='session' value="{session}">
                 <input type="hidden" name="page_type" value="cart">
             </form>
         </li>
+
         <li>
             <form method=POST action="../cgi_bin/update.py">
-                <input type=submit name=Update value="Update">
+                <ul>
+                <li><label><input type=text name=Category value="Category" class="entry"></label></li>
+                <li><input type=submit name=Update value="Update" class="button"></li>
+                </ul>
+                <input type=hidden name="page_type" value="user">
                 <input type="hidden" name="session" value="{session}">
-                <input type="hidden" name="page_type" value="user">
             </form>
         </li>
     </ul>
 </div>
-
 
 <div class="product">
     <table>

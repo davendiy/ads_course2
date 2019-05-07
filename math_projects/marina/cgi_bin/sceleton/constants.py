@@ -6,6 +6,7 @@ CART_PAGE_PATTERN = 'front/cart_pattern.html'
 ADD_PAGE_PATTERN = 'front/addition_pattern.html'
 ADMIN_PAGE_PATTERN = 'front/admin_pattern.html'
 PRODUCT_PATTERN = "front/product.html"
+SIGN_UP_PATTERN = 'front/sign_up.html'
 
 STYLESHEET = 'front/main.css'
 LOGIN_PAGE = 'front/login.html'
@@ -32,7 +33,7 @@ ERROR_PAGE = """Content-type: text/html charset=utf-8
     <title>ERROR</title>
 </head>
 <body>
-<h1>INVALID SESSION</h1>
+<h1>{}</h1>
 </body>
 </html>
 """
@@ -66,3 +67,22 @@ FILE_MODE = 'file'
 STRING_MODE = 'string'
 
 ADMIN = 'admin'
+
+
+BUTTON_ADD = """
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Add2Cart" value="Add to cart">
+    <input type="hidden" name="session" value="{session}">
+    <input type="hidden" name="item_id" value="{Item_id}">
+    <input type="hidden" name="type" value="Add">
+</form>
+"""
+
+BUTTON_DELETE = """
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Add2Cart" value="Add to cart">
+    <input type="hidden" name="session" value="{session}">
+    <input type="hidden" name="item_id" value="{Item_id}">
+    <input type="hidden" name="type" value="Delete">
+</form>
+"""

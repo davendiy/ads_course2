@@ -8,7 +8,6 @@ import pickle
 
 form = cgi.FieldStorage()
 
-# FIXME doesn't print any exceptions and html pages
 logging.debug(str(form))
 if 'Sign_in' in form:
     login = form['login'].value if 'login' in form else ''
@@ -45,3 +44,7 @@ if 'Sign_in' in form:
         page = change_html(LOGIN_PAGE, FILE_MODE)
         page = page.replace(FORMAT_PLACE, HTML_WRONG_PASS)
         print(page)
+
+elif 'Sign_up' in form:
+
+    print(change_html(SIGN_UP_PATTERN))
