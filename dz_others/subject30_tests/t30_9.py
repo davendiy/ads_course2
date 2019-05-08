@@ -31,7 +31,8 @@ class Section:
         """
         self.start = a
         self.end = b
-        if a >= b:
+        self._empty = False
+        if a > b:
             self.do_empty()
 
     def isempty(self):
@@ -53,34 +54,34 @@ class TestSection(unittest.TestCase):
     def testInit(self):
 
         test = Section(0, 1)
-        self.assertTrue(test.isempty(), False)
-        self.assertTrue(test.start, 0)
-        self.assertTrue(test.end, 1)
+        self.assertEqual(test.isempty(), False)
+        self.assertEqual(test.start, 0)
+        self.assertEqual(test.end, 1)
 
         test = Section(0, -1)
-        self.assertTrue(test.isempty(), True)
+        self.assertEqual(test.isempty(), True)
 
         test = Section(0, 0)
-        self.assertTrue(test.isempty(), True)
+        self.assertEqual(test.isempty(), True)
 
     def testDoEmpty(self):
 
         test = Section(0, 20)
         test.do_empty()
-        self.assertTrue(test.isempty(), True)
-        self.assertTrue(test.start, 0)
-        self.assertTrue(test.end, 0)
+        self.assertEqual(test.isempty(), True)
+        self.assertEqual(test.start, 0)
+        self.assertEqual(test.end, 0)
 
     def testEqual(self):
         test = Section(0, 2)
 
         test.equate(2, 5)
-        self.assertTrue(test.start, 2)
-        self.assertTrue(test.end, 5)
-        self.assertTrue(test.isempty(), False)
+        self.assertEqual(test.start, 2)
+        self.assertEqual(test.end, 5)
+        self.assertEqual(test.isempty(), False)
 
         test.equate(4, 1)
-        self.assertTrue(test.isempty(), True)
+        self.assertEqual(test.isempty(), True)
 
     def testIntersection(self):
 
@@ -89,19 +90,19 @@ class TestSection(unittest.TestCase):
         test2 = Section(0, 1)
 
         test.intersection(test1, test2)
-        self.assertTrue(test.isempty(), True)
+        self.assertEqual(test.isempty(), True)
 
         test1 = Section(0, 5)
         test2 = Section(5, 10)
 
         test.intersection(test1, test2)
-        self.assertTrue(test.isempty(), False)
-        self.assertTrue(test.start, 5)
-        self.assertTrue(test.end, 5)
+        self.assertEqual(test.isempty(), False)
+        self.assertEqual(test.start, 5)
+        self.assertEqual(test.end, 5)
 
         test1 = Section(0, 6)
         test2 = Section(2, 10)
         test.intersection(test1, test2)
-        self.assertTrue(test.isempty(), False)
-        self.assertTrue(test.start, 2)
-        self.assertTrue(test.end, 6)
+        self.assertEqual(test.isempty(), False)
+        self.assertEqual(test.start, 2)
+        self.assertEqual(test.end, 6)

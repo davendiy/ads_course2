@@ -1,0 +1,461 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <style>
+/*========== MENU ========== */
+
+
+.menu {
+    border: 2px solid black;
+}
+
+.menu ul{
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 2px 40px 2px 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/*========== /MENU ========== */
+
+
+
+
+
+/*========== PRODUCT ========== */
+
+.product {
+    font-family: 'Lato', sans-serif;
+    padding: 15px;
+    border: 1px solid black;
+    width: 80%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product tr{
+    height: 20%;
+    vertical-align: center;
+    width: auto;
+}
+
+.product tr td{
+    padding: 10px;
+    text-align: center;
+    width: auto;
+}
+
+.product tr td img{
+    width: 300px;
+    height: 200px;
+}
+
+.product tr:nth-child(even) {background-color: #f2f2f2;}
+
+.product tr:hover {background: #999999}
+
+
+
+/*========== /PRODUCT ========== */
+
+
+/*========== ADDITION ========== */
+
+.add {
+    font-family: 'Lato', sans-serif;
+    padding: 15px;
+    border: 1px solid black;
+    width: 90%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.add tr{
+    height: 20%;
+    vertical-align: center;
+}
+
+.add tr td{
+    padding: 10px;
+    text-align: center;
+}
+
+.add tr td input{
+    width: 200px;
+    height: 30px;
+    border: 2px solid black;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.add textarea{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+/*========== /ADDITION ========== */
+
+.button{
+
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    margin-left: 30%;
+    margin-top: 1%;
+    width: auto;
+    height: 30px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button:hover {background-color: #999999}
+
+
+.entry {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    margin-left: 30%;
+    margin-top: 1%;
+    width: auto;
+    height: 30px;
+    font-size: 16px;
+    text-decoration: none;
+}</style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Home page" class="button">
+                <input type="hidden" name='session' value="54447">
+                <input type="hidden" name="page_type" value="user">
+            </form>
+        </li>
+        <li>
+            <form method=POST action="../cgi_bin/create_page.py">
+                <input type="submit" value="Cart" class="button">
+                <input type="hidden" name='session' value="54447">
+                <input type="hidden" name="page_type" value="cart">
+            </form>
+        </li>
+    </ul>
+</div>
+
+
+ <tr>
+        <td>
+            <!--название-->
+            test item
+        </td>
+        <td>
+            <!--категория-->
+            test category
+        </td>
+        <td>
+            <!--описание-->
+            <label><textarea rows="10" cols="20">Some very long text from wikipedia:
+Mathematical optimization
+In terms of mathematical optimization, dynamic programming usually refers to simplifying a decision by breaking it down into a sequence of decision steps over time. This is done by defining a sequence of value functions V1, V2, ..., Vn taking y as an argument representing the state of the system at times i from 1 to n. The definition of Vn(y) is the value obtained in state y at the last time n. The values Vi at earlier times i = n −1, n − 2, ..., 2, 1 can be found by working backwards, using a recursive relationship called the Bellman equation. For i = 2, ..., n, Vi−1 at any state y is calculated from Vi by maximizing a simple function (usually the sum) of the gain from a decision at time i − 1 and the function Vi at the new state of the system if this decision is made. Since Vi has already been calculated for the needed states, the above operation yields Vi−1 for those states. Finally, V1 at the initial state of the system is the value of the optimal solution. The optimal values of the decision variables can be recovered, one by one, by tracking back the calculations already performed.
+
+Control theory
+In control theory, a typical problem is to find an admissible control {\displaystyle \mathbf {u} ^{\ast }} {\displaystyle \mathbf {u} ^{\ast }} which causes the system {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} to follow an admissible trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} on a continuous time interval {\displaystyle t_{0}\leq t\leq t_{1}} {\displaystyle t_{0}\leq t\leq t_{1}} that minimizes a cost function
+
+{\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t} {\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t}
+The solution to this problem is an optimal control law or policy {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)} {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)}, which produces an optimal trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} and an optimized loss function {\displaystyle J^{\ast }} {\displaystyle J^{\ast }}. The latter obeys the fundamental equation of dynamic programming:
+
+{\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}} {\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}}</textarea></label>
+        </td>
+        <td>
+            <!--характеристики-->
+            <label><textarea rows="10" cols="20">Also some text from wikipedia:
+n economics, the objective is generally to maximize (rather than minimize) some dynamic social welfare function. In Ramsey's problem, this function relates amounts of consumption to levels of utility. Loosely speaking, the planner faces the trade-off between contemporaneous consumption and future consumption (via investment in capital stock that is used in production), known as intertemporal choice. Future consumption is discounted at a constant rate {\displaystyle \beta \in (0,1)} {\displaystyle \beta \in (0,1)}. A discrete approximation to the transition equation of capital is given by
+
+{\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}} {\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}}
+where {\displaystyle c} c is consumption, {\displaystyle k} k is capital, and {\displaystyle f} f is a production function satisfying the Inada conditions. An initial capital stock {\displaystyle k_{0}>0} {\displaystyle k_{0}>0} is assumed.
+
+Let {\displaystyle c_{t}} c_{t} be consumption in period t, and assume consumption yields utility {\displaystyle u(c_{t})=\ln(c_{t})} u(c_{t})=\ln(c_{t}) as long as the consumer lives. Assume the consumer is impatient, so that he discounts future utility by a factor b each period, where {\displaystyle 0<b<1} 0<b<1. Let {\displaystyle k_{t}} k_{t} be capital in period t. Assume initial capital is a given amount {\displaystyle k_{0}>0} k_{0}>0, and suppose that this period's capital and consumption determine next period's capital as {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}} k_{t+1}=Ak_{t}^{a}-c_{t}, where A is a positive constant and {\displaystyle 0<a<1} 0<a<1. Assume capital cannot be negative. Then the consumer's decision problem can be written as follows:
+
+{\displaystyle \max \sum _{t=0}^{T}b^{t}\ln(c_{t})} \max \sum _{t=0}^{T}b^{t}\ln(c_{t}) subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0 for all {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T
+Written this way, the problem looks complicated, because it involves solving for all the choice variables {\displaystyle c_{0},c_{1},c_{2},\ldots ,c_{T}} c_{0},c_{1},c_{2},\ldots ,c_{T}. (Note that {\displaystyle k_{0}} k_{0} is not a choice variable—the consumer's initial capital is taken as given.)
+
+The dynamic programming approach to solve this problem involves breaking it apart into a sequence of smaller decisions. To do so, we define a sequence of value functions {\displaystyle V_{t}(k)} V_{t}(k), for {\displaystyle t=0,1,2,\ldots ,T,T+1} t=0,1,2,\ldots ,T,T+1 which represent the value of having any amount of capital k at each time t. Note that {\displaystyle V_{T+1}(k)=0} V_{T+1}(k)=0, that is, there is (by assumption) no utility from having capital after death.
+
+The value of any quantity of capital at any previous time can be calculated by backward induction using the Bellman equation. In this problem, for each {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T, the Bellman equation is
+
+{\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} {\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0
+This problem is much simpler than the one we wrote down before, because it involves only two decision variables, {\displaystyle c_{t}} c_{t} and {\displaystyle k_{t+1}} k_{t+1}. Intuitively, instead of choosing his whole lifetime plan at birth, the consumer can take things one step at a time. At time t, his current capital {\displaystyle k_{t}} k_{t} is given, and he only needs to choose current consumption {\displaystyle c_{t}} c_{t} and saving {\displaystyle k_{t+1}} k_{t+1}.
+
+To actually solve this problem, we work backwards. For simplicity, the current level of capital is denoted as k. {\displaystyle V_{T+1}(k)} V_{T+1}(k) is already known, so using the Bellman equation once we can calculate {\displaystyle V_{T}(k)} V_{T}(k), and so on until we get to {\displaystyle V_{0}(k)} V_{0}(k), which is the value of the initial decision problem for the whole lifetime. In other words, once we know {\displaystyle V_{T-j+1}(k)} V_{T-j+1}(k), we can calculate {\displaystyle V_{T-j}(k)} V_{T-j}(k), which is the maximum of {\displaystyle \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j})} \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j}), where {\displaystyle c_{T-j}} c_{T-j} is the choice variable and {\displaystyle Ak^{a}-c_{T-j}\geq 0} Ak^{a}-c_{T-j}\geq 0.
+
+Working backwards, it can be shown that the value function at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}} V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}
+where each {\displaystyle v_{T-j}} v_{T-j} is a constant, and the optimal amount to consume at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}} c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}
+which can be simplified to
+
+{\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}} {\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}}</textarea></label>
+        </td>
+        <td>
+            <!--фото-->
+            <img src="../uploads/avengers_infinity_war_4k_8k_2.jpg">
+        </td>
+        <td>
+            <!--цена-->
+            1000
+        </td>
+        <td>
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Delete" value="Remove from cart" class='button'>
+    <input type="hidden" name="session" value="54447">
+    <input type="hidden" name="Item_id" value="14">
+    <input type="hidden" name="type" value="Delete">
+</form>
+</td>
+
+ </tr>
+ <tr>
+        <td>
+            <!--название-->
+            test item
+        </td>
+        <td>
+            <!--категория-->
+            test category
+        </td>
+        <td>
+            <!--описание-->
+            <label><textarea rows="10" cols="20">Some very long text from wikipedia:
+Mathematical optimization
+In terms of mathematical optimization, dynamic programming usually refers to simplifying a decision by breaking it down into a sequence of decision steps over time. This is done by defining a sequence of value functions V1, V2, ..., Vn taking y as an argument representing the state of the system at times i from 1 to n. The definition of Vn(y) is the value obtained in state y at the last time n. The values Vi at earlier times i = n −1, n − 2, ..., 2, 1 can be found by working backwards, using a recursive relationship called the Bellman equation. For i = 2, ..., n, Vi−1 at any state y is calculated from Vi by maximizing a simple function (usually the sum) of the gain from a decision at time i − 1 and the function Vi at the new state of the system if this decision is made. Since Vi has already been calculated for the needed states, the above operation yields Vi−1 for those states. Finally, V1 at the initial state of the system is the value of the optimal solution. The optimal values of the decision variables can be recovered, one by one, by tracking back the calculations already performed.
+
+Control theory
+In control theory, a typical problem is to find an admissible control {\displaystyle \mathbf {u} ^{\ast }} {\displaystyle \mathbf {u} ^{\ast }} which causes the system {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} to follow an admissible trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} on a continuous time interval {\displaystyle t_{0}\leq t\leq t_{1}} {\displaystyle t_{0}\leq t\leq t_{1}} that minimizes a cost function
+
+{\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t} {\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t}
+The solution to this problem is an optimal control law or policy {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)} {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)}, which produces an optimal trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} and an optimized loss function {\displaystyle J^{\ast }} {\displaystyle J^{\ast }}. The latter obeys the fundamental equation of dynamic programming:
+
+{\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}} {\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}}</textarea></label>
+        </td>
+        <td>
+            <!--характеристики-->
+            <label><textarea rows="10" cols="20">Also some text from wikipedia:
+n economics, the objective is generally to maximize (rather than minimize) some dynamic social welfare function. In Ramsey's problem, this function relates amounts of consumption to levels of utility. Loosely speaking, the planner faces the trade-off between contemporaneous consumption and future consumption (via investment in capital stock that is used in production), known as intertemporal choice. Future consumption is discounted at a constant rate {\displaystyle \beta \in (0,1)} {\displaystyle \beta \in (0,1)}. A discrete approximation to the transition equation of capital is given by
+
+{\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}} {\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}}
+where {\displaystyle c} c is consumption, {\displaystyle k} k is capital, and {\displaystyle f} f is a production function satisfying the Inada conditions. An initial capital stock {\displaystyle k_{0}>0} {\displaystyle k_{0}>0} is assumed.
+
+Let {\displaystyle c_{t}} c_{t} be consumption in period t, and assume consumption yields utility {\displaystyle u(c_{t})=\ln(c_{t})} u(c_{t})=\ln(c_{t}) as long as the consumer lives. Assume the consumer is impatient, so that he discounts future utility by a factor b each period, where {\displaystyle 0<b<1} 0<b<1. Let {\displaystyle k_{t}} k_{t} be capital in period t. Assume initial capital is a given amount {\displaystyle k_{0}>0} k_{0}>0, and suppose that this period's capital and consumption determine next period's capital as {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}} k_{t+1}=Ak_{t}^{a}-c_{t}, where A is a positive constant and {\displaystyle 0<a<1} 0<a<1. Assume capital cannot be negative. Then the consumer's decision problem can be written as follows:
+
+{\displaystyle \max \sum _{t=0}^{T}b^{t}\ln(c_{t})} \max \sum _{t=0}^{T}b^{t}\ln(c_{t}) subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0 for all {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T
+Written this way, the problem looks complicated, because it involves solving for all the choice variables {\displaystyle c_{0},c_{1},c_{2},\ldots ,c_{T}} c_{0},c_{1},c_{2},\ldots ,c_{T}. (Note that {\displaystyle k_{0}} k_{0} is not a choice variable—the consumer's initial capital is taken as given.)
+
+The dynamic programming approach to solve this problem involves breaking it apart into a sequence of smaller decisions. To do so, we define a sequence of value functions {\displaystyle V_{t}(k)} V_{t}(k), for {\displaystyle t=0,1,2,\ldots ,T,T+1} t=0,1,2,\ldots ,T,T+1 which represent the value of having any amount of capital k at each time t. Note that {\displaystyle V_{T+1}(k)=0} V_{T+1}(k)=0, that is, there is (by assumption) no utility from having capital after death.
+
+The value of any quantity of capital at any previous time can be calculated by backward induction using the Bellman equation. In this problem, for each {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T, the Bellman equation is
+
+{\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} {\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0
+This problem is much simpler than the one we wrote down before, because it involves only two decision variables, {\displaystyle c_{t}} c_{t} and {\displaystyle k_{t+1}} k_{t+1}. Intuitively, instead of choosing his whole lifetime plan at birth, the consumer can take things one step at a time. At time t, his current capital {\displaystyle k_{t}} k_{t} is given, and he only needs to choose current consumption {\displaystyle c_{t}} c_{t} and saving {\displaystyle k_{t+1}} k_{t+1}.
+
+To actually solve this problem, we work backwards. For simplicity, the current level of capital is denoted as k. {\displaystyle V_{T+1}(k)} V_{T+1}(k) is already known, so using the Bellman equation once we can calculate {\displaystyle V_{T}(k)} V_{T}(k), and so on until we get to {\displaystyle V_{0}(k)} V_{0}(k), which is the value of the initial decision problem for the whole lifetime. In other words, once we know {\displaystyle V_{T-j+1}(k)} V_{T-j+1}(k), we can calculate {\displaystyle V_{T-j}(k)} V_{T-j}(k), which is the maximum of {\displaystyle \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j})} \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j}), where {\displaystyle c_{T-j}} c_{T-j} is the choice variable and {\displaystyle Ak^{a}-c_{T-j}\geq 0} Ak^{a}-c_{T-j}\geq 0.
+
+Working backwards, it can be shown that the value function at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}} V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}
+where each {\displaystyle v_{T-j}} v_{T-j} is a constant, and the optimal amount to consume at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}} c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}
+which can be simplified to
+
+{\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}} {\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}}</textarea></label>
+        </td>
+        <td>
+            <!--фото-->
+            <img src="../uploads/avengers_infinity_war_4k_8k_2.jpg">
+        </td>
+        <td>
+            <!--цена-->
+            1000
+        </td>
+        <td>
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Delete" value="Remove from cart" class='button'>
+    <input type="hidden" name="session" value="54447">
+    <input type="hidden" name="Item_id" value="14">
+    <input type="hidden" name="type" value="Delete">
+</form>
+</td>
+
+ </tr>
+ <tr>
+        <td>
+            <!--название-->
+            test item
+        </td>
+        <td>
+            <!--категория-->
+            test category
+        </td>
+        <td>
+            <!--описание-->
+            <label><textarea rows="10" cols="20">Some very long text from wikipedia:
+Mathematical optimization
+In terms of mathematical optimization, dynamic programming usually refers to simplifying a decision by breaking it down into a sequence of decision steps over time. This is done by defining a sequence of value functions V1, V2, ..., Vn taking y as an argument representing the state of the system at times i from 1 to n. The definition of Vn(y) is the value obtained in state y at the last time n. The values Vi at earlier times i = n −1, n − 2, ..., 2, 1 can be found by working backwards, using a recursive relationship called the Bellman equation. For i = 2, ..., n, Vi−1 at any state y is calculated from Vi by maximizing a simple function (usually the sum) of the gain from a decision at time i − 1 and the function Vi at the new state of the system if this decision is made. Since Vi has already been calculated for the needed states, the above operation yields Vi−1 for those states. Finally, V1 at the initial state of the system is the value of the optimal solution. The optimal values of the decision variables can be recovered, one by one, by tracking back the calculations already performed.
+
+Control theory
+In control theory, a typical problem is to find an admissible control {\displaystyle \mathbf {u} ^{\ast }} {\displaystyle \mathbf {u} ^{\ast }} which causes the system {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} to follow an admissible trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} on a continuous time interval {\displaystyle t_{0}\leq t\leq t_{1}} {\displaystyle t_{0}\leq t\leq t_{1}} that minimizes a cost function
+
+{\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t} {\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t}
+The solution to this problem is an optimal control law or policy {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)} {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)}, which produces an optimal trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} and an optimized loss function {\displaystyle J^{\ast }} {\displaystyle J^{\ast }}. The latter obeys the fundamental equation of dynamic programming:
+
+{\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}} {\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}}</textarea></label>
+        </td>
+        <td>
+            <!--характеристики-->
+            <label><textarea rows="10" cols="20">Also some text from wikipedia:
+n economics, the objective is generally to maximize (rather than minimize) some dynamic social welfare function. In Ramsey's problem, this function relates amounts of consumption to levels of utility. Loosely speaking, the planner faces the trade-off between contemporaneous consumption and future consumption (via investment in capital stock that is used in production), known as intertemporal choice. Future consumption is discounted at a constant rate {\displaystyle \beta \in (0,1)} {\displaystyle \beta \in (0,1)}. A discrete approximation to the transition equation of capital is given by
+
+{\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}} {\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}}
+where {\displaystyle c} c is consumption, {\displaystyle k} k is capital, and {\displaystyle f} f is a production function satisfying the Inada conditions. An initial capital stock {\displaystyle k_{0}>0} {\displaystyle k_{0}>0} is assumed.
+
+Let {\displaystyle c_{t}} c_{t} be consumption in period t, and assume consumption yields utility {\displaystyle u(c_{t})=\ln(c_{t})} u(c_{t})=\ln(c_{t}) as long as the consumer lives. Assume the consumer is impatient, so that he discounts future utility by a factor b each period, where {\displaystyle 0<b<1} 0<b<1. Let {\displaystyle k_{t}} k_{t} be capital in period t. Assume initial capital is a given amount {\displaystyle k_{0}>0} k_{0}>0, and suppose that this period's capital and consumption determine next period's capital as {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}} k_{t+1}=Ak_{t}^{a}-c_{t}, where A is a positive constant and {\displaystyle 0<a<1} 0<a<1. Assume capital cannot be negative. Then the consumer's decision problem can be written as follows:
+
+{\displaystyle \max \sum _{t=0}^{T}b^{t}\ln(c_{t})} \max \sum _{t=0}^{T}b^{t}\ln(c_{t}) subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0 for all {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T
+Written this way, the problem looks complicated, because it involves solving for all the choice variables {\displaystyle c_{0},c_{1},c_{2},\ldots ,c_{T}} c_{0},c_{1},c_{2},\ldots ,c_{T}. (Note that {\displaystyle k_{0}} k_{0} is not a choice variable—the consumer's initial capital is taken as given.)
+
+The dynamic programming approach to solve this problem involves breaking it apart into a sequence of smaller decisions. To do so, we define a sequence of value functions {\displaystyle V_{t}(k)} V_{t}(k), for {\displaystyle t=0,1,2,\ldots ,T,T+1} t=0,1,2,\ldots ,T,T+1 which represent the value of having any amount of capital k at each time t. Note that {\displaystyle V_{T+1}(k)=0} V_{T+1}(k)=0, that is, there is (by assumption) no utility from having capital after death.
+
+The value of any quantity of capital at any previous time can be calculated by backward induction using the Bellman equation. In this problem, for each {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T, the Bellman equation is
+
+{\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} {\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0
+This problem is much simpler than the one we wrote down before, because it involves only two decision variables, {\displaystyle c_{t}} c_{t} and {\displaystyle k_{t+1}} k_{t+1}. Intuitively, instead of choosing his whole lifetime plan at birth, the consumer can take things one step at a time. At time t, his current capital {\displaystyle k_{t}} k_{t} is given, and he only needs to choose current consumption {\displaystyle c_{t}} c_{t} and saving {\displaystyle k_{t+1}} k_{t+1}.
+
+To actually solve this problem, we work backwards. For simplicity, the current level of capital is denoted as k. {\displaystyle V_{T+1}(k)} V_{T+1}(k) is already known, so using the Bellman equation once we can calculate {\displaystyle V_{T}(k)} V_{T}(k), and so on until we get to {\displaystyle V_{0}(k)} V_{0}(k), which is the value of the initial decision problem for the whole lifetime. In other words, once we know {\displaystyle V_{T-j+1}(k)} V_{T-j+1}(k), we can calculate {\displaystyle V_{T-j}(k)} V_{T-j}(k), which is the maximum of {\displaystyle \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j})} \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j}), where {\displaystyle c_{T-j}} c_{T-j} is the choice variable and {\displaystyle Ak^{a}-c_{T-j}\geq 0} Ak^{a}-c_{T-j}\geq 0.
+
+Working backwards, it can be shown that the value function at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}} V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}
+where each {\displaystyle v_{T-j}} v_{T-j} is a constant, and the optimal amount to consume at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}} c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}
+which can be simplified to
+
+{\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}} {\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}}</textarea></label>
+        </td>
+        <td>
+            <!--фото-->
+            <img src="../uploads/avengers_infinity_war_4k_8k_2.jpg">
+        </td>
+        <td>
+            <!--цена-->
+            1000
+        </td>
+        <td>
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Delete" value="Remove from cart" class='button'>
+    <input type="hidden" name="session" value="54447">
+    <input type="hidden" name="Item_id" value="14">
+    <input type="hidden" name="type" value="Delete">
+</form>
+</td>
+
+ </tr>
+ <tr>
+        <td>
+            <!--название-->
+            test item
+        </td>
+        <td>
+            <!--категория-->
+            test category
+        </td>
+        <td>
+            <!--описание-->
+            <label><textarea rows="10" cols="20">Some very long text from wikipedia:
+Mathematical optimization
+In terms of mathematical optimization, dynamic programming usually refers to simplifying a decision by breaking it down into a sequence of decision steps over time. This is done by defining a sequence of value functions V1, V2, ..., Vn taking y as an argument representing the state of the system at times i from 1 to n. The definition of Vn(y) is the value obtained in state y at the last time n. The values Vi at earlier times i = n −1, n − 2, ..., 2, 1 can be found by working backwards, using a recursive relationship called the Bellman equation. For i = 2, ..., n, Vi−1 at any state y is calculated from Vi by maximizing a simple function (usually the sum) of the gain from a decision at time i − 1 and the function Vi at the new state of the system if this decision is made. Since Vi has already been calculated for the needed states, the above operation yields Vi−1 for those states. Finally, V1 at the initial state of the system is the value of the optimal solution. The optimal values of the decision variables can be recovered, one by one, by tracking back the calculations already performed.
+
+Control theory
+In control theory, a typical problem is to find an admissible control {\displaystyle \mathbf {u} ^{\ast }} {\displaystyle \mathbf {u} ^{\ast }} which causes the system {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} {\displaystyle {\dot {\mathbf {x} }}(t)=\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)} to follow an admissible trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} on a continuous time interval {\displaystyle t_{0}\leq t\leq t_{1}} {\displaystyle t_{0}\leq t\leq t_{1}} that minimizes a cost function
+
+{\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t} {\displaystyle J=b\left(\mathbf {x} (t_{1}),t_{1}\right)+\int _{t_{0}}^{t_{1}}f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)\mathrm {d} t}
+The solution to this problem is an optimal control law or policy {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)} {\displaystyle \mathbf {u} ^{\ast }=h(\mathbf {x} (t),t)}, which produces an optimal trajectory {\displaystyle \mathbf {x} ^{\ast }} {\displaystyle \mathbf {x} ^{\ast }} and an optimized loss function {\displaystyle J^{\ast }} {\displaystyle J^{\ast }}. The latter obeys the fundamental equation of dynamic programming:
+
+{\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}} {\displaystyle -J_{t}^{\ast }=\min _{\mathbf {u} }\left\{f\left(\mathbf {x} (t),\mathbf {u} (t),t\right)+J_{x}^{\ast {\mathsf {T}}}\mathbf {g} \left(\mathbf {x} (t),\mathbf {u} (t),t\right)\right\}}</textarea></label>
+        </td>
+        <td>
+            <!--характеристики-->
+            <label><textarea rows="10" cols="20">Also some text from wikipedia:
+n economics, the objective is generally to maximize (rather than minimize) some dynamic social welfare function. In Ramsey's problem, this function relates amounts of consumption to levels of utility. Loosely speaking, the planner faces the trade-off between contemporaneous consumption and future consumption (via investment in capital stock that is used in production), known as intertemporal choice. Future consumption is discounted at a constant rate {\displaystyle \beta \in (0,1)} {\displaystyle \beta \in (0,1)}. A discrete approximation to the transition equation of capital is given by
+
+{\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}} {\displaystyle k_{t+1}={\hat {g}}\left(k_{t},c_{t}\right)=f(k_{t})-c_{t}}
+where {\displaystyle c} c is consumption, {\displaystyle k} k is capital, and {\displaystyle f} f is a production function satisfying the Inada conditions. An initial capital stock {\displaystyle k_{0}>0} {\displaystyle k_{0}>0} is assumed.
+
+Let {\displaystyle c_{t}} c_{t} be consumption in period t, and assume consumption yields utility {\displaystyle u(c_{t})=\ln(c_{t})} u(c_{t})=\ln(c_{t}) as long as the consumer lives. Assume the consumer is impatient, so that he discounts future utility by a factor b each period, where {\displaystyle 0<b<1} 0<b<1. Let {\displaystyle k_{t}} k_{t} be capital in period t. Assume initial capital is a given amount {\displaystyle k_{0}>0} k_{0}>0, and suppose that this period's capital and consumption determine next period's capital as {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}} k_{t+1}=Ak_{t}^{a}-c_{t}, where A is a positive constant and {\displaystyle 0<a<1} 0<a<1. Assume capital cannot be negative. Then the consumer's decision problem can be written as follows:
+
+{\displaystyle \max \sum _{t=0}^{T}b^{t}\ln(c_{t})} \max \sum _{t=0}^{T}b^{t}\ln(c_{t}) subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0 for all {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T
+Written this way, the problem looks complicated, because it involves solving for all the choice variables {\displaystyle c_{0},c_{1},c_{2},\ldots ,c_{T}} c_{0},c_{1},c_{2},\ldots ,c_{T}. (Note that {\displaystyle k_{0}} k_{0} is not a choice variable—the consumer's initial capital is taken as given.)
+
+The dynamic programming approach to solve this problem involves breaking it apart into a sequence of smaller decisions. To do so, we define a sequence of value functions {\displaystyle V_{t}(k)} V_{t}(k), for {\displaystyle t=0,1,2,\ldots ,T,T+1} t=0,1,2,\ldots ,T,T+1 which represent the value of having any amount of capital k at each time t. Note that {\displaystyle V_{T+1}(k)=0} V_{T+1}(k)=0, that is, there is (by assumption) no utility from having capital after death.
+
+The value of any quantity of capital at any previous time can be calculated by backward induction using the Bellman equation. In this problem, for each {\displaystyle t=0,1,2,\ldots ,T} t=0,1,2,\ldots ,T, the Bellman equation is
+
+{\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} {\displaystyle V_{t}(k_{t})\,=\,\max \left(\ln(c_{t})+bV_{t+1}(k_{t+1})\right)} subject to {\displaystyle k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0} k_{t+1}=Ak_{t}^{a}-c_{t}\geq 0
+This problem is much simpler than the one we wrote down before, because it involves only two decision variables, {\displaystyle c_{t}} c_{t} and {\displaystyle k_{t+1}} k_{t+1}. Intuitively, instead of choosing his whole lifetime plan at birth, the consumer can take things one step at a time. At time t, his current capital {\displaystyle k_{t}} k_{t} is given, and he only needs to choose current consumption {\displaystyle c_{t}} c_{t} and saving {\displaystyle k_{t+1}} k_{t+1}.
+
+To actually solve this problem, we work backwards. For simplicity, the current level of capital is denoted as k. {\displaystyle V_{T+1}(k)} V_{T+1}(k) is already known, so using the Bellman equation once we can calculate {\displaystyle V_{T}(k)} V_{T}(k), and so on until we get to {\displaystyle V_{0}(k)} V_{0}(k), which is the value of the initial decision problem for the whole lifetime. In other words, once we know {\displaystyle V_{T-j+1}(k)} V_{T-j+1}(k), we can calculate {\displaystyle V_{T-j}(k)} V_{T-j}(k), which is the maximum of {\displaystyle \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j})} \ln(c_{T-j})+bV_{T-j+1}(Ak^{a}-c_{T-j}), where {\displaystyle c_{T-j}} c_{T-j} is the choice variable and {\displaystyle Ak^{a}-c_{T-j}\geq 0} Ak^{a}-c_{T-j}\geq 0.
+
+Working backwards, it can be shown that the value function at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}} V_{T-j}(k)\,=\,a\sum _{i=0}^{j}a^{i}b^{i}\ln k+v_{T-j}
+where each {\displaystyle v_{T-j}} v_{T-j} is a constant, and the optimal amount to consume at time {\displaystyle t=T-j} t=T-j is
+
+{\displaystyle c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}} c_{T-j}(k)\,=\,{\frac {1}{\sum _{i=0}^{j}a^{i}b^{i}}}Ak^{a}
+which can be simplified to
+
+{\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}} {\displaystyle {\begin{aligned}c_{T}(k)&=Ak^{a}\\c_{T-1}(k)&={\frac {Ak^{a}}{1+ab}}\\c_{T-2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}}}\\&\dots \\c_{2}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}}}\\c_{1}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}}}\\c_{0}(k)&={\frac {Ak^{a}}{1+ab+a^{2}b^{2}+\ldots +a^{T-2}b^{T-2}+a^{T-1}b^{T-1}+a^{T}b^{T}}}\end{aligned}}}</textarea></label>
+        </td>
+        <td>
+            <!--фото-->
+            <img src="../uploads/avengers_infinity_war_4k_8k_2.jpg">
+        </td>
+        <td>
+            <!--цена-->
+            1000
+        </td>
+        <td>
+<form method="post" action="../cgi_bin/cart.py">
+    <input type="submit" name="Delete" value="Remove from cart" class='button'>
+    <input type="hidden" name="session" value="54447">
+    <input type="hidden" name="Item_id" value="14">
+    <input type="hidden" name="type" value="Delete">
+</form>
+</td>
+
+ </tr>
+<!--LIST_HERE-->
+
+
+</body>
+</html>
