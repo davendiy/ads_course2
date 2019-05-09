@@ -139,6 +139,18 @@ class ShopStorage:
         curs.execute(query, parameters)
         self.db.close()
 
+    def del_record(self, item_type, item_id):
+        assert item_type in [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE]
+
+        if item_type == CARTS_TABLE:
+            query = "DELETE FROM {} WHERE Item_id=?".format(item_type)
+        else:
+            query = "DELETE FROM {} WHERE Id=?".format(item_type)
+
+        curs = self.db.get_cursor()
+        curs.execute(query, (item_id,))
+        self.db.close()
+
     def get_cart(self, user_id):
 
         query = 'SELECT Item_id FROM {} WHERE User_id=?'.format(CARTS_TABLE)
@@ -158,6 +170,11 @@ class ShopStorage:
     def get_user_id(self, user):
         query = 'SELECT Id FROM {} WHERE Name=?'.format(USERS_TABLE)
         res = self.db.get_one_result(query, user)
+        return '' if not res else res[0]
+
+    def get_one_item(self, item_id):
+        query = 'SELECT * FROM {} WHERE Id=?'.format(ITEMS_TABLE)
+        res = self.db.get_data_dicts(query, item_id)
         return '' if not res else res[0]
 
 default_conn = Connector(DEFAULT_DATABASE)

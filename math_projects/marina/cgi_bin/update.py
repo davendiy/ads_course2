@@ -12,6 +12,7 @@ if UPDATE_PARAM in form:
 
     with open(SESSIONS_URL, 'rb') as file:  # check session
         sessions = pickle.load(file)  # type: dict
+    logging.debug('sessions: {}'.format(sessions))
     user_id = sessions.get(cur_session, None)
     if user_id is None:
         print(ERROR_PAGE)
@@ -22,5 +23,6 @@ if UPDATE_PARAM in form:
     page = change_html(page_path)
     page = page.replace('{session}', cur_session)
     category = form['Category'].value if 'Category' in form else ''
-    page = fill_page(page, database.get_items(category), STRING_MODE)
+    tmp = BUTTON_ADD.replace('{session}', cur_session) if page_type == 'user' else ''
+    page = fill_page(page, database.get_items(category), STRING_MODE, button_template=tmp)
     print(page)

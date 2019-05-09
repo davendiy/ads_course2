@@ -37,15 +37,17 @@ def change_html(filename_or_page, mode=FILE_MODE):
     return text
 
 
-def fill_page(page_or_filename, data, mode=FILE_MODE):
+def fill_page(page_or_filename, data, mode=FILE_MODE, button_template=''):
     """ Наповнити html сторінку інформацією з бази даних
 
     :param page_or_filename: сторінка, або шлях до сторінки
     :param data: список словників, які необхідно буде вставити
     :param mode: режим, в якому працює функція: FILE_MODE - на вхід дано назву файлу
                                                 STRING_MODE - на вхід дано рядок
+    :param button_template: BUTTON_AND or BUTTON_DELETE - шаблон кнопки, що буде вставлятись
     :return: змінений текст сторінки
     """
+    logging.debug('template button: {}'.format(button_template))
     page = page_or_filename
     if mode == FILE_MODE:
         with open(page_or_filename, 'r', encoding='utf-8') as file:
@@ -60,8 +62,10 @@ def fill_page(page_or_filename, data, mode=FILE_MODE):
     for el in data:                               # створення списку товарів
         tmp_el = el.copy()
         tmp_el["Category"] = translate[int(tmp_el['Category_id'])]
+        button = button_template.replace("{Item_id}", str(tmp_el['Id']))
         del tmp_el['Category_id']
         del tmp_el['Id']
+        tmp_el['Button'] = button
         # можна використовувати ** завдяки тому, що назви полів і ключові параметри однакові
         res += template.format(**tmp_el)
     res += FORMAT_PLACE  # про всяк випадок, може знадобиться потім ще додавати елементи

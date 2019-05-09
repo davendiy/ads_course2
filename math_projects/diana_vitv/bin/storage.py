@@ -209,9 +209,10 @@ class StorageCollection:
 if __name__ == '__main__':
 
     # тестування (власноруч)
-    test = StorageCollection('source.db')
+    test = StorageCollection(StorageDB('../storage.db'))
     while True:
         try:
             eval(input('--> '))
+
         except Exception as e:
             print(e)

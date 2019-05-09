@@ -381,7 +381,7 @@ class DialogChangeItem:
             tmp_default = self.default.copy()
             tmp_default['Category'] = tmp_default['Category_id']
             tmp_default['Category_id'] = self._categories[tmp_default['Category'].strip()]
-
+            print("tmp default: ", tmp_default)
             # викликаємо відповідну функцію
             create_report(outfile, self.pre.template_invoice, [tmp_default])
             showinfo('Success', 'Одиниця товару успішно випущена. Накладна збережена до {}'.format(outfile))

@@ -12,3 +12,42 @@ Traceback (most recent call last):
     _entry = ttk.Label(_frame, text=self.default['Category_id'])
 KeyError: 'Category_id'
 ====================2019-03-16 19:38:26.991134====================
+====================2019-05-08 22:26:58.311739====================
+====================2019-05-08 22:31:58.562274====================
+====================2019-05-08 22:33:24.007834====================
+====================2019-05-08 22:35:02.108456====================
+Traceback (most recent call last):
+  File "/snap/pycharm-professional/127/helpers/pydev/pydevd.py", line 1741, in <module>
+    main()
+  File "/snap/pycharm-professional/127/helpers/pydev/pydevd.py", line 1735, in main
+    globals = debugger.run(setup['file'], None, None, is_module)
+  File "/snap/pycharm-professional/127/helpers/pydev/pydevd.py", line 1135, in run
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "/snap/pycharm-professional/127/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "/files/univer/python/course2/math_projects/diana_vitv/main.py", line 26, in <module>
+    test = MainWindow(top)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 39, in __init__
+    tmp = self._open_database()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 177, in _open_database
+    filename = askopenfilename()  # стандартний діалог відкриття файлу
+  File "/usr/lib/python3.6/tkinter/filedialog.py", line 375, in askopenfilename
+    return Open(**options).show()
+  File "/usr/lib/python3.6/tkinter/commondialog.py", line 43, in show
+    s = w.tk.call(self.command, *w._options(self.options))
+KeyboardInterrupt
+====================2019-05-08 22:35:05.716115====================
+====================2019-05-08 22:36:23.639400====================
+====================2019-05-08 22:55:55.758304====================
+====================2019-05-08 22:58:14.054687====================
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 1705, in __call__
+    return self.func(*args)
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 265, in _settings
+    self._update_categories()
+  File "/files/univer/python/course2/math_projects/diana_vitv/bin/main_window.py", line 154, in _update_categories
+    self.categories_list.delete(0, END)
+  File "/usr/lib/python3.6/tkinter/__init__.py", line 2791, in delete
+    self.tk.call(self._w, 'delete', first, last)
+_tkinter.TclError: invalid command name ".!frame2.!frame2.!listbox"

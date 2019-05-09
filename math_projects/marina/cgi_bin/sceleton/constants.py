@@ -71,18 +71,21 @@ ADMIN = 'admin'
 
 BUTTON_ADD = """
 <form method="post" action="../cgi_bin/cart.py">
-    <input type="submit" name="Add2Cart" value="Add to cart">
+    <input type="submit" name="Add2Cart" value="Add to cart" class='button'>
     <input type="hidden" name="session" value="{session}">
-    <input type="hidden" name="item_id" value="{Item_id}">
+    <input type="hidden" name="Item_id" value="{Item_id}">
     <input type="hidden" name="type" value="Add">
 </form>
 """
 
 BUTTON_DELETE = """
 <form method="post" action="../cgi_bin/cart.py">
-    <input type="submit" name="Add2Cart" value="Add to cart">
+    <input type="submit" name="Delete" value="Remove from cart" class='button'>
     <input type="hidden" name="session" value="{session}">
-    <input type="hidden" name="item_id" value="{Item_id}">
+    <input type="hidden" name="Item_id" value="{Item_id}">
     <input type="hidden" name="type" value="Delete">
 </form>
 """
+
+PARAM_ADD = 'Add2Cart'
+PARAM_DEL = 'Delete'

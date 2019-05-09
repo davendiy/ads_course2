@@ -328,3 +328,412 @@ None
 
 
 
+====================2019-05-08 22:26:58.311689=====================
+2019-05-08 22:27:03.096433
+_fill_list
+None
+
+2019-05-08 22:27:18.317981
+_fill_list
+None
+
+2019-05-08 22:27:23.673924
+_fill_list
+None
+
+2019-05-08 22:27:24.374206
+_save_category
+<ButtonPress event num=1 x=40 y=19>
+2019-05-08 22:27:25.084413
+_fill_list
+None
+
+2019-05-08 22:27:27.781749
+_add_item
+None
+
+
+2019-05-08 22:27:34.375503
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_update_text
+<ButtonPress event num=1 x=40 y=38>
+
+
+2019-05-08 22:27:40.249610
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_add_handler
+None
+
+
+2019-05-08 22:27:42.618112
+_fill_list
+None
+
+2019-05-08 22:27:44.560084
+_create_report
+None
+
+
+2019-05-08 22:28:28.681936
+_change_element
+<ButtonPress event num=1 x=186 y=106>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 27, 'Name': 'Metro Exodus', 'Category_id': 12312320, 'Department_id': 2342353323, 'Build_number': 3453334534, 'Shelf_number': 4534543534}]
+2019-05-08 22:28:38.725790
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+2019-05-08 22:28:58.137928
+_fill_list
+None
+
+2019-05-08 22:29:17.841344
+_change_element
+<ButtonPress event num=1 x=230 y=187>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 32, 'Name': 'the last test item', 'Category_id': 12312318, 'Department_id': 1314234, 'Build_number': 2342342, 'Shelf_number': 2342342}, {'id': 33, 'Name': 'last test', 'Category_id': 12312317, 'Department_id': 1231, 'Build_number': 2342342, 'Shelf_number': 123}]
+2019-05-08 22:29:20.807850
+_fill_list
+None
+
+2019-05-08 22:29:50.968263
+_change_element
+<ButtonPress event num=1 x=205 y=96>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 20, 'Name': 'new item3', 'Category_id': 12312316, 'Department_id': 24234234, 'Build_number': 23424234, 'Shelf_number': 234235252}]
+2019-05-08 22:29:56.079845
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+2019-05-08 22:30:08.380209
+_fill_list
+None
+
+
+
+====================2019-05-08 22:31:58.562250=====================
+2019-05-08 22:32:01.338791
+_fill_list
+None
+
+2019-05-08 22:32:02.430775
+_change_element
+<ButtonPress event num=1 x=207 y=113>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 29, 'Name': 'StarCraft2', 'Category_id': 12312320, 'Department_id': 2342353323, 'Build_number': 3453334534, 'Shelf_number': 4534543536}]
+2019-05-08 22:32:05.480760
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+{'id': ' 29', 'Name': ' StarCraft2', 'Category_id': 12312320, 'Department_id': ' 2342353323', 'Build_number': ' 3453334534', 'Shelf_number': ' 4534543536', 'Category': ' Computer Games'}
+2019-05-08 22:32:14.428103
+_fill_list
+None
+
+
+
+====================2019-05-08 22:33:24.007804=====================
+2019-05-08 22:33:28.179645
+_open_database
+file is not a database
+
+
+2019-05-08 22:33:29.528161
+_fill_list
+None
+
+2019-05-08 22:33:31.951860
+_change_element
+<ButtonPress event num=1 x=161 y=109>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 30, 'Name': 'Sharp shl23', 'Category_id': 12312315, 'Department_id': 2342353345, 'Build_number': 3453334534, 'Shelf_number': 4534543536}]
+2019-05-08 22:33:33.066802
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+tmp default:  {'id': ' 30', 'Name': ' Sharp shl23', 'Category_id': 12312315, 'Department_id': ' 2342353345', 'Build_number': ' 3453334534', 'Shelf_number': ' 4534543536', 'Category': ' Electronic'}
+2019-05-08 22:33:37.896710
+_fill_list
+None
+
+
+
+====================2019-05-08 22:35:02.108424=====================
+====================2019-05-08 22:35:05.716090=====================
+2019-05-08 22:35:07.400582
+_fill_list
+None
+
+2019-05-08 22:35:08.168153
+_change_element
+<ButtonPress event num=1 x=140 y=70>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 19, 'Name': 'new item233', 'Category_id': 12312316, 'Department_id': 2342342, 'Build_number': 2334222, 'Shelf_number': 23342342}]
+2019-05-08 22:35:09.394048
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_release_handler
+None
+
+
+tmp default:  {'id': ' 19', 'Name': ' new item233', 'Category_id': 12312316, 'Department_id': ' 2342342', 'Build_number': ' 2334222', 'Shelf_number': ' 23342342', 'Category': ' Mechanic'}
+2019-05-08 22:35:12.468920
+_fill_list
+None
+
+
+
+====================2019-05-08 22:36:23.639377=====================
+2019-05-08 22:36:25.603696
+_fill_list
+None
+
+2019-05-08 22:36:30.071694
+_save_category
+<ButtonPress event num=1 x=76 y=33>
+2019-05-08 22:36:30.821241
+_fill_list
+None
+
+2019-05-08 22:36:31.906911
+_save_category
+<ButtonPress event num=1 x=69 y=50>
+2019-05-08 22:36:32.403855
+_fill_list
+None
+
+2019-05-08 22:36:36.127039
+_save_category
+<ButtonPress event num=1 x=23 y=79>
+2019-05-08 22:36:36.664887
+_fill_list
+None
+
+2019-05-08 22:36:40.347368
+_fill_list
+None
+
+2019-05-08 22:36:43.675434
+_add_item
+None
+
+
+2019-05-08 22:36:47.126390
+_fill_list
+None
+
+2019-05-08 22:36:52.226083
+_save_category
+<ButtonPress event num=1 x=22 y=76>
+2019-05-08 22:36:52.702559
+_fill_list
+None
+
+2019-05-08 22:36:53.332592
+_fill_list
+None
+
+2019-05-08 22:36:57.003145
+_fill_list
+None
+
+2019-05-08 22:37:00.961386
+_settings
+
+
+2019-05-08 22:37:10.026350
+_change_element
+<ButtonPress event num=1 x=175 y=52>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}]
+2019-05-08 22:37:15.825788
+_fill_list
+None
+
+2019-05-08 22:38:16.839389
+_settings
+
+
+2019-05-08 22:38:44.181661
+_change_element
+<ButtonPress event state=0x2000 num=1 x=253 y=49>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 10, 'Name': ' value dsgd', 'Category_id': 12312315, 'Department_id': 234234, 'Build_number': 323123, 'Shelf_number': 2342342}]
+2019-05-08 22:38:52.636462
+_fill_list
+None
+
+
+
+====================2019-05-08 22:55:55.758277=====================
+2019-05-08 22:55:58.444633
+_fill_list
+None
+
+
+
+====================2019-05-08 22:58:14.054661=====================
+2019-05-08 22:58:15.550316
+_fill_list
+None
+
+2019-05-08 23:00:11.440517
+_save_category
+<ButtonPress event num=1 x=48 y=61>
+2019-05-08 23:00:41.978815
+_save_category
+<ButtonPress event num=1 x=19 y=78>
+2019-05-08 23:07:27.906722
+_save_category
+<ButtonPress event num=1 x=68 y=37>
+2019-05-08 23:09:03.084335
+_add_item
+None
+
+
+2019-05-08 23:09:05.167148
+_fill_list
+None
+
+2019-05-08 23:09:56.767190
+_add_item
+None
+
+
+2019-05-08 23:09:58.362211
+_fill_list
+None
+
+2019-05-08 23:10:17.102706
+_add_item
+None
+
+
+2019-05-08 23:10:28.549168
+_fill_list
+None
+
+2019-05-08 23:10:37.824854
+_add_item
+None
+
+
+2019-05-08 23:10:40.728974
+_fill_list
+None
+
+2019-05-08 23:11:45.573948
+_add_item
+None
+
+
+2019-05-08 23:12:12.664145
+<class 'math_projects.diana_vitv.bin.dialogs.DialogEnterItem'>
+_update_text
+<ButtonPress event num=1 x=61 y=31>
+
+
+2019-05-08 23:13:55.403141
+_fill_list
+None
+
+2019-05-08 23:14:30.609983
+_category_handler
+None
+
+
+2019-05-08 23:14:32.597288
+_fill_list
+None
+
+2019-05-08 23:14:47.162234
+_category_handler
+None
+
+
+2019-05-08 23:15:00.418117
+_fill_list
+None
+
+2019-05-08 23:16:19.258616
+_fill_list
+None
+
+2019-05-08 23:16:21.803227
+_fill_list
+None
+
+2019-05-08 23:16:22.523422
+_change_element
+<ButtonPress event num=1 x=239 y=60>
+
+
+field names: ['id', 'Name', 'Category_id', 'Department_id', 'Build_number', 'Shelf_number']
+[{'id': 17, 'Name': ' sjfjdd2222', 'Category_id': 12312316, 'Department_id': 12123123, 'Build_number': 12311, 'Shelf_number': 12332}]
+2019-05-08 23:20:07.007152
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_update_text
+<ButtonPress event num=1 x=54 y=19>
+
+
+2019-05-08 23:22:03.631181
+<class 'math_projects.diana_vitv.bin.dialogs.DialogChangeItem'>
+_exit
+None
+
+
+2019-05-08 23:22:03.652139
+_fill_list
+None
+
+2019-05-08 23:22:17.497789
+_settings
+
+
+2019-05-08 23:22:33.394187
+_settings
+
+
+2019-05-08 23:22:35.178172
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_change_template
+None
+
+
+2019-05-08 23:22:43.111428
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_change_report
+None
+
+
+2019-05-08 23:22:44.756056
+<class 'math_projects.diana_vitv.bin.dialogs.DialogSettings'>
+_change_template_invoide
+None
+
+
+
+

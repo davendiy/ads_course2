@@ -15,7 +15,7 @@ CGIHTTPRequestHandler.cgi_directories = ['/cgi_bin', '/htbin']
 
 logging.debug('STARTED')
 HOST = ''               # Комп'ютер для з'єднання
-PORT = 8001             # Порт для з'єднання
+PORT = 8002             # Порт для з'єднання
 
 print(database.get_items('Update'))
 
