@@ -157,9 +157,12 @@ class ShopStorage:
         return self.db.get_data_dicts(query, user_id)
 
     def close_cart(self, user_id):
-        query = 'DELETE FROM {} WHERE User_id=?'.format(user_id)
+        items = self.get_cart(user_id)
+        for el in items:
+            self.del_record(ITEMS_TABLE, item_id=el['Item_id'])
+        query = 'DELETE FROM {} WHERE User_id=?'.format(CARTS_TABLE)
         curs = self.db.get_cursor()
-        curs.execute(query)
+        curs.execute(query, (user_id,))
         self.db.close()
 
     def get_user_pass(self, user):
