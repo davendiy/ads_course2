@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
+""" CGI скрипт обробки натиснення кнопки Buy
+"""
 
 import cgi
 from sceleton import *
@@ -9,6 +11,7 @@ form = cgi.FieldStorage()
 
 if 'Buy' in form:
 
+    # перевірка сесії, щоб хто завгодно, без авторизації, не мав доступу до купівлі
     cur_session = form[SESSION_PARAM].value
 
     with open(SESSIONS_URL, 'rb') as file:  # check session

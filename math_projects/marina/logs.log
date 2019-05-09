@@ -1765,3 +1765,6 @@ FileNotFoundError: [Errno 2] No such file or directory: 'uploads/android_android
 </form>
 
 2019-05-09 12:55:54,684 translate: {1: 'Category', 2: 'test category', 3: 'test ', 4: 'test category2'}
+2019-05-09 12:58:40,203 FieldStorage(None, None, [MiniFieldStorage('login', 'test user'), MiniFieldStorage('password', 'івоаіло'), MiniFieldStorage('Sign_in', 'Sign in')])
+2019-05-09 12:58:41,350 PERMISSION DENIED
+2019-05-09 12:58:44,792 FieldStorage(None, None, [MiniFieldStorage('login', 'test user'), MiniFieldStorage('password', 'test'), MiniFieldStorage('Sign_up', 'Sign up')])

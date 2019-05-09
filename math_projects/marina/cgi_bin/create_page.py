@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" CGI скрипт створення необхідної html сторінки, після натиснення
+відповідної кнопки на попередній сторінці
+"""
+
 import cgi
 from sceleton import *
 import pickle
@@ -10,7 +14,7 @@ cgitb.enable()
 form = cgi.FieldStorage()
 
 if CREATE_PARAM in form:
-    page_type = form[CREATE_PARAM].value
+    page_type = form[CREATE_PARAM].value    # зчитка полів форми
     page_path = PARAMS_PAGE_DICT[page_type]
     cur_session = form[SESSION_PARAM].value
 
@@ -23,6 +27,7 @@ if CREATE_PARAM in form:
         print(ERROR_PAGE.format('INVALID SESSION'))
         exit(1)
 
+    # створення відповідної сторінки
     if page_path == ADMIN_PAGE_PATTERN:
         print(create_home_page(page_path, cur_session, ''))
 

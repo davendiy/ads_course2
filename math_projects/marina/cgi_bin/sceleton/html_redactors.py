@@ -80,6 +80,14 @@ def fill_page(page_or_filename, data, mode=FILE_MODE, button_template=''):
 
 
 def create_home_page(page_path, cur_session, button_template, category=''):
+    """ Створити домашню сторінку для користувача / адміна
+
+    :param page_path: шлях до шаблону сторінки
+    :param cur_session: ід сесії
+    :param button_template: шаблон кнопки
+    :param category: категорія, за якою шукаються елементи
+    :return: html сторінка
+    """
     page = change_html(page_path, FILE_MODE)
     page = page.replace('{session}', cur_session)
     data = database.get_items(category)
@@ -89,6 +97,14 @@ def create_home_page(page_path, cur_session, button_template, category=''):
 
 
 def create_cart_page(page_path, cur_session, button_template, user_id):
+    """ Створити сторінку корзини для користувача
+
+    :param page_path: шлях до шаблону
+    :param cur_session: ід сесії
+    :param button_template: шаблон кнопки
+    :param user_id: ід користувача
+    :return: html сторінка
+    """
     page = change_html(page_path, FILE_MODE)
     page = page.replace('{session}', cur_session)
     tmp_data = database.get_cart(user_id)

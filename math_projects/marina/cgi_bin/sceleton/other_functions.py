@@ -1,17 +1,35 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+""" Інші необхідні функції для роботи інтернет-магазину
+"""
 import bcrypt
 import logging
 
+# базові налаштування для логування
 logging.basicConfig(filename='logs.log', format='%(asctime) -15s %(message)s', level=logging.DEBUG)
 
 
 def encrypt(password, encoding='utf-8'):
+    """ Захешувати пароль користувача.
+    Використовується хеш bcrypt, оскільки він повільний, через що взлом шляхом підбору хешу
+    є неможливим з нинішнім розвитком технологій (якщо пароль нормальний)
+
+    :param password: рядок
+    :param encoding: кодування
+    :return: потік байтів - хеш
+    """
     return bcrypt.hashpw(bytes(password, encoding=encoding), bcrypt.gensalt(14))
 
 
 def check_pass(password, hashed, encoding='utf-8'):
+    """ Перевірити пароль з хешом
+
+    :param password: рядок
+    :param hashed: потік байтів
+    :param encoding: кодування
+    :return: bool
+    """
     return bcrypt.checkpw(bytes(password, encoding=encoding), hashed)
 
 

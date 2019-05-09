@@ -100,7 +100,11 @@ class ShopStorage:
         self.db = db
 
     def get_items(self, category=''):
+        """ Повернути товари певної категорії
 
+        :param category: назва категорії
+        :return: [{name_field1: value1, name_field2: value2 ...}, ...]
+        """
         if category:
             category_id = self.get_category_id(category)
             if category_id:
@@ -115,15 +119,28 @@ class ShopStorage:
         return res
         
     def get_category_id(self, category_name):
+        """ Повернути ідентифікаций номер категорії за її назвою
+
+        :param category_name: назва категорії
+        :return: ід
+        """
         query = 'SELECT Id FROM {} WHERE Name=?'.format(CATEGORIES_TABLE)
         res = self.db.get_one_result(query, category_name)
         return '' if not res else res[0]
 
     def get_categories(self):
+        """ Повернути список всіх категорій
+
+        :return: [{name_field1: value1, name_field2: value2 ...}, ...]
+        """
         return self.db.get_data_dicts('SELECT * FROM {}'.format(CATEGORIES_TABLE))
 
     def add_record(self, item_type, **params):
+        """ Додати запис до бази даних
 
+        :param item_type: [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE] - тип запису (назва таблиці)
+        :param params: параметри запису
+        """
         assert item_type in [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE]
 
         # словник -> список кортежів для того, щоб не змінювався порядок елементів
@@ -140,6 +157,11 @@ class ShopStorage:
         self.db.close()
 
     def del_record(self, item_type, item_id):
+        """ Видалити запис з бази даних
+
+        :param item_type: [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE] - тип запису (назва таблиці)
+        :param item_id: id елемента
+        """
         assert item_type in [CATEGORIES_TABLE, USERS_TABLE, ITEMS_TABLE, CARTS_TABLE]
 
         if item_type == CARTS_TABLE:
@@ -152,11 +174,20 @@ class ShopStorage:
         self.db.close()
 
     def get_cart(self, user_id):
+        """ Отримати елементи, що знаходяться в корзині користувача з заданим id
 
+        :param user_id: число
+        :return: [{name_field1: value1, name_field2: value2 ...}, ...]
+        """
         query = 'SELECT Item_id FROM {} WHERE User_id=?'.format(CARTS_TABLE)
         return self.db.get_data_dicts(query, user_id)
 
     def close_cart(self, user_id):
+        """ Здійснити купівлю
+
+        Видаляє з корзини користувача всі елементи + видаляє ці елементи з загальної таблиці
+        :param user_id: число (ідентифікатор користувача)
+        """
         items = self.get_cart(user_id)
         for el in items:
             self.del_record(ITEMS_TABLE, item_id=el['Item_id'])
@@ -166,19 +197,36 @@ class ShopStorage:
         self.db.close()
 
     def get_user_pass(self, user):
+        """ Повернути хеш пароля користувача
+
+        :param user: логін користувача
+        :return: хеш пароля
+        """
         query = 'SELECT Password_hash FROM {} WHERE Name=?'.format(USERS_TABLE)
         res = self.db.get_one_result(query, user)
         return '' if not res else res[0]
 
     def get_user_id(self, user):
+        """ Повернути ід користувача за іменем
+
+        :param user: ім'я (логін)
+        :return: ід (число)
+        """
         query = 'SELECT Id FROM {} WHERE Name=?'.format(USERS_TABLE)
         res = self.db.get_one_result(query, user)
         return '' if not res else res[0]
 
     def get_one_item(self, item_id):
+        """ Повернути 1 елемет з таблиці за даним ід
+
+        :param item_id: ідентифікатор елемента
+        :return: {name_field1: value1, name_field2: value2 ...}
+        """
         query = 'SELECT * FROM {} WHERE Id=?'.format(ITEMS_TABLE)
         res = self.db.get_data_dicts(query, item_id)
         return '' if not res else res[0]
 
+
+# об'єкти за замовчуванням
 default_conn = Connector(DEFAULT_DATABASE)
 database = ShopStorage(default_conn)

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+"""CGI скрипт обробки натиснення на кнопу SIGN_OUT
+
+Завершує сесію
+"""
+
 import cgi
 from sceleton import *
 import pickle

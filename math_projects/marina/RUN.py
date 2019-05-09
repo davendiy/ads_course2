@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
-# TODO DEBUG
-# TODO modify login page, add css
-# TODO add comments
-# TODO refactor
-
 from http.server import HTTPServer, CGIHTTPRequestHandler
 from cgi_bin.sceleton import *
 import pickle

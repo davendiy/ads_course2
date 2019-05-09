@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*-encoding: utf-8-*-
 
+"""CGI скрипт обобки натиснення кнопки Update
+"""
 import cgi
 from sceleton import *
 import pickle
