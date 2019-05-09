@@ -60,7 +60,7 @@ def fill_page(page_or_filename, data, mode=FILE_MODE, button_template=''):
     translate = id_dict(database.get_categories())
     logging.debug('translate: {}'.format(translate))
     summary = 0
-    flag = 'Price' in data[0]
+    flag = data and 'Price' in data[0]
     for el in data:                               # створення списку товарів
         tmp_el = el.copy()
         tmp_el["Category"] = translate[int(tmp_el['Category_id'])]
@@ -77,3 +77,24 @@ def fill_page(page_or_filename, data, mode=FILE_MODE, button_template=''):
     page = page.replace(FORMAT_PLACE, res)  # вставляємо шматок коду в замість коментаря
     page = page.replace('{Sum}', str(summary))
     return page
+
+
+def create_home_page(page_path, cur_session, button_template, category=''):
+    page = change_html(page_path, FILE_MODE)
+    page = page.replace('{session}', cur_session)
+    data = database.get_items(category)
+    logging.debug('data for home page: {}'.format(data))
+    page = fill_page(page, data, mode=STRING_MODE, button_template=button_template)
+    return page
+
+
+def create_cart_page(page_path, cur_session, button_template, user_id):
+    page = change_html(page_path, FILE_MODE)
+    page = page.replace('{session}', cur_session)
+    tmp_data = database.get_cart(user_id)
+    data = []
+    for el in tmp_data:
+        data.append(database.get_one_item(el['Item_id']))
+    logging.debug('data for cart page: {}'.format(data))
+    page = fill_page(page, data, mode=STRING_MODE, button_template=button_template)
+    print(page)

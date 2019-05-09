@@ -20,9 +20,9 @@ if UPDATE_PARAM in form:
 
     page_type = form[CREATE_PARAM].value
     page_path = PARAMS_PAGE_DICT[page_type]
-    page = change_html(page_path)
-    page = page.replace('{session}', cur_session)
     category = form['Category'].value if 'Category' in form else ''
     tmp = BUTTON_ADD.replace('{session}', cur_session) if page_type == 'user' else ''
-    page = fill_page(page, database.get_items(category), STRING_MODE, button_template=tmp)
-    print(page)
+    print(create_home_page(page_path=page_path,
+                           cur_session=cur_session,
+                           button_template=tmp,
+                           category=category))

@@ -21,9 +21,6 @@ if 'Buy' in form:
         exit(1)
 
     database.close_cart(user_id)
-    page = change_html(HOME_USER_PAGE_PATTERN, FILE_MODE)
-    page = page.replace('{session}', cur_session)
-    data = database.get_items()
-    logging.debug('data for home page: {}'.format(data))
-    page = fill_page(page, data, mode=STRING_MODE, button_template=BUTTON_ADD.replace('{session}', cur_session))
-    print(page)
+    print(create_home_page(page_path=HOME_USER_PAGE_PATTERN,
+                           cur_session=cur_session,
+                           button_template=BUTTON_ADD.replace('{session}', cur_session)))

@@ -5,8 +5,9 @@ import cgi
 from sceleton import *
 import pickle
 import os
+import cgitb
 
-
+cgitb.enable()
 form = cgi.FieldStorage()
 
 
